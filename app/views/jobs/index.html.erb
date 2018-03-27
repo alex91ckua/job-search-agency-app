@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jobs</h1>
+
+
+<%= form_tag 'jobs', method: 'get' do %>
+  <%= label_tag(:title, "title:") %>
+  <%= text_field_tag :title %>
+
+  <%= label_tag(:sector, "sector:") %>
+  <%= select_tag :sector, options_for_select(Job.sectors_options, params[:sector]), :include_blank => '-- Any --' %>
+
+  <%= label_tag(:salary_from, "salary_from:") %>
+  <%= text_field_tag :salary_from %>
+
+  <%= label_tag(:salary_to, "salary_to:") %>
+  <%= text_field_tag :salary_to %>
+
+  <%= label_tag(:location, "location:") %>
+  <%= select_tag :location, options_for_select(Job.locations_options, params[:location]), :include_blank => '-- Any --' %>
+
+  <%= label_tag(:job_type, "job_type:") %>
+  <%= select_tag :job_type, options_for_select(Job.job_types_options, params[:job_type]), :include_blank => '-- Any --' %>
+
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<%= form_tag 'jobs', method: 'get' do %>
+
+  <%= hidden_field_tag :title, params[:title] %>
+  <%= hidden_field_tag :sector, params[:sector] %>
+  <%= hidden_field_tag :salary_from, params[:salary_from] %>
+  <%= hidden_field_tag :salary_to, params[:salary_to] %>
+  <%= hidden_field_tag :location, params[:location] %>
+  <%= hidden_field_tag :job_type, params[:job_type] %>
+
+  <%= label_tag(:order_by, "order_by:") %>
+  <%= select_tag :order_by, options_for_select([["Date Created", "date"], ["Title", "title"]], params[:order_by]), :onchange => ("javascript: this.form.submit();"), :include_blank => 'Sort By...' %>
+
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Job type</th>
+      <th>Sector</th>
+      <th>Salary</th>
+      <th>Description</th>
+      <th>Company description</th>
+      <th>Responsibilities</th>
+      <th>Location</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.title %></td>
+        <td><%= job.job_type %></td>
+        <td><%= job.sector %></td>
+        <td><%= job.salary %></td>
+        <td><%= job.description %></td>
+        <td><%= job.company_description %></td>
+        <td><%= job.responsibilities %></td>
+        <td><%= job.location %></td>
+        <td><%= link_to 'Show', job %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
