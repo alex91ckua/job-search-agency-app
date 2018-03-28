@@ -1,5 +1,5 @@
 .mobile-app {
-  background-image: url("../img/mobile-app_bg-xs.jpg");
+  background-image: image-url("mobile-app_bg-xs.jpg");
   background-position: center;
   background-size: cover;
   padding-top: 50px;
@@ -74,7 +74,7 @@
 
 .mobile-app {
   background-position: bottom;
-  background-image: url("../img/mobile-app_bg-l.jpg");
+  background-image: image-url("mobile-app_bg-l.jpg");
 
   .mobile-app__phone-img {
     width: 120px;
@@ -168,6 +168,6 @@
 .mobile-app {
   padding-top: 100px;
   padding-bottom: 100px;
-  background-image: url("../img/mobile-app_bg-xl.jpg");
+  background-image: image-url("mobile-app_bg-xl.jpg");
 }
 }

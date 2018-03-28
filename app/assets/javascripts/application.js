@@ -12,4 +12,9 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery.min
+//= require bootstrap.min
+//= require select2.min
+//= require TweenMax.min
+//= require owl.carousel.min
+//= require script
