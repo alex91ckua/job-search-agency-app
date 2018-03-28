@@ -36,7 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # Simple admin panel
 gem 'activeadmin'
 
+# Authentification
 gem 'devise'
+
+# File upload
+gem 'carrierwave', '~> 1.2.2'
+
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
