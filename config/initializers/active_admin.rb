@@ -130,6 +130,7 @@ ActiveAdmin.setup do |config|
   #
   # You can disable the menu item for the comments index page:
   # config.comments_menu = false
+  config.comments_menu = false
   #
   # You can customize the comment menu:
   # config.comments_menu = { parent: 'Admin', priority: 1 }
