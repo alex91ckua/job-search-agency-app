@@ -1,0 +1,143 @@
+.current-jobs .hero,
+.client-services .hero,
+.contact-us .hero,
+.about-us .hero,
+.blog-page .hero {
+  position: relative;
+  background-color: #008CFF;
+  padding-top: 130px;
+  padding-bottom: 35px;
+  overflow: hidden;
+
+  .hero__title {
+    z-index: 5;
+
+    h1 {
+      margin-bottom: 17px;
+      font-family: "MuseoSlab500";
+      font-size: 22px;
+      line-height: 26px;
+      letter-spacing: -0.67px;
+      color: $white;
+      text-align: center;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      font-family: "MuseoSansRounded300";
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: -0.63px;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .hero__orb {
+    display: none;
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.current-jobs .hero,
+.client-services .hero,
+.contact-us .hero,
+.about-us .hero,
+.blog-page .hero {
+  padding-top: 130px;
+  padding-bottom: 60px;
+
+  .hero__title {
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 32px;
+
+      br {
+        display: none;
+      }
+    }
+
+    .round {
+      @include make-round();
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(lg) {
+
+.current-jobs .hero,
+.client-services .hero,
+.contact-us .hero,
+.about-us .hero,
+.blog-page .hero {
+  padding-top: 130px;
+  padding-bottom: 80px;
+
+  .hero__title {
+
+    h1 {
+      margin-bottom: 25px;
+      font-size: 40px;
+      line-height: 36.4px;
+      letter-spacing: -1.2px;
+
+      br {
+        display: none;
+      }
+    }
+
+    .round {
+      @include make-round();
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 26px;
+      line-height: 42px;
+      letter-spacing: -0.96px;
+    }
+  }
+
+  .hero__orb {
+    display: block;
+    position: absolute;
+    width: 465px;
+    height: 465px;
+    top: -60px;
+    left: calc(50% - 232.5px);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+}
+
+@include media-breakpoint-up(xl) {
+
+.current-jobs .hero,
+.client-services .hero,
+.contact-us .hero,
+.about-us .hero,
+.blog-page .hero {
+  padding-top: 170px;
+  padding-bottom: 120px;
+
+  .hero__orb {
+    top: -15px;
+  }
+}
+}

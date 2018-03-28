@@ -1,0 +1,72 @@
+.call-back {
+  padding-bottom: 30px;
+
+  .call-back__title {
+    margin-bottom: 20px;
+    font-family: "MuseoSlab500";
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.55px;
+    color: #666666;
+    text-align: center;
+  }
+
+  .call-back__container {
+    padding: 30px 15px;
+    background-color: $white;
+    border-radius: 5.8px;
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.call-back {
+
+  .call-back__title {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    font-size: 21.4px;
+    line-height: 31px;
+    text-align: left;
+  }
+
+  .call-back__container {
+    padding: 55px;
+    border-radius: 6.8px;
+  }
+}
+}
+
+@include media-breakpoint-up(lg) {
+
+.call-back {
+
+  .call-back__container {
+    border-radius: 8px;
+  }
+
+  .call-back__title {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 36px;
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.call-back {
+
+  .call-back__title {
+    font-size: 30.2px;
+    line-height: 43.7px;
+  }
+
+  .call-back__container {
+    padding: 70px;
+    border-radius: 10px;
+  }
+}
+}

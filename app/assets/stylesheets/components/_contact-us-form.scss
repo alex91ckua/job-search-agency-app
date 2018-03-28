@@ -1,0 +1,111 @@
+.contact-us-form {
+  padding-bottom: 30px;
+
+  .contact-us-form__container {
+    padding: 25px 15px;
+    background-color: $white;
+    border-radius: 5.8px;
+  }
+
+  .contact-us-form__title {
+    margin-bottom: 20px;
+    font-family: "MuseoSlab500";
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.55px;
+    color: #666666;
+    text-align: center;
+  }
+
+  .contact-us-form__descr {
+    font-family: "MuseoSansRounded300";
+    font-size: 12px;
+    line-height: 16px;
+    color: #666666;
+    text-align: center;
+  }
+
+  &--join-our-team {
+
+    .form__submit input {
+      background-image: linear-gradient(to bottom, #FBAA49 0%, #F57223 50%, #FBAA49 100%) !important;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.contact-us-form {
+
+  .contact-us-form__container {
+    padding: 55px;
+    border-radius: 6.8px;
+  }
+
+  .contact-us-form__title {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    font-size: 21.4px;
+    line-height: 31px;
+    text-align: left;
+  }
+
+  .contact-us-form__descr {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+}
+
+
+
+@include media-breakpoint-up(lg) {
+
+.contact-us-form {
+  padding-bottom: 35px;
+
+  .contact-us-form__container {
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+  .contact-us-form__title {
+    margin-bottom: 15px;
+    font-size: 25px;
+    line-height: 36px;
+  }
+
+  .contact-us-form__descr {
+    margin-bottom: 25px;
+    font-size: 16.8px;
+    line-height: 22.4px;
+  }
+}
+}
+
+
+
+@include media-breakpoint-up(xl) {
+
+.contact-us-form {
+
+  .contact-us-form__container {
+    padding: 50px;
+    border-radius: 10px;
+  }
+
+  .contact-us-form__title {
+    font-size: 30.2px;
+    line-height: 43.7px;
+  }
+
+  .contact-us-form__descr {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+}

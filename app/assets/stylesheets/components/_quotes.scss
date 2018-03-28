@@ -1,0 +1,300 @@
+.quotes {
+  background-color: rgba(209,214,217,0.25);
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .owl-carousel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .owl-dots {
+    order: 1;
+    display: none;
+  }
+
+  .owl-stage-outer {
+    order: 2;
+  }
+
+  .owl-nav {
+    display: none;
+  }
+
+  .owl-stage {
+    display: flex;
+    align-items: center;
+  }
+
+  .quote {
+
+    p {
+      margin-bottom: 10px;
+      font-family: "MuseoSlab300Italic";
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.55px;
+      text-align: center;
+
+      &::before {
+        display: block;
+        content: "“";
+        font-family: "GeorgiaBold";
+        text-align: center;
+        color: #D1D6D9;
+        font-size: 36px;
+        line-height: 31px;
+        letter-spacing: -1.1px;
+      }
+
+      &::after {
+        display: block;
+        content: "“";
+        font-family: "GeorgiaBold";
+        text-align: center;
+        color: #D1D6D9;
+        font-size: 36px;
+        line-height: 31px;
+        letter-spacing: -1.1px;
+        transform: rotate(180deg);
+      }
+    }
+
+    h4 {
+      margin-bottom: 0;
+      font-family: "MuseoSansRounded700";
+      font-size: 13px;
+      color: #9B9B9B;
+      text-align: center;
+    }
+  }
+
+  &--blue {
+
+    .quote p {
+      color: #008CFF;
+    }
+
+    .owl-dot.active {
+      background-color: #008CFF !important;
+    }
+  }
+
+  &--green {
+    background-color: $white;
+
+    .quote p {
+      color: #8CC832;
+    }
+
+    .owl-dot.active {
+      background-color: #8CC832 !important;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.quotes {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .owl-nav {
+    display: block;
+  }
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: calc(50% - 18.5px);
+    width: 37px;
+    height: 37px;
+    background-color: $white !important;
+    border-radius: 50%;
+
+    span {
+      font-size: 0;
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-top: 5px solid #D1D6D9;
+      border-left: 5px solid #D1D6D9;
+      transition: all 0.3s;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover span {
+      border-color: #212121;
+    }
+  }
+
+  .owl-prev {
+    left: 0;
+
+    span {
+      margin-left: 13px;
+      margin-right: auto;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .owl-next {
+    right: 0;
+
+    span {
+      margin-left: auto;
+      margin-right: 13px;
+      transform: rotate(135deg);
+    }
+  }
+
+  .owl-dots {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .owl-dot {
+      margin-left: 7px;
+      margin-right: 7px;
+      margin-bottom: 20px;
+      width: 5px;
+      height: 5px;
+      background-color: #B2B2B2;
+      border-radius: 50%;
+      transition: all 0.3s;
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .quote {
+    padding-left: 70px;
+    padding-right: 70px;
+
+    p {
+      font-size: 21.4px;
+      line-height: 31px;
+    }
+
+    h3 {
+      font-size: 11.9px;
+    }
+  }
+
+  &--green {
+    .owl-prev,
+    .owl-next {
+      background-color: #FAFAFA !important;
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(lg) {
+
+.quotes {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .owl-dots {
+
+    .owl-dot {
+      margin-left: 8px;
+      margin-right: 8px;
+      margin-bottom: 25px;
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  .quote {
+
+    p {
+      margin-bottom: 25px;
+      font-size: 25.2px;
+      line-height: 36.4px;
+
+      &::before,
+      &::after {
+        font-size: 42px;
+        line-height: 36px;
+      }
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.quotes {
+  padding-top: 80px;
+  padding-bottom: 90px;
+
+  .owl-dots {
+
+    .owl-dot {
+      margin-left: 9.5px;
+      margin-right: 9.5px;
+      margin-bottom: 35px;
+      width: 7.5px;
+      height: 7.5px;
+    }
+  }
+
+  .owl-prev,
+  .owl-next {
+    width: 52px;
+    height: 52px;
+
+    span {
+      width: 20px;
+      height: 20px;
+      border-top: 7px solid #D1D6D9;
+      border-left: 7px solid #D1D6D9;
+    }
+  }
+
+  .owl-prev span {
+    margin-left: 18px;
+  }
+
+  .owl-next span {
+    margin-right: 18px;
+  }
+
+  .quote {
+
+    p {
+      margin-bottom: 25px;
+      font-size: 31.5px;
+      line-height: 45.5px;
+
+      &::before,
+      &::after {
+        font-size: 52.5px;
+        line-height: 52.5px;
+      }
+    }
+
+    h4 {
+      font-size: 17.5px;
+    }
+  }
+}
+}

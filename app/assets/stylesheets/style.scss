@@ -1,0 +1,57 @@
+// Global styles
+@import "global";
+
+// Custom mixins
+@import "mixins";
+
+// Custom fonts
+@import "fonts";
+
+// Custom variables
+@import "variables";
+
+// Import page blocks
+@import "components/header";
+@import "components/footer";
+@import "components/form";
+@import "components/title-block";
+
+// Homepage
+@import "components/homepage_hero";
+@import "components/quotes";
+@import "components/advantages";
+@import "components/homepage_about-us";
+
+// Current Jobs
+@import "components/current-jobs_hero";
+@import "components/search-current-jobs";
+@import "components/register-interest";
+@import "components/charter";
+@import "components/mobile-app";
+@import "components/job-detail";
+
+// Client Services
+@import "components/client-services_hero";
+@import "components/register-vacancy";
+@import "components/stats";
+@import "components/methods";
+@import "components/call-back";
+
+// About Us
+@import "components/about-us_hero";
+@import "components/principles";
+@import "components/our-vision";
+@import "components/our-team";
+@import "components/get-in-touch";
+
+// Contact Us
+@import "components/contact-us_hero";
+@import "components/contacts";
+@import "components/contact-us-form";
+@import "components/our-history";
+
+
+// Blog page
+@import "components/blog-page_hero";
+@import "components/blog-posts";
+@import "components/blog-post";

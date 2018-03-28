@@ -1,0 +1,496 @@
+.our-team {
+  padding-top: 20px;
+
+  .our-team__members {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -50px;
+    border-radius: 5.8px;
+    background-color: $white;
+  }
+
+  .owl-carousel {
+    position: relative;
+
+    .owl-stage {
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: 75px;
+      width: 37px;
+      height: 37px;
+      background-color: #D1D6D9 !important;
+      border-radius: 50%;
+
+      span {
+        font-size: 0;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: 5px solid $white;
+        border-left: 5px solid $white;
+        transition: all 0.3s;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .owl-prev {
+      left: 20px;
+
+      span {
+        margin-left: 13px;
+        margin-right: auto;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .owl-next {
+      right: 20px;
+
+      span {
+        margin-left: auto;
+        margin-right: 13px;
+        transform: rotate(135deg);
+      }
+    }
+
+    .owl-dots {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .owl-dot {
+      display: block;
+      margin: 10px 3px;
+      width: 6px;
+      height: 6px;
+      background-color: #B2B2B2;
+      border-radius: 50%;
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .owl-dot.active {
+      background-color: #8CC832;
+    }
+  }
+
+  .our-team__member {
+    padding: 20px;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .member__avatar {
+      display: block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 22px;
+      margin-left: auto;
+      margin-right: auto;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid #979797;
+
+      @include media-breakpoint-down(sm) {
+        order: 1;
+      }
+    }
+
+    .member__name {
+      margin-bottom: 20px;
+      font-family: "MuseoSansRounded300";
+      font-size: 25px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #8CC832;
+
+      @include media-breakpoint-down(sm) {
+        order: 2;
+      }
+    }
+
+    .member__info {
+
+      @include media-breakpoint-down(sm) {
+        order: 3;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-family: "MuseoSlab300";
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #4A4A4A;
+      }
+    }
+  }
+
+  .members__join-our-team-btn {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+
+    a {
+      @include make-btn(green);
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  .members__show-all-btn {
+    display: none;
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+.our-team {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .our-team__members {
+    margin-bottom: -80px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 5.8px;
+  }
+
+  .owl-carousel {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .our-team__member {
+    position: relative;
+    width: 50%;
+    padding: 25px;
+
+    .member__name {
+      margin-bottom: 18px;
+      font-size: 25px;
+    }
+
+    .member__avatar {
+      margin-bottom: 20px;
+      width: 130px;
+      height: 130px;
+    }
+
+    .member__info {
+
+      p {
+        font-size: 14px;
+
+        &:not(:nth-last-child(1)) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $white;
+      border: 1.7px solid #EDEEEF;
+      border-radius: 50%;
+      display: none;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      width: 9.35px;
+      height: 9.35px;
+    }
+
+    @include media-breakpoint-down(md) {
+
+      &:not(:nth-child(-n+2)) {
+        display: none;
+      }
+
+      &:nth-child(1) {
+        &::after {
+          display: block;
+          top: -5.25px;
+          right: -5.25px;
+        }
+      }
+
+      &:nth-child(odd) {
+        border-right: 1.7px solid #EDEEEF;
+        border-bottom: 1.7px solid #EDEEEF;
+
+        &::before {
+          display: block;
+          left: -5.25px;
+          bottom: -5.25px;
+        }
+
+        &:nth-last-child(-n+2) {
+          border-bottom: none;
+
+          &::before {
+            display: block;
+            left: auto;
+            right: -5.25px;
+            bottom: -5.25px;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        border-bottom: 1.7px solid #EDEEEF;
+
+        &::before {
+          display: block;
+          right: -5.25px;
+          bottom: -5.25px;
+        }
+
+        &:nth-last-child(1) {
+          border-bottom: none;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .our-team__members--hide {
+
+    .our-team__member {
+
+      @include media-breakpoint-down(md) {
+        &::before {
+          display: none;
+          top: auto;
+          bottom: auto;
+          left: auto;
+          right: auto;
+        }
+
+        &:nth-child(1) {
+
+          &::before {
+            display: block;
+            bottom: -5.25px;
+            right: -5.25px;
+          }
+        }
+
+        &:nth-child(-n+2) {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .members__join-our-team-btn {
+    display: none;
+    padding: 0;
+  }
+
+  .members__show-all-btn {
+    display: block;
+    text-align: center;
+
+    a {
+      @include make-btn(green);
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(lg) {
+
+.our-team {
+  padding-top: 80px;
+
+  .our-team__members {
+    margin-bottom: -110px;
+    border-radius: 8px;
+  }
+
+  .our-team__member {
+    width: calc(100%/3);
+    display: block;
+
+    .member__info {
+
+      p {
+        font-size: 16.8px;
+        line-height: 22.4px;
+      }
+    }
+
+    &::before,
+    &:after {
+      display: none;
+      width: 11px;
+      height: 11px;
+      border-width: 2px;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+    }
+
+    &:not(:nth-child(-n+3)) {
+      display: none;
+    }
+
+    &:nth-child(-n+2) {
+
+      &::after {
+        display: block;
+        top: -6.5px;
+        right: -6.5px;
+      }
+    }
+
+    &:nth-child(3n-2) {
+      border-right: 2px solid #EDEEEF;
+      border-bottom: 2px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        left: -6.5px;
+        bottom: -6.5px;
+      }
+
+      &:nth-last-child(-n+3) {
+        border-bottom: none;
+
+        &::before {
+          left: auto;
+          right: -6.5px;
+        }
+      }
+    }
+
+    &:nth-child(3n-1) {
+      border-right: 2px solid #EDEEEF;
+      border-bottom: 2px solid #EDEEEF;
+
+      &:nth-last-child(-n+2) {
+        border-bottom: none;
+
+        &::before {
+          display: block;
+          bottom: -6.5px;
+          right: -6.5px;
+        }
+      }
+    }
+
+    &:nth-child(3n) {
+      border-bottom: 2px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        right: -6.5px;
+        bottom: -6.5px;
+      }
+
+      &:nth-last-child(1) {
+        border-bottom: none;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .our-team__members--hide {
+
+    .our-team__member {
+
+      &:nth-child(-n+3) {
+        border-bottom: none;
+      }
+
+      &:nth-child(-n+2) {
+
+        &::before {
+          display: block;
+          left: auto;
+          bottom: -6.5px;
+          right: -6.5px;
+        }
+      }
+
+      &:nth-child(3) {
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .members__show-all-btn {
+    margin-top: -25px;
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.our-team {
+
+  .our-team__members {
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  .our-team__member {
+    padding: 35px;
+    border-width: 2.5px !important;
+
+    &::before,
+    &::after {
+      transform: scale(1.25);
+    }
+
+    .member__name {
+      font-size: 27px;
+      margin-bottom: 25px;
+    }
+
+    .member__avatar {
+      margin-bottom: 25px;
+    }
+  }
+}
+}

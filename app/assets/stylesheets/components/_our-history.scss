@@ -1,0 +1,163 @@
+.our-history {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .our-history__content {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 5.8px;
+    padding: 20px;
+    text-align: center;
+
+    h5 {
+      margin-bottom: 15px;
+      font-family: "MuseoSansRounded500";
+      font-size: 14px;
+      color: #4A4A4A;
+    }
+
+    h6 {
+      margin-bottom: 5px;
+      font-family: "MuseoSansRounded700";
+      font-size: 13px;
+      color: #4A4A4A;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin-bottom: 15px;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-family: "MuseoSansRounded300";
+      font-size: 13px;
+      color: #4A4A4A;
+
+      &::before {
+        content: "•";
+        margin-right: 5px;
+      }
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-family: "MuseoSansRounded300";
+      font-size: 13px;
+    }
+
+    .register-interest {
+      @include make-btn(yellow);
+      display: inline-block;
+      width: auto;
+      margin-bottom: 15px;
+    }
+
+    img {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .content__video {
+      display: block;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.our-history {
+
+  .our-history__content {
+    padding: 25px;
+    text-align: left;
+    border-radius: 6.8px;
+
+    h5 {
+      margin-bottom: 30px;
+      font-size: 16.8px;
+    }
+
+    h6 {
+      margin-bottom: 10px;
+      font-size: 14.4px;
+    }
+
+    ul {
+      margin-bottom: 50px;
+    }
+
+    li {
+      font-size: 14.4px;
+
+      &:before {
+        margin-right: 10px;
+      }
+    }
+
+    .register-interest {
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 14.4px;
+    }
+
+    img {
+      margin-bottom: 35px;
+    }
+  }
+}
+}
+
+@include media-breakpoint-up(lg) {
+
+.our-history {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .our-history__content {
+    padding: 35px 45px;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 8px;
+
+    .content__left-column,
+    .content__right-column {
+      width: 48%;
+
+      & > *:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.our-history {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .our-history__content {
+    padding: 55px;
+    border-radius: 10px;
+
+    h5 {
+      font-size: 18px;
+    }
+
+    h6,
+    li,
+    p {
+      font-size: 16px;
+    }
+  }
+}
+}

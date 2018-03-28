@@ -1,0 +1,402 @@
+.charter {
+  padding-top: 15px;
+  padding-bottom: 40px;
+
+  .charter__items {
+    position: relative;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 35px 25px;
+    border-radius: 5.8px;
+    background-color: $white;
+
+    .owl-stage {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: calc(50% - 18.5px);
+      width: 37px;
+      height: 37px;
+      background-color: #D1D6D9 !important;
+      border-radius: 50%;
+
+      span {
+        font-size: 0;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: 5px solid $white;
+        border-left: 5px solid $white;
+        transition: all 0.3s;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .owl-prev {
+      left: 20px;
+
+      span {
+        margin-left: 13px;
+        margin-right: auto;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .owl-next {
+      right: 20px;
+
+      span {
+        margin-left: auto;
+        margin-right: 13px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+
+  .charter__item {
+
+    h4 {
+      margin-bottom: 17.5px;
+      font-family: "MuseoSansRounded300";
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .number {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 23.5px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid;
+      border-radius: 50%;
+      font-family: "MuseoSansRounded700";
+      font-size: 57.8px;
+      line-height: 80px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-family: "MuseoSlab300";
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: -0.37px;
+      text-align: center;
+      color: #4A4A4A;
+    }
+  }
+
+  .charter__item-total {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    p {
+      font-family: "MuseoSlab300";
+      font-size: 12px;
+      line-height: 16px;
+
+    }
+
+    a {
+      display: inline-block;
+      width: auto;
+    }
+
+    &--blue {
+      p {
+        color: #008CFF;
+      }
+
+      a {
+        @include make-btn(blue);
+      }
+    }
+
+    &--pink {
+      p {
+        color: #D21E46;
+      }
+
+      a {
+        @include make-btn(pink);
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.charter {
+
+  .charter__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 40px;
+    border-radius: 6.8px;
+  }
+
+  .charter__item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    &::before {
+      display: none;
+      position: absolute;
+      content: "";
+      width: 9.35px;
+      height: 9.35px;
+      background-color: #fff;
+      border: 1.7px solid #EDEEEF;
+      border-radius: 50%;
+    }
+
+    &::after {
+      display: none;
+      position: absolute;
+      content: "";
+      width: 9.35px;
+      height: 9.35px;
+      background-color: #fff;
+      border: 1.7px solid #EDEEEF;
+      border-radius: 50%;
+    }
+
+    @include media-breakpoint-down(md) {
+
+    &:nth-child(odd) {
+      border-bottom: 1.7px solid #EDEEEF;
+      border-right: 1.7px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        left: -5.25px;
+        bottom: -5.25px;
+      }
+    }
+
+    &:nth-child(even) {
+      border-bottom: 1.7px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        right: -5.25px;
+        bottom: -5.25px;
+      }
+    }
+
+    &:nth-child(1) {
+
+      &::after {
+        display: block;
+        top: -5.25px;
+        right: -5.25px;
+      }
+    }
+    }
+  }
+
+  .charter__item-total {
+    padding: 20px;
+
+    p {
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    a {
+      font-size: 16px;
+    }
+  }
+}
+}
+
+@include media-breakpoint-up(lg) {
+
+.charter {
+
+  .charter__items {
+    border-radius: 8px;
+  }
+
+  .charter__item {
+    width: calc(100%/3);
+    padding: 40px 25px;
+
+    h4 {
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+
+    .number {
+      margin-bottom: 40px;
+      width: 111px;
+      height: 111px;
+      font-size: 80px;
+      line-height: 111px;
+    }
+
+    p {
+      font-size: 16.8px;
+      line-height: 22.4px;
+      letter-spacing: -0.5px;
+    }
+
+    &::before,
+    &:after {
+      display: none;
+      width: 11px;
+      height: 11px;
+      border-width: 2px;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+    }
+
+    &:nth-child(3n-2) {
+      border-bottom: 2px solid #EDEEEF;
+      border-right: 2px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        left: -6.5px;
+        bottom: -6.5px;
+      }
+
+      &:nth-last-child(1),
+      &:nth-last-child(2),
+      &:nth-last-child(3) {
+        border-bottom: none;
+
+        &::before {
+          display: block;
+          left: auto;
+          right: -6.5px;
+          bottom: -6.5px;
+        }
+      }
+    }
+
+    &:nth-child(3n-1) {
+      border-bottom: 2px solid #EDEEEF;
+      border-right: 2px solid #EDEEEF;
+
+      &:nth-last-child(1),
+      &:nth-last-child(2),
+      &:nth-last-child(3) {
+        border-bottom: none;
+
+        &::before {
+          display: block;
+          right: -6.5px;
+          bottom: -6.5px;
+        }
+      }
+    }
+
+    &:nth-child(3n) {
+      border-bottom: 2px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        right: -6.5px;
+        bottom: -6.5px;
+      }
+    }
+
+    &:nth-child(1) {
+
+      &::after {
+        display: block;
+        top: -6.5px;
+        right: -6.5px;
+      }
+    }
+
+    &:nth-child(2) {
+
+      &::after {
+        display: block;
+        top: -6.5px;
+        right: -6.5px;
+      }
+    }
+  }
+
+  .charter__item-total {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      width: 100%;
+      margin-top: auto;
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    a {
+      margin-bottom: auto;
+    }
+
+    &--blue {
+      width: calc(100%*(2/3));
+    }
+    &--pink {
+      width: calc(100%/3);
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.charter {
+
+  .charter__items {
+    padding: 60px;
+    border-radius: 10px;
+  }
+
+  .charter__item {
+    border-width: 2.5px !important;
+
+    h4 {
+      font-size: 24px;
+    }
+
+    &::before,
+    &::after {
+      transform: scale(1.25);
+    }
+  }
+}
+}

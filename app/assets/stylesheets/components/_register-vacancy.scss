@@ -1,0 +1,121 @@
+.register-vacancy {
+  padding-bottom: 30px;
+
+  .register-vacancy__container {
+    padding: 25px 15px;
+    background-color: $white;
+    border-radius: 5.8px;
+  }
+
+  .register-vacancy__title {
+    margin-bottom: 20px;
+    font-family: "MuseoSlab500";
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.55px;
+    color: #666666;
+    text-align: center;
+  }
+
+  .register-vacancy__descr {
+    font-family: "MuseoSansRounded300";
+    font-size: 12px;
+    line-height: 16px;
+    color: #666666;
+    text-align: center;
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.register-vacancy {
+
+  .register-vacancy__container {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6.8px;
+  }
+
+  .register-vacancy__title {
+    order: 1;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    margin-bottom: 20px;
+    font-size: 21.4px;
+    line-height: 31px;
+    text-align: left;
+  }
+
+  .register-vacancy__descr {
+    order: 3;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .register-vacancy__form {
+    order: 2;
+    margin-bottom: 20px;
+  }
+}
+}
+
+
+@include media-breakpoint-up(lg) {
+
+.register-vacancy {
+  padding-bottom: 35px;
+
+  .register-vacancy__container {
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+  .register-vacancy__title {
+    margin-bottom: 25px;
+    font-size: 25px;
+    line-height: 36px;
+  }
+
+  .register-vacancy__descr {
+    font-size: 16.8px;
+    line-height: 22.4px;
+  }
+
+  .register-vacancy__form {
+    margin-bottom: 15px;
+  }
+}
+}
+
+
+
+@include media-breakpoint-up(xl) {
+
+.register-vacancy {
+
+  .register-vacancy__container {
+    padding: 50px;
+    border-radius: 10px;
+  }
+
+  .register-vacancy__title {
+    margin-bottom: 30px;
+    font-size: 30.2px;
+    line-height: 43.7px;
+  }
+
+  .register-vacancy__descr {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .register-vacancy__form {
+    margin-bottom: 25px;
+  }
+}
+}

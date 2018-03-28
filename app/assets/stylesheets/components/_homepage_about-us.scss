@@ -1,0 +1,125 @@
+.homepage .about-us {
+  padding-top: 155px;
+  padding-bottom: 120px;
+  background-image: url("../img/homepage_about-us-l.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  h4 {
+    margin-bottom: 20px;
+    font-family: "MuseoSlab500";
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.82px;
+    color: $white;
+  }
+
+  .round {
+    @include make-round();
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 32px;
+    font-family: "MuseoSansRounded500";
+    font-size: 12px;
+    line-height: 16px;
+    color: $white;
+  }
+
+  a {
+    @include make-btn(green);
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.homepage .about-us {
+  padding-top: 360px;
+  padding-bottom: 130px;
+  background-image: url("../img/homepage_about-us-m.jpg");
+
+  h4 {
+    margin-bottom: 30px;
+    font-size: 34px;
+    line-height: 31px;
+  }
+
+  .round {
+    margin-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 25px;
+    font-size: 14.3px;
+    line-height: 19px;
+  }
+}
+}
+
+
+@include media-breakpoint-up(lg) {
+
+.homepage .about-us {
+  padding-top: 420px;
+  padding-bottom: 150px;
+  background-image: url("../img/homepage_about-us-l.jpg");
+
+  h4 {
+    margin-bottom: 35px;
+    font-size: 40px;
+    line-height: 36px;
+  }
+
+  .round {
+    margin-bottom: 35px;
+  }
+
+  p {
+    font-size: 16.8px;
+    line-height: 22.4px;
+  }
+
+  a {
+    padding: 11px 25px;
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.homepage .about-us {
+  padding-top: 625px;
+  padding-bottom: 190px;
+  background-image: url("../img/homepage_about-us-xl.jpg");
+
+  h4 {
+    margin-bottom: 45px;
+    font-size: 50px;
+    line-height: 45px;
+  }
+
+  .round {
+    margin-bottom: 45px;
+  }
+
+  p {
+    margin-bottom: 40px;
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+  a {
+    padding: 14px 32px;
+  }
+}
+}
