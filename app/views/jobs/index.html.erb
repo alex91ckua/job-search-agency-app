@@ -58,11 +58,11 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= job.title %></td>
-        <td><%= job.job_type %></td>
+        <td><%= job.job_type.humanize.capitalize %></td>
         <td><%= job.sector %></td>
         <td><%= job.salary %></td>
         <td><%= job.description %></td>
-        <td><%= job.company_description %></td>
+        <td><%= job.company.description %></td>
         <td><%= job.responsibilities %></td>
         <td><%= job.location %></td>
         <td><%= link_to 'Show', job %></td>

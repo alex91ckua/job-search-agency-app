@@ -27,7 +27,7 @@
 
 <p>
   <strong>Company description:</strong>
-  <%= @job.company_description %>
+  <%= @job.company.description %>
 </p>
 
 <p>
@@ -39,5 +39,29 @@
   <strong>Location:</strong>
   <%= @job.location %>
 </p>
+
+<%= form_for :candidate, url: candidate_path, method: 'post', :html => { :multipart => true } do |f| %>
+  <%= f.label :first_name, 'first_name' %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name, 'last_name' %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email, 'email' %>
+  <%= f.email_field :email %>
+
+  <%= f.label :phone, 'phone' %>
+  <%= f.phone_field :phone %>
+
+  <%= f.label :attachment, 'attachment' %>
+  <%= f.file_field :attachment %>
+
+  <%= f.label :job_alerts, 'job_alerts' %>
+  <%= f.check_box :job_alerts %>
+
+  <%= f.hidden_field :job_id, { :value => @job.id } %>
+  <br>
+  <%= f.submit %>
+<% end %>
 
 <%= link_to 'Back', jobs_path %>
