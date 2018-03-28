@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327132446) do
+ActiveRecord::Schema.define(version: 20180328114141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,17 +46,43 @@ ActiveRecord::Schema.define(version: 20180327132446) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "candidates", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone"
+    t.string "attachment"
+    t.boolean "job_alerts", default: false
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_candidates_on_job_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "phone"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.integer "job_type"
     t.string "sector"
     t.integer "salary"
     t.string "description"
-    t.string "company_description"
     t.string "responsibilities"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "company_id"
+    t.boolean "company_job_alerts", default: false
+    t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
+  add_foreign_key "candidates", "jobs"
+  add_foreign_key "jobs", "companies"
 end
