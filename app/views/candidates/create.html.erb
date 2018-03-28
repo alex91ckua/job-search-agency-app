@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Candidate Application</h1>
+
+<div>
+  <% if @candidate.errors.empty? %>
+    Thanks for your application!
+  <% else %>
+    <b>There errors exist:</b>
+    <%= @candidate.errors.full_messages.to_sentence %>
+  <% end %>
+</div>
