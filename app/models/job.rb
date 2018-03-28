@@ -1,4 +1,13 @@
 class Job < ApplicationRecord
+  validates :title, presence: true
+  validates :job_type, presence: true
+  validates :sector, presence: true
+  validates :location, presence: true
+  validates :description, presence: true
+  validates :salary, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  belongs_to :company
+  has_many :candidates
+
   enum job_type: [ :full_time, :part_time ]
 
   scope :salary_from, ->(salary_from) { where('salary >= ?', salary_from) }
@@ -9,6 +18,10 @@ class Job < ApplicationRecord
   scope :title, ->(title) { where('title ilike ?', "%#{title}%") }
   scope :ordered_by_title, -> { order(title: :asc) }
   scope :ordered_by_date, -> { order(created_at: :desc) }
+
+  def ref_id
+    'JC%.5d' % id
+  end
 
   def self.job_types_options
     # or use the I18n module to humanize the keys
