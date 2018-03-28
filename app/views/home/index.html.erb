@@ -1,0 +1,233 @@
+<% content_for :body_class, 'homepage' %>
+
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Recruitment where people count</h1>
+        <h3>Global Career and Talent Solutions in Finance</h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__dropdown  container-fluid" id="accordion">
+    <div class="row" >
+      <div class="container">
+        <div class="row" >
+          <div class="dropdown__btns  col-12">
+            <div class="dropdown__btn  dropdown__btn--1  collapsed" data-toggle="collapse" data-target="#heroDropdownContent1" aria-expanded="false" aria-controls="heroDropdownContent1">
+              <div class="btn__circle"></div>
+              <div class="btn__position">Candidates</div>
+              <div class="btn__card">
+                <p>Looking for a new role?</p>
+                <span>Search Now</span>
+                <div class="lines">
+                  <div class="line  line--1"></div>
+                  <div class="line  line--2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown__btn  dropdown__btn--2  collapsed" data-toggle="collapse" data-target="#heroDropdownContent2" aria-expanded="false" aria-controls="heroDropdownContent2">
+              <div class="btn__circle"></div>
+              <div class="btn__position">Employers</div>
+              <div class="btn__card">
+                <p>Request a call back?</p>
+                <span>Give us some details</span>
+                <div class="lines">
+                  <div class="line  line--1"></div>
+                  <div class="line  line--2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown__content">
+        <div id="heroDropdownContent1" class="collapse" aria-labelledby="heroDropdown1" data-parent="#accordion">
+          <div class="content__wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="content  content--1  col-12">
+                  <h3 class="content__title">Search Current Jobs</h3>
+                  <form action="" class="content__form  form__search-current-jobs">
+                    <div class="form__select">
+                      <select class="js-select2" data-placeholder="Choose a sector">
+                        <option><!-- Empty "option" needed for placeholder --></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="form__select">
+                      <select class="js-select2" data-placeholder="Salary range">
+                        <option><!-- Empty "option" needed for placeholder --></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="form__select">
+                      <select class="js-select2" data-placeholder="Choose a location">
+                        <option><!-- Empty "option" needed for placeholder --></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="form__select">
+                      <select class="js-select2" data-placeholder="Job type">
+                        <option><!-- Empty "option" needed for placeholder --></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="form__input">
+                      <input type="text" placeholder="Add a Keyword / Job function">
+                    </div>
+                    <div class="form__submit">
+                      <input type="submit" value="Search Jobs now">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="heroDropdownContent2" class="collapse" aria-labelledby="heroDropdown2" data-parent="#accordion">
+          <div class="content__wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="content  content--2  col-12">
+                  <h3 class="content__title">We’ll call you back</h3>
+                  <form action="" class="content__form  form__request-call-back">
+                    <div class="form__select">
+                      <select class="js-select2" data-placeholder="Type of Request">
+                        <option><!-- Empty "option" needed for placeholder --></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="form__input">
+                      <input type="text" placeholder="first name">
+                    </div>
+                    <div class="form__input">
+                      <input type="text" placeholder="last name">
+                    </div>
+                    <div class="form__input">
+                      <input type="email" placeholder="email">
+                    </div>
+                    <div class="form__input">
+                      <input type="tel" placeholder="phone">
+                    </div>
+                    <div class="form__input">
+                      <input type="text" placeholder="company">
+                    </div>
+                    <div class="form__input  form__input--textarea">
+                      <textarea placeholder="Brief Description"></textarea>
+                    </div>
+                    <div class="form__group">
+                      <div class="form__input">
+                        <input type="text" placeholder="best time to call">
+                      </div>
+                      <div class="form__submit">
+                        <input type="submit" value="Call me">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-1.png') %>" alt="">
+  </div>
+  <div class="hero__orb  hero__orb--2">
+    <img src="<%= asset_path('orb-2.png') %>" alt="">
+  </div>
+  <div class="hero__orb  hero__orb--3">
+    <img src="<%= asset_path('orb-3.png') %>" alt="">
+  </div>
+</div>
+<div class="quotes  quotes--blue">
+  <div class="container">
+    <div class="row">
+      <div class="owl-carousel  col-12">
+        <div class="quote">
+          <p>Global Accounting has been the best recruitment agency I have used over the last 5 years. They intelligently filter candidates and then support them through the recruitment process.</p>
+          <h4>Finance Director, FTSE 5 Organisation</h4>
+        </div>
+        <div class="quote">
+          <p>Global Accounting has been the best recruitment agency I have used over the last 5 years. They intelligently filter candidates and then support them through the recruitment process.</p>
+          <h4>Finance Director, FTSE 5 Organisation</h4>
+        </div>
+        <div class="quote">
+          <p>Global Accounting has been the best recruitment agency I have used over the last 5 years. They intelligently filter candidates and then support them through the recruitment process.</p>
+          <h4>Finance Director, FTSE 5 Organisation</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="advantages">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="advantages__title  title-block">
+          <h3>Expertise in Finance & Accounting for a wide range of industries</h3>
+          <div class="round"></div>
+          <p>We build strategic candidate and client relationships across a range of sectors, understanding not just the markets, but also the needs and priorities of the individuals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="advantages__items">
+          <div class="advantages__item  advantages__item--1">
+            <h4>Pharmaceuticals<br>& Life Sciences</h4>
+            <img src="<%= asset_path('orb-4.png') %>" alt="">
+            <p>Our consultants have a strong and successful track record of delivering world-class talent into the top performing businesses in the pharmaceutical and life sciences sector. Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="advantages__item  advantages__item--2">
+            <h4>Retail, FMCG<br>& Hospitality</h4>
+            <img src="<%= asset_path('orb-5.png') %>" alt="">
+            <p>If you are a finance professional in retail, FMCG or hospitality, we have the network, track record and expertise to help you find hard to resource talent, or that elusive strategic career step.</p>
+          </div>
+          <div class="advantages__item  advantages__item--3">
+            <h4>Private<br>Equity</h4>
+            <img src="<%= asset_path('orb-6.png') %>" alt="">
+            <p>Our track record of delivering both directly into PE firms and also into PE backed businesses, makes us a great choice for both hiring top talent into the sector and also finding you the right role in investor backed businesses.</p>
+          </div>
+          <div class="advantages__item  advantages__item--4">
+            <h4>Technology,<br>Media & Telecoms</h4>
+            <img src="<%= asset_path('orb-7.png') %>" alt="">
+            <p>The only constant in this sector is change, and our Consultants have their finger on the pulse in order to provide forward thinking candidates to progressive businesses, and vice versa.</p>
+          </div>
+          <div class="advantages__item  advantages__item--5">
+            <h4>Property, FM<br>& Construction</h4>
+            <img src="<%= asset_path('orb-8.png') %>" alt="">
+            <p>In a sector that often requires some very niche and specific skills, we have developed a great understanding of the drivers and levers of success, enabling us to provide the right people to the right opportunities.</p>
+          </div>
+          <div class="advantages__item  advantages__item--6">
+            <h4>Engineering &<br>Infrastructure</h4>
+            <img src="<%= asset_path('orb-9.png') %>" alt="">
+            <p>In a set of sectors where attraction can be difficult, we have succeeded in developing a network of some of the best employers and candidates, both locally and overseas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-10  offset-1">
+        <h4>What’s on your horizon?</h4>
+        <div class="round"></div>
+        <p>Whatever your aspirations or career ambitions, the team at Global Accounting Network are interested in making your plans a reality. We’re a highly professional team, but we never lose sight of being genuine and honest with everyone we work with.</p>
+        <a href="#">More About Us</a>
+      </div>
+    </div>
+  </div>
+</div>
