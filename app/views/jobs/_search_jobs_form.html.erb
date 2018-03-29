@@ -1,0 +1,27 @@
+<%= form_tag jobs_path, method: 'get', class: 'content__form  form__search-current-jobs', id: 'job-search-form', remote: (is_remote ||= false) do %>
+
+  <div class="form__input">
+    <%= text_field_tag :title, nil, placeholder: 'Add a Keyword / Job function' %>
+  </div>
+
+  <div class="form__select">
+    <%= select_tag :sector, options_for_select(Job.sectors_options, params[:sector]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Choose a sector'} %>
+  </div>
+
+  <div class="form__select">
+    <%= select_tag :salary_range, options_for_select(['10000-20000', '20000-40000', '20000-100000']), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Salary range'} %>
+  </div>
+
+  <div class="form__select">
+    <%= select_tag :location, options_for_select(Job.locations_options, params[:location]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Location'} %>
+  </div>
+
+  <div class="form__select">
+    <%= select_tag :job_type, options_for_select(Job.job_types_options, params[:job_type]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Job Type'} %>
+  </div>
+
+  <div class="form__submit">
+    <%= submit_tag 'Search Jobs Now' %>
+  </div>
+
+<% end %>

@@ -1,0 +1,7 @@
+jQuery('#job-results').html('<%= j render 'jobs/jobs_list' %>');
+jQuery("html, body").animate({ scrollTop: jQuery('#job-results').offset().top }, 1000);
+window.history.replaceState('', '', "<%= request.fullpath %>");
+
+// Initialize Direction Aware Hover
+searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");
+directionAwareHover(searchJobsItems);

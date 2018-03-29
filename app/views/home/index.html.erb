@@ -48,42 +48,7 @@
               <div class="row">
                 <div class="content  content--1  col-12">
                   <h3 class="content__title">Search Current Jobs</h3>
-                  <form action="" class="content__form  form__search-current-jobs">
-                    <div class="form__select">
-                      <select class="js-select2" data-placeholder="Choose a sector">
-                        <option><!-- Empty "option" needed for placeholder --></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                    <div class="form__select">
-                      <select class="js-select2" data-placeholder="Salary range">
-                        <option><!-- Empty "option" needed for placeholder --></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                    <div class="form__select">
-                      <select class="js-select2" data-placeholder="Choose a location">
-                        <option><!-- Empty "option" needed for placeholder --></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                    <div class="form__select">
-                      <select class="js-select2" data-placeholder="Job type">
-                        <option><!-- Empty "option" needed for placeholder --></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                    <div class="form__input">
-                      <input type="text" placeholder="Add a Keyword / Job function">
-                    </div>
-                    <div class="form__submit">
-                      <input type="submit" value="Search Jobs now">
-                    </div>
-                  </form>
+                  <%= render 'jobs/search_jobs_form' %>
                 </div>
               </div>
             </div>
@@ -95,41 +60,7 @@
               <div class="row">
                 <div class="content  content--2  col-12">
                   <h3 class="content__title">We’ll call you back</h3>
-                  <form action="" class="content__form  form__request-call-back">
-                    <div class="form__select">
-                      <select class="js-select2" data-placeholder="Type of Request">
-                        <option><!-- Empty "option" needed for placeholder --></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                    <div class="form__input">
-                      <input type="text" placeholder="first name">
-                    </div>
-                    <div class="form__input">
-                      <input type="text" placeholder="last name">
-                    </div>
-                    <div class="form__input">
-                      <input type="email" placeholder="email">
-                    </div>
-                    <div class="form__input">
-                      <input type="tel" placeholder="phone">
-                    </div>
-                    <div class="form__input">
-                      <input type="text" placeholder="company">
-                    </div>
-                    <div class="form__input  form__input--textarea">
-                      <textarea placeholder="Brief Description"></textarea>
-                    </div>
-                    <div class="form__group">
-                      <div class="form__input">
-                        <input type="text" placeholder="best time to call">
-                      </div>
-                      <div class="form__submit">
-                        <input type="submit" value="Call me">
-                      </div>
-                    </div>
-                  </form>
+                  <%= render 'home/call_back_form' %>
                 </div>
               </div>
             </div>

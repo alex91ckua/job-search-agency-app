@@ -1,73 +1,192 @@
-<p id="notice"><%= notice %></p>
+<% content_for :body_class, 'current-jobs' %>
 
-<h1>Jobs</h1>
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Top candidates.<br> Great companies.</h1>
+        <div class="round"></div>
+        <h3>We make the match</h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-10.png') %>" alt="">
+  </div>
+</div>
+<div class="search-current-jobs">
+  <div class="container">
+    <div class="row">
+      <div id="current_jobs" class="search-current-jobs__container  col-12">
+        <div class="search-current-jobs__criteria">
+          <h3 class="criteria__title">Search Current Jobs</h3>
+          <%= render 'jobs/search_jobs_form', is_remote: true %>
+        </div>
+        <!-- Current Jobs - Result section start -->
+        <div class="search-current-jobs__result">
 
+          <%= form_tag jobs_path, method: 'get', class: 'result__sort', remote: true do %>
+            <p>Jobs Matching Your Criteria</p>
+            <%= hidden_field_tag :title, params[:title] %>
+            <%= hidden_field_tag :sector, params[:sector] %>
+            <%= hidden_field_tag :salary_from, params[:salary_from] %>
+            <%= hidden_field_tag :salary_to, params[:salary_to] %>
+            <%= hidden_field_tag :location, params[:location] %>
+            <%= hidden_field_tag :job_type, params[:job_type] %>
 
-<%= form_tag 'jobs', method: 'get' do %>
-  <%= label_tag(:title, "title:") %>
-  <%= text_field_tag :title %>
+            <div class="form__select">
+              <%= select_tag :order_by, options_for_select([["Date Created", "date"], ["Job Title", "title"]], params[:order_by]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Order By', :onchange => ("javascript: Rails.fire(this.form, 'submit');")} %>
+            </div>
+          <% end %>
 
-  <%= label_tag(:sector, "sector:") %>
-  <%= select_tag :sector, options_for_select(Job.sectors_options, params[:sector]), :include_blank => '-- Any --' %>
+          <div id="job-results" >
+            <%= render 'jobs/jobs_list' %>
+          </div>
 
-  <%= label_tag(:salary_from, "salary_from:") %>
-  <%= text_field_tag :salary_from %>
-
-  <%= label_tag(:salary_to, "salary_to:") %>
-  <%= text_field_tag :salary_to %>
-
-  <%= label_tag(:location, "location:") %>
-  <%= select_tag :location, options_for_select(Job.locations_options, params[:location]), :include_blank => '-- Any --' %>
-
-  <%= label_tag(:job_type, "job_type:") %>
-  <%= select_tag :job_type, options_for_select(Job.job_types_options, params[:job_type]), :include_blank => '-- Any --' %>
-
-  <%= submit_tag 'Search' %>
-<% end %>
-
-<%= form_tag 'jobs', method: 'get' do %>
-
-  <%= hidden_field_tag :title, params[:title] %>
-  <%= hidden_field_tag :sector, params[:sector] %>
-  <%= hidden_field_tag :salary_from, params[:salary_from] %>
-  <%= hidden_field_tag :salary_to, params[:salary_to] %>
-  <%= hidden_field_tag :location, params[:location] %>
-  <%= hidden_field_tag :job_type, params[:job_type] %>
-
-  <%= label_tag(:order_by, "order_by:") %>
-  <%= select_tag :order_by, options_for_select([["Date Created", "date"], ["Title", "title"]], params[:order_by]), :onchange => ("javascript: this.form.submit();"), :include_blank => 'Sort By...' %>
-
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Job type</th>
-      <th>Sector</th>
-      <th>Salary</th>
-      <th>Description</th>
-      <th>Company description</th>
-      <th>Responsibilities</th>
-      <th>Location</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.job_type.humanize.capitalize %></td>
-        <td><%= job.sector %></td>
-        <td><%= job.salary %></td>
-        <td><%= job.description %></td>
-        <td><%= job.company.description %></td>
-        <td><%= job.responsibilities %></td>
-        <td><%= job.location %></td>
-        <td><%= link_to 'Show', job %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </div>
+        <!-- Current Jobs - Result section end -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="register-interest">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="register-interest__container">
+          <h3 class="register-interest__title">Register Interest</h3>
+          <p class="register-interest__descr">
+            Register your CV with us and increase your chances of an interview before a job is even advertised
+          </p>
+          <form class="form__register-interest" action="">
+            <div class="form__select">
+              <select class="js-select2" data-placeholder="Title">
+                <option><!-- Empty "option" needed for placeholder --></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="form__input">
+              <input type="text" placeholder="Fist Name">
+            </div>
+            <div class="form__input">
+              <input type="text" placeholder="Last Name">
+            </div>
+            <div class="form__input">
+              <input type="email" placeholder="Email ">
+            </div>
+            <div class="form__input">
+              <input type="tel" placeholder="Phone">
+            </div>
+            <div class="form__group">
+              <label class="form__file">
+                <input type="file">
+                <div class="file__btn">upload CV</div>
+                <p class="file__info">No files attached…</p>
+              </label>
+              <label class="form__checkbox">
+                <input type="checkbox">
+                <div class="checkbox__box"></div>
+                <p>Send me Job Alerts as they become available</p>
+              </label>
+              <div class="form__submit">
+                <input type="submit" value="Register now">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="charter">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-block">
+          <h3>Candidate Charter</h3>
+          <div class="round"></div>
+          <p>Our 10-point Charter is designed to protect you through your job search. It hold us to account to ensure you have clear lines of communication in every phase.</p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="charter__items  owl-carousel">
+          <div class="charter__item" style="color: #008CFF">
+            <h4>Meeting you</h4>
+            <div class="number">1</div>
+            <p>To assess which organisation you are best suited to, we meet every candidate we represent and interview you as a prospective employer would.</p>
+          </div>
+          <div class="charter__item" style="color: #D21E46">
+            <h4>Understanding you</h4>
+            <div class="number">2</div>
+            <p>We start by understanding your needs, long-term goals and areas for development in order to help plan your next strategic career move effectively</p>
+          </div>
+          <div class="charter__item" style="color: #8CC832">
+            <h4>Assessing you</h4>
+            <div class="number">3</div>
+            <p>We evaluate your skills, achievements, culture and fit so we understand how your capabilities will benefit your prospective employer</p>
+          </div>
+          <div class="charter__item" style="color: #000047">
+            <h4>Creating your plan</h4>
+            <div class="number">4</div>
+            <p>We will set very clear expectations of our performance and endeavour to meet them. If we don’t feel we can help you, we will be honest and tell you</p>
+          </div>
+          <div class="charter__item" style="color: #F5A623">
+            <h4>Protecting you</h4>
+            <div class="number">5</div>
+            <p>None of your personal information is ever released and is only sent to an employer once we have your express permission</p>
+          </div>
+          <div class="charter__item" style="color: #8B572A">
+            <h4>Informing you</h4>
+            <div class="number">6</div>
+            <p>You will receive all the information you will need about each opportunity to enable you to decide whether you wish to progress to interview stage</p>
+          </div>
+          <div class="charter__item" style="color: #417505">
+            <h4>Preparing you</h4>
+            <div class="number">7</div>
+            <p>The quality of your interview briefing will maximise your chances of being awarded the role. We will thoroughly prepare you and provide you with a highly in-depth briefing prior to your interview</p>
+          </div>
+          <div class="charter__item" style="color: #4A4A4A">
+            <h4>Debriefing you</h4>
+            <div class="number">8</div>
+            <p>Whatever the outcome of your interview, we will provide you with the employer’s feedback, and we want to learn about your experience</p>
+          </div>
+          <div class="charter__item" style="color: #DBCD18">
+            <h4>Updating you</h4>
+            <div class="number">9</div>
+            <p>Market conditions change regularly which will impact on your attractiveness and suitability for specific roles, so we will keep you updated</p>
+          </div>
+          <div class="charter__item" style="color: #000000">
+            <h4>Respecting you</h4>
+            <div class="number">10</div>
+            <p>Your calls will always be returned and we will always do what we say we will do. This is part of our core values and recruiter care. If for any reason beyond our control we can’t, we will tell you.</p>
+          </div>
+          <div class="charter__item-total  charter__item-total--blue">
+            <p>Our role is to help you to win the role you are targeting. You may not be successful first time with every application that you submit, but we aim to ensure you still benefit from the experience. And you will be joining our extended network of people who we encourage to interact, exchange contacts, and share knowledge. We also want you to enjoy the experience</p>
+            <a href="#">Register now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mobile-app">
+  <div class="container">
+    <div class="row">
+      <div class="mobile-app__container  col-12">
+        <div class="mobile-app__phone-img">
+          <img src="<%= asset_path('mobile-app.png') %>" alt="">
+        </div>
+        <div class="mobile-app__descr">
+          <h4>Download the Global App for Jobs on-the-go</h4>
+          <p>Register your details with us via the app to ensure that you never miss out on an opportunity.</p>
+        </div>
+        <div class="mobile-app__links">
+          <a class="mobile-app__link" href="#"><img src="<%= asset_path('app-store-badge.png') %>" alt=""></a>
+          <a class="mobile-app__link" href="#"><img src="<%= asset_path('google-play-badge.png') %>" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
