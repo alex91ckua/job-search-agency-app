@@ -1,6 +1,11 @@
 class CandidatesController < ApplicationController
   def create
     @candidate = Candidate.create(candidate_params)
+    if @candidate.errors.any?
+      flash.now[:error] = @candidate.errors.full_messages.to_sentence
+    else
+      flash.now[:success] = 'Thanks for your application'
+    end
   end
 
   private
