@@ -6,8 +6,12 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
 
-    @jobs = @jobs.salary_from(params[:salary_from]) if params[:salary_from].present?
-    @jobs = @jobs.salary_to(params[:salary_to]) if params[:salary_to].present?
+    if params[:salary_range]
+      salary = params[:salary_range].split('-')
+      @jobs = @jobs.salary_from(salary[0]) if salary[0].present?
+      @jobs = @jobs.salary_to(salary[1]) if salary[1].present?
+    end
+
     @jobs = @jobs.location(params[:location]) if params[:location].present?
     @jobs = @jobs.job_type(params[:job_type]) if params[:job_type].present?
     @jobs = @jobs.title(params[:title]) if params[:title].present?
