@@ -11,6 +11,7 @@
 
   .hero__title {
     z-index: 5;
+    text-align: center;
 
     h1 {
       margin-bottom: 17px;
@@ -31,6 +32,13 @@
       color: $white;
       text-align: center;
       text-transform: uppercase;
+    }
+
+    a {
+      @include make-btn(blue);
+      display: inline-block;
+      width: auto;
+      margin-top: 20px;
     }
   }
 
