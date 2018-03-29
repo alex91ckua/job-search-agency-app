@@ -194,139 +194,141 @@ function setMap(url) {
 };
 
 
-$j(document).ready(function() {
-  // Smooth scrolling to internal links
-  $j('a[href^="#"]').on('click',function (e) {
-	  e.preventDefault();
-    if ($j(this).hasClass("carousel-control-prev")  || $j(this).hasClass("carousel-control-next")) { return };
-	  var target = this.hash;
-	  var $target = $j(target);
+$j( document ).on('turbolinks:load', function() {
 
-    $j('html, body').stop().animate({
-      'scrollTop': $target.offset().top
-    }, 900, 'swing');
-  });
+    $j(document).ready(function() {
+      // Smooth scrolling to internal links
+      $j('a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
+        if ($j(this).hasClass("carousel-control-prev")  || $j(this).hasClass("carousel-control-next")) { return };
+          var target = this.hash;
+          var $target = $j(target);
 
-
-  // Nav toggle
-  $j("#headerNavToggle").on("click", function(e) {
-    e.preventDefault();
-    $j("#header").toggleClass("header--open");
-  });
+        $j('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+        }, 900, 'swing');
+      });
 
 
-  // Initialize Select2
-  $j('.js-select2').each(function() {
-    var placeholder = $j(this).data('placeholder');
+      // Nav toggle
+      $j("#headerNavToggle").on("click", function(e) {
+        e.preventDefault();
+        $j("#header").toggleClass("header--open");
+      });
 
-    $j(this).select2({
-      minimumResultsForSearch: -1,
-      placeholder: placeholder
+
+      // Initialize Select2
+      $j('.js-select2').each(function() {
+        var placeholder = $j(this).data('placeholder');
+
+        $j(this).select2({
+          minimumResultsForSearch: -1,
+          placeholder: placeholder
+        });
+      });
+
+
+      // Initialize parallax
+      $j('.homepage .hero').mousemove(function(e){
+        parallaxIt(e, '.hero__orb--1', -40);
+        parallaxIt(e, '.hero__orb--2', 10);
+        parallaxIt(e, '.hero__orb--3', -20);
+      });
+
+      $j('.current-jobs .hero').mousemove(function(e){
+        parallaxIt(e, '.hero__orb--1', -10);
+      });
+
+      $j('.client-services .hero').mousemove(function(e){
+        parallaxIt(e, '.hero__orb--1', -10);
+      });
+
+      $j('.contact-us .hero').mousemove(function(e){
+        parallaxIt(e, '.hero__orb--1', -10);
+      });
+
+      $j('.about-us .hero').mousemove(function(e){
+        parallaxIt(e, '.hero__orb--1', -10);
+      });
+
+      $j('.blog-page .hero').mousemove(function(e){
+        parallaxIt(e, '.hero__orb--1', -10);
+      });
+
+
+      // Initialize quotes owlCarousel
+      $j(".quotes .owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 10000
+      });
+
+
+      // Initialize current-jobs owlCarousel
+      owlCarouselMobileOnly('.charter__items');
+      owlCarouselMobileOnly('.our-team .owl-carousel');
+
+
+      // Initialize Stats owlCarousel
+      $j(".stats__slider").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 10000
+      });
+
+
+      // Initialize Direction Aware Hover
+      searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");
+      directionAwareHover(searchJobsItems);
+
+
+      // File input handler
+      $j('.form__file').change(function() {
+        var fullPath = $j(this).find("input").val();
+        if (fullPath) {
+          var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+          var fileName = fullPath.substring(startIndex);
+          if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
+              fileName = fileName.substring(1);
+          }
+          $j(this).find(".file__info").html("Attached: " + fileName);
+          $j(this).find(".file__btn").addClass("file__btn--added-file");
+        }
+      });
+
+      // Our team - "load more" handler
+      $j(".members__show-all-btn").on("click", function(e) {
+        e.preventDefault();
+        if ($j(window).outerWidth() < 992) {
+          $j(".our-team__member:not(:nth-child(-n+2))").slideToggle();
+        } else {
+          $j(".our-team__member:not(:nth-child(-n+3))").slideToggle();
+        }
+        $j(".our-team__members--hide").removeClass("our-team__members--hide");
+        $j(".members__join-our-team-btn").slideToggle();
+        $j(".members__show-all-btn").slideToggle();
+      });
+
+
+      // Init map handler
+      contcatsMapHandler();
+
+
+      // Blog page - load more btn Handler
+      $j(".blog-posts__load-more-btn  button").on("click", function(e) {
+        e.preventDefault();
+        $j(".blog-posts__item:not(:nth-child(-n+9))").slideToggle('medium', function() {
+          if ($j(this).is(':visible'))
+              $j(this).css('display','block');
+        });
+
+        $j(".blog-posts__load-more-btn").slideToggle();
+      });
     });
-  });
-
-
-  // Initialize parallax
-  $j('.homepage .hero').mousemove(function(e){
-    parallaxIt(e, '.hero__orb--1', -40);
-    parallaxIt(e, '.hero__orb--2', 10);
-    parallaxIt(e, '.hero__orb--3', -20);
-  });
-
-  $j('.current-jobs .hero').mousemove(function(e){
-    parallaxIt(e, '.hero__orb--1', -10);
-  });
-
-  $j('.client-services .hero').mousemove(function(e){
-    parallaxIt(e, '.hero__orb--1', -10);
-  });
-
-  $j('.contact-us .hero').mousemove(function(e){
-    parallaxIt(e, '.hero__orb--1', -10);
-  });
-
-  $j('.about-us .hero').mousemove(function(e){
-    parallaxIt(e, '.hero__orb--1', -10);
-  });
-
-  $j('.blog-page .hero').mousemove(function(e){
-    parallaxIt(e, '.hero__orb--1', -10);
-  });
-
-
-  // Initialize quotes owlCarousel
-  $j(".quotes .owl-carousel").owlCarousel({
-    items: 1,
-    loop: true,
-    nav: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 10000
-  });
-
-
-  // Initialize current-jobs owlCarousel
-  owlCarouselMobileOnly('.charter__items');
-  owlCarouselMobileOnly('.our-team .owl-carousel');
-
-
-  // Initialize Stats owlCarousel
-  $j(".stats__slider").owlCarousel({
-    items: 1,
-    loop: true,
-    nav: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 10000
-  });
-
-
-  // Initialize Direction Aware Hover
-  searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");
-  directionAwareHover(searchJobsItems);
-
-
-  // File input handler
-  $j('.form__file').change(function() {
-    var fullPath = $j(this).find("input").val();
-    if (fullPath) {
-      var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-      var fileName = fullPath.substring(startIndex);
-      if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
-          fileName = fileName.substring(1);
-      }
-      $j(this).find(".file__info").html("Attached: " + fileName);
-      $j(this).find(".file__btn").addClass("file__btn--added-file");
-    }
-  });
-
-
-  // Our team - "load more" handler
-  $j(".members__show-all-btn").on("click", function(e) {
-    e.preventDefault();
-    if ($j(window).outerWidth() < 992) {
-      $j(".our-team__member:not(:nth-child(-n+2))").slideToggle();
-    } else {
-      $j(".our-team__member:not(:nth-child(-n+3))").slideToggle();
-    }
-    $j(".our-team__members--hide").removeClass("our-team__members--hide");
-    $j(".members__join-our-team-btn").slideToggle();
-    $j(".members__show-all-btn").slideToggle();
-  });
-
-
-  // Init map handler
-  contcatsMapHandler();
-
-
-  // Blog page - load more btn Handler
-  $j(".blog-posts__load-more-btn  button").on("click", function(e) {
-    e.preventDefault();
-    $j(".blog-posts__item:not(:nth-child(-n+9))").slideToggle('medium', function() {
-      if ($j(this).is(':visible'))
-          $j(this).css('display','block');
-    });
-
-    $j(".blog-posts__load-more-btn").slideToggle();
-  });
 });
