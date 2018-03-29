@@ -1,12 +1,22 @@
-<p id="notice"><%= notice %></p>
+<% content_for :body_class, 'contact-us' %>
 
-<h1>Candidate Application</h1>
-
-<div>
-  <% if @candidate.errors.empty? %>
-    Thanks for your application!
-  <% else %>
-    <b>There errors exist:</b>
-    <%= @candidate.errors.full_messages.to_sentence %>
-  <% end %>
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Candidate Application</h1>
+        <div class="round"></div>
+        <% if @candidate.errors.empty? %>
+          <h3>Thanks for your application!</h3>
+        <% else %>
+          <h3>There are some errors:</h3>
+          <h3><%= @candidate.errors.full_messages.to_sentence %></h3>
+        <% end %>
+        <%= link_to 'Go Back', job_path(params[:candidate][:job_id]) %>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="img/orb-10.png" alt="">
+  </div>
 </div>

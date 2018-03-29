@@ -1,0 +1,4 @@
+jQuery('#job-apply-form-result').html('<%= j render 'partials/flash' %>');
+<% if flash['success'] %>
+jQuery('#job-apply-form').html("");
+<% end %>
