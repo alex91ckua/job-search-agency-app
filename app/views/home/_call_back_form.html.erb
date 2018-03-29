@@ -1,0 +1,43 @@
+<div id="call-back-form" >
+  <%= form_for @callback, url: create_callback_path, remote: true, :html => { :multipart => true, :class => 'content__form  form__request-call-back' } do |f| %>
+
+    <div class="form__select">
+      <%= f.select(:request_type, options_for_select(['General', 'Propose'], :selected => params[:request_type]), {}, { :class => 'js-select2', 'data-placeholder' => 'Type of Request' }) %>
+    </div>
+
+    <div class="form__input">
+      <%= f.text_field :first_name, placeholder: 'First Name' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.email_field :email, placeholder: 'Email' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.phone_field :phone, placeholder: 'Phone' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.text_field :company_name, placeholder: 'Company' %>
+    </div>
+
+    <div class="form__input  form__input--textarea">
+      <%= f.text_area :message, placeholder: 'Brief Description' %>
+    </div>
+
+    <div class="form__group">
+      <div class="form__input">
+        <%= f.text_field :call_time, placeholder: 'best time to call' %>
+      </div>
+      <div class="form__submit">
+        <%= f.submit 'Call Me' %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+<div id="callback-form-result" ></div>

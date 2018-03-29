@@ -1,0 +1,4 @@
+<% if flash['success'] %>
+  jQuery('#call-back-form').html("");
+<% end %>
+jQuery('#callback-form-result').html("<%= j render 'flash' %>");
