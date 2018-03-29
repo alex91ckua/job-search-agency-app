@@ -14,6 +14,7 @@ ActiveAdmin.register Candidate do
     end
     column :job_alerts
     column :job
+    column :created_at
     actions
   end
 
@@ -25,10 +26,11 @@ ActiveAdmin.register Candidate do
       row :email
       row :phone
       row :attachment do |candidate|
-        link_to(candidate.attachment.file.filename, candidate.attachment.url)
+        link_to(candidate.attachment.file.filename, candidate.attachment.url) if candidate.attachment.file
       end
       row :job_alerts
       row :job
+      row :created_at
     end
     active_admin_comments
   end
