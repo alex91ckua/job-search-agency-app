@@ -1,67 +1,88 @@
-<p id="notice"><%= notice %></p>
+<% content_for :body_class, 'current-jobs' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
-
-<p>
-  <strong>Job type:</strong>
-  <%= @job.job_type %>
-</p>
-
-<p>
-  <strong>Sector:</strong>
-  <%= @job.sector %>
-</p>
-
-<p>
-  <strong>Salary:</strong>
-  <%= @job.salary %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
-
-<p>
-  <strong>Company description:</strong>
-  <%= @job.company.description %>
-</p>
-
-<p>
-  <strong>Responsibilities:</strong>
-  <%= @job.responsibilities %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @job.location %>
-</p>
-
-<%= form_for :candidate, url: candidate_path, method: 'post', :html => { :multipart => true } do |f| %>
-  <%= f.label :first_name, 'first_name' %>
-  <%= f.text_field :first_name %>
-
-  <%= f.label :last_name, 'last_name' %>
-  <%= f.text_field :last_name %>
-
-  <%= f.label :email, 'email' %>
-  <%= f.email_field :email %>
-
-  <%= f.label :phone, 'phone' %>
-  <%= f.phone_field :phone %>
-
-  <%= f.label :attachment, 'attachment' %>
-  <%= f.file_field :attachment %>
-
-  <%= f.label :job_alerts, 'job_alerts' %>
-  <%= f.check_box :job_alerts %>
-
-  <%= f.hidden_field :job_id, { :value => @job.id } %>
-  <br>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to 'Back', jobs_path %>
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1><%= @job.title %></h1>
+        <div class="round"></div>
+        <h3>Job Ref: <%= @job.ref_id %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-10.png') %>" alt="">
+  </div>
+</div>
+<div class="job-detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="job-detail__container">
+          <div class="job-detail__main-info">
+            SECTOR: <%= @job.sector %><br>
+            SALARY: <%= @job.salary %><br>
+            LOCATION: <%= @job.location %><br>
+            JOB TYPE: <%= @job.job_type.humanize.capitalize %><br>
+            REERENCE: <%= @job.ref_id %>
+          </div>
+          <div class="job-detail__about-company">
+            <%= @job.company.description %>
+          </div>
+          <div class="job-detail__about-role">
+            <%= @job.description %>
+          </div>
+          <div class="job-detail__main-responsibilities">
+            <h4>Main responsibilities:</h4>
+            <ul>
+              <% @job.responsibilities.each_line do |responsibility| %>
+                <li><%= responsibility %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="job-detail__back-btn">
+            <%= link_to 'back to search results', jobs_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="register-interest">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="register-interest__container">
+          <h3 class="register-interest__title">Apply for this job</h3>
+          <p class="register-interest__job-id">
+            <span class="reference">REFERENCE # </span>
+            <span class="job-id"><%= @job.ref_id %></span>
+          </p>
+          <div id="job-apply-form" >
+            <%= render 'candidates/form_create_candidate' %>
+          </div>
+          <div id="job-apply-form-result" ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mobile-app">
+  <div class="container">
+    <div class="row">
+      <div class="mobile-app__container  col-12">
+        <div class="mobile-app__phone-img">
+          <img src="<%= asset_path('mobile-app.png') %>" alt="">
+        </div>
+        <div class="mobile-app__descr">
+          <h4>Download the Global App for Jobs on-the-go</h4>
+          <p>Register your details with us via the app to ensure that you never miss out on an opportunity.</p>
+        </div>
+        <div class="mobile-app__links">
+          <a class="mobile-app__link" href="#"><img src="<%= asset_path('app-store-badge.png') %>" alt=""></a>
+          <a class="mobile-app__link" href="#"><img src="<%= asset_path('google-play-badge.png') %>" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
