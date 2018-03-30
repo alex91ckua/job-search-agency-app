@@ -20,3 +20,5 @@
 
 # Ignor .idea dir
 /.idea
+
+/public
