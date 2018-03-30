@@ -1,5 +1,5 @@
 <div id="call-back-form" >
-  <%= form_for @callback, url: create_callback_path, remote: true, :html => { :multipart => true, :class => 'content__form  form__request-call-back' } do |f| %>
+  <%= form_for @callback, url: request_callback_path, method: :create, remote: true, :html => { :multipart => true, :class => 'content__form  form__request-call-back' } do |f| %>
 
     <div class="form__select">
       <%= f.select(:request_type, options_for_select(['General', 'Propose'], :selected => params[:request_type]), {}, { :class => 'js-select2', 'data-placeholder' => 'Type of Request' }) %>
@@ -40,4 +40,6 @@
 
   <% end %>
 </div>
-<div id="callback-form-result" ></div>
+<div id="callback-form-result" >
+  <%= render 'partials/flash' %>
+</div>
