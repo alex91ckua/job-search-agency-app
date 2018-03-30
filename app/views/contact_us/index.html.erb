@@ -1,0 +1,129 @@
+<% content_for :body_class, 'contact-us' %>
+
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Get in touch</h1>
+        <div class="round"></div>
+        <h3>London Headquarters. Global reach.</h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-10.png') %>" alt="">
+  </div>
+</div>
+<div class="contacts">
+  <div class="container">
+    <div class="row">
+      <div class="contacts__locations  col-12" id="accordion">
+        <div class="locations__nav-desktop">
+          <!-- Map path set here -->
+          <button class="nav-desktop__item" data-map="img/map-london.jpg"  data-toggle="collapse" data-target="#locationCollapseOne" aria-expanded="true" aria-controls="locationCollapseOne">
+            London
+          </button>
+          <button class="nav-desktop__item  collapsed" data-map="img/homepage_about-us-l.jpg" data-toggle="collapse" data-target="#locationCollapseTwo" aria-expanded="true" aria-controls="locationCollapseTwo">
+            Frankfurt
+          </button>
+          <button class="nav-desktop__item  collapsed" data-map="img/mobile-app_bg-l.jpg" data-toggle="collapse" data-target="#locationCollapseThree" aria-expanded="true" aria-controls="locationCollapseThree">
+            Arkansas
+          </button>
+        </div>
+        <div class="location">
+          <!-- Map path also set here -->
+          <button class="location__nav-mobile" data-map="img/map-london.jpg" data-toggle="collapse" data-target="#locationCollapseOne" aria-expanded="true" aria-controls="locationCollapseOne">
+            London
+          </button>
+          <div class="location__items  collapse  show"  id="locationCollapseOne" aria-labelledby="locationHeadingOne" data-parent="#accordion">
+            <div class="location__items-container">
+              <div class="location__item  location__item--call-us">
+                <h4>Call us</h4>
+                <p>+44 (0)20 3617 9197 (8:30am-6:30pm)</p>
+                <a href="#">CALL NOW</a>
+              </div>
+              <div class="location__item  location__item--client-vacancy-form">
+                <h4>Client vacancy form</h4>
+                <p>Send us your job brief now</p>
+                <%= link_to 'Submit a Job', contact_client_path %>
+              </div>
+              <div class="location__item  location__item--visit-us">
+                <h4>VISIT US</h4>
+                <p>Broughton House, 6-8 Sackville Street, London, W1S 3DG</p>
+                <a href="#">OPEN IN GOOGLE MAPS</a>
+              </div>
+              <div class="location__item  location__item--candidate-contact-form">
+                <h4>CANDIDATE CONTACT FORM</h4>
+                <p>Send us your CV now</p>
+                <%= link_to 'Register Interest', contact_candidate_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="location">
+          <button class="location__nav-mobile  collapsed" data-map="img/homepage_about-us-l.jpg"  data-toggle="collapse" data-target="#locationCollapseTwo" aria-expanded="true" aria-controls="locationCollapseTwo">
+            Frankfurt
+          </button>
+          <div class="location__items  collapse"  id="locationCollapseTwo" aria-labelledby="locationHeadingTwo" data-parent="#accordion">
+            <div class="location__items-container">
+              <div class="location__item  location__item--call-us">
+                <h4>Call us</h4>
+                <p>+44 (0)20 3617 9197 (8:30am-6:30pm)</p>
+                <a href="#">CALL NOW</a>
+              </div>
+              <div class="location__item  location__item--client-vacancy-form">
+                <h4>Client vacancy form</h4>
+                <p>Send us your job brief now</p>
+                <a href="#">SUBMIT A JOB</a>
+              </div>
+              <div class="location__item  location__item--visit-us">
+                <h4>VISIT US</h4>
+                <p>Broughton House, 6-8 Sackville Street, Frankfurt, W1S 3DG</p>
+                <a href="#">OPEN IN GOOGLE MAPS</a>
+              </div>
+              <div class="location__item  location__item--candidate-contact-form">
+                <h4>CANDIDATE CONTACT FORM</h4>
+                <p>Send us your CV now</p>
+                <a href="#">REGISTER INTEREST</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="location">
+          <button class="location__nav-mobile  collapsed" data-map="img/mobile-app_bg-l.jpg" data-toggle="collapse" data-target="#locationCollapseThree" aria-expanded="true" aria-controls="locationCollapseThree">
+            Arkansas
+          </button>
+          <div class="location__items  collapse"  id="locationCollapseThree" aria-labelledby="locationHeadingThree" data-parent="#accordion">
+            <div class="location__items-container">
+              <div class="location__item  location__item--call-us">
+                <h4>Call us</h4>
+                <p>+44 (0)20 3617 9197 (8:30am-6:30pm)</p>
+                <a href="#">CALL NOW</a>
+              </div>
+              <div class="location__item  location__item--client-vacancy-form">
+                <h4>Client vacancy form</h4>
+                <p>Send us your job brief now</p>
+                <a href="#">SUBMIT A JOB</a>
+              </div>
+              <div class="location__item  location__item--visit-us">
+                <h4>VISIT US</h4>
+                <p>Broughton House, 6-8 Sackville Street, Arkansas, W1S 3DG</p>
+                <a href="#">OPEN IN GOOGLE MAPS</a>
+              </div>
+              <div class="location__item  location__item--candidate-contact-form">
+                <h4>CANDIDATE CONTACT FORM</h4>
+                <p>Send us your CV now</p>
+                <a href="#">REGISTER INTEREST</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="contacts__map  col-12"></div>
+    </div>
+  </div>
+</div>
