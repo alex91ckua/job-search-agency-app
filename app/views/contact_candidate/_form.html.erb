@@ -1,0 +1,50 @@
+<div id="contact-candidate-form" >
+  <%= form_for @candidate_form, url: contact_candidate_path, method: :create, remote: true, :html => { :multipart => true, :class => 'form__register-interest' } do |f| %>
+
+    <div class="form__select">
+      <select class="js-select2" data-placeholder="Mr">
+        <option><!-- Empty "option" needed for placeholder --></option>
+        <option value="-">Mr</option>
+        <option value="-">Mrs</option>
+      </select>
+    </div>
+
+
+    <div class="form__input">
+      <%= f.text_field :first_name, placeholder: 'First Name' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.email_field :email, placeholder: 'Email' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.phone_field :phone, placeholder: 'Phone' %>
+    </div>
+
+    <div class="form__group">
+      <label class="form__file">
+        <%= f.file_field :attachment %>
+        <div class="file__btn">upload cv</div>
+        <p class="file__info">No files attached…</p>
+      </label>
+      <label class="form__checkbox">
+        <%= f.check_box :job_alerts %>
+        <div class="checkbox__box"></div>
+        <p>Send me Job Alerts as they become available</p>
+      </label>
+      <div class="form__submit">
+        <%= f.submit 'Register Now' %>
+      </div>
+    </div>
+
+    <%= f.hidden_field :nickname  %>
+  <% end %>
+</div>
+<div id="contact-candidate-form-result" >
+  <%= render 'partials/flash' %>
+</div>
