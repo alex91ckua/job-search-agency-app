@@ -30,4 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  callback_form:
+    subject: 'Call me Back request - Global Accounting'
+  register_vacancy_form:
+    subject: 'Register Vacancy request - Global Accounting'

@@ -1,0 +1,4 @@
+jQuery('#contact-client-form-result').html('<%= j render 'partials/flash' %>');
+<% if flash['success'] %>
+jQuery('#contact-client-form').html("");
+<% end %>

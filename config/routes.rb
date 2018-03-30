@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :companies, only: [:index, :show]
   resource :candidate, only: [:create]
   get 'client-services', to: 'client_services#index'
+  get 'contact-client', to: 'contact_client#index'
+  post 'contact-client', to: 'contact_client#create'
   scope 'client-services' do
     get 'request-callback', to: 'request_callback#index'
     post 'request-callback', to: 'request_callback#create'
   end
-
 end
