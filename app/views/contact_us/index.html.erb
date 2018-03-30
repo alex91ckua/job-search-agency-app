@@ -20,104 +20,49 @@
       <div class="contacts__locations  col-12" id="accordion">
         <div class="locations__nav-desktop">
           <!-- Map path set here -->
-          <button class="nav-desktop__item" data-map="img/map-london.jpg"  data-toggle="collapse" data-target="#locationCollapseOne" aria-expanded="true" aria-controls="locationCollapseOne">
-            London
-          </button>
-          <button class="nav-desktop__item  collapsed" data-map="img/homepage_about-us-l.jpg" data-toggle="collapse" data-target="#locationCollapseTwo" aria-expanded="true" aria-controls="locationCollapseTwo">
-            Frankfurt
-          </button>
-          <button class="nav-desktop__item  collapsed" data-map="img/mobile-app_bg-l.jpg" data-toggle="collapse" data-target="#locationCollapseThree" aria-expanded="true" aria-controls="locationCollapseThree">
-            Arkansas
-          </button>
+          <% @offices.each_with_index do |office, i| %>
+            <button class="nav-desktop__item  <%= (i == 0) ? '' : 'collapsed' %>" data-map="https://maps.googleapis.com/maps/api/staticmap?center=<%=u office.address %>+<%=u office.name %>&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%=u office.address %>+<%=u office.name %>"  data-toggle="collapse" data-target="#locationCollapse<%= office.id %>" aria-expanded="true" aria-controls="locationCollapse<%= office.id %>">
+              <%= office.name %>
+            </button>
+          <% end %>
         </div>
-        <div class="location">
-          <!-- Map path also set here -->
-          <button class="location__nav-mobile" data-map="img/map-london.jpg" data-toggle="collapse" data-target="#locationCollapseOne" aria-expanded="true" aria-controls="locationCollapseOne">
-            London
-          </button>
-          <div class="location__items  collapse  show"  id="locationCollapseOne" aria-labelledby="locationHeadingOne" data-parent="#accordion">
-            <div class="location__items-container">
-              <div class="location__item  location__item--call-us">
-                <h4>Call us</h4>
-                <p>+44 (0)20 3617 9197 (8:30am-6:30pm)</p>
-                <a href="#">CALL NOW</a>
-              </div>
-              <div class="location__item  location__item--client-vacancy-form">
-                <h4>Client vacancy form</h4>
-                <p>Send us your job brief now</p>
-                <%= link_to 'Submit a Job', contact_client_path %>
-              </div>
-              <div class="location__item  location__item--visit-us">
-                <h4>VISIT US</h4>
-                <p>Broughton House, 6-8 Sackville Street, London, W1S 3DG</p>
-                <a href="#">OPEN IN GOOGLE MAPS</a>
-              </div>
-              <div class="location__item  location__item--candidate-contact-form">
-                <h4>CANDIDATE CONTACT FORM</h4>
-                <p>Send us your CV now</p>
-                <%= link_to 'Register Interest', contact_candidate_path %>
+
+        <% @offices.each_with_index do |office, i| %>
+
+          <div class="location">
+            <!-- Map path also set here -->
+            <button class="location__nav-mobile" data-map="https://maps.googleapis.com/maps/api/staticmap?center=<%=u office.address %>+<%=u office.name %>&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%=u office.address %>+<%=u office.name %>" data-toggle="collapse" data-target="#locationCollapse<%= office.id %>" aria-expanded="true" aria-controls="locationCollapse<%= office.id %>">
+              London
+            </button>
+            <div class="location__items  collapse  <%= (i == 0) ? 'collapse  show' : 'collapsed' %>"  id="locationCollapse<%= office.id %>" aria-labelledby="locationHeading<%= office.id %>" data-parent="#accordion">
+              <div class="location__items-container">
+                <div class="location__item  location__item--call-us">
+                  <h4>Call us</h4>
+                  <p><%= office.phone %> (<%= office.work_time %>)</p>
+                  <a href="tel:<%= office.phone %>">CALL NOW</a>
+                </div>
+                <div class="location__item  location__item--client-vacancy-form">
+                  <h4>Client vacancy form</h4>
+                  <p>Send us your job brief now</p>
+                  <%= link_to 'Submit a Job', contact_client_path %>
+                </div>
+                <div class="location__item  location__item--visit-us">
+                  <h4>VISIT US</h4>
+                  <p><%= office.address %></p>
+                  <a href="https://maps.google.com/?q=<%=u office.address %>+<%=u office.name %>" target="_blank" >OPEN IN GOOGLE MAPS</a>
+                </div>
+                <div class="location__item  location__item--candidate-contact-form">
+                  <h4>CANDIDATE CONTACT FORM</h4>
+                  <p>Send us your CV now</p>
+                  <%= link_to 'Register Interest', contact_candidate_path %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="location">
-          <button class="location__nav-mobile  collapsed" data-map="img/homepage_about-us-l.jpg"  data-toggle="collapse" data-target="#locationCollapseTwo" aria-expanded="true" aria-controls="locationCollapseTwo">
-            Frankfurt
-          </button>
-          <div class="location__items  collapse"  id="locationCollapseTwo" aria-labelledby="locationHeadingTwo" data-parent="#accordion">
-            <div class="location__items-container">
-              <div class="location__item  location__item--call-us">
-                <h4>Call us</h4>
-                <p>+44 (0)20 3617 9197 (8:30am-6:30pm)</p>
-                <a href="#">CALL NOW</a>
-              </div>
-              <div class="location__item  location__item--client-vacancy-form">
-                <h4>Client vacancy form</h4>
-                <p>Send us your job brief now</p>
-                <a href="#">SUBMIT A JOB</a>
-              </div>
-              <div class="location__item  location__item--visit-us">
-                <h4>VISIT US</h4>
-                <p>Broughton House, 6-8 Sackville Street, Frankfurt, W1S 3DG</p>
-                <a href="#">OPEN IN GOOGLE MAPS</a>
-              </div>
-              <div class="location__item  location__item--candidate-contact-form">
-                <h4>CANDIDATE CONTACT FORM</h4>
-                <p>Send us your CV now</p>
-                <a href="#">REGISTER INTEREST</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="location">
-          <button class="location__nav-mobile  collapsed" data-map="img/mobile-app_bg-l.jpg" data-toggle="collapse" data-target="#locationCollapseThree" aria-expanded="true" aria-controls="locationCollapseThree">
-            Arkansas
-          </button>
-          <div class="location__items  collapse"  id="locationCollapseThree" aria-labelledby="locationHeadingThree" data-parent="#accordion">
-            <div class="location__items-container">
-              <div class="location__item  location__item--call-us">
-                <h4>Call us</h4>
-                <p>+44 (0)20 3617 9197 (8:30am-6:30pm)</p>
-                <a href="#">CALL NOW</a>
-              </div>
-              <div class="location__item  location__item--client-vacancy-form">
-                <h4>Client vacancy form</h4>
-                <p>Send us your job brief now</p>
-                <a href="#">SUBMIT A JOB</a>
-              </div>
-              <div class="location__item  location__item--visit-us">
-                <h4>VISIT US</h4>
-                <p>Broughton House, 6-8 Sackville Street, Arkansas, W1S 3DG</p>
-                <a href="#">OPEN IN GOOGLE MAPS</a>
-              </div>
-              <div class="location__item  location__item--candidate-contact-form">
-                <h4>CANDIDATE CONTACT FORM</h4>
-                <p>Send us your CV now</p>
-                <a href="#">REGISTER INTEREST</a>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <% end %>
+
+
       </div>
     </div>
   </div>
