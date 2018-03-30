@@ -49,7 +49,7 @@
     </div>
   </div>
 </div>
-<div class="register-interest">
+<div id="register-interest" class="register-interest">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -58,42 +58,7 @@
           <p class="register-interest__descr">
             Register your CV with us and increase your chances of an interview before a job is even advertised
           </p>
-          <form class="form__register-interest" action="">
-            <div class="form__select">
-              <select class="js-select2" data-placeholder="Title">
-                <option><!-- Empty "option" needed for placeholder --></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="Fist Name">
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="Last Name">
-            </div>
-            <div class="form__input">
-              <input type="email" placeholder="Email ">
-            </div>
-            <div class="form__input">
-              <input type="tel" placeholder="Phone">
-            </div>
-            <div class="form__group">
-              <label class="form__file">
-                <input type="file">
-                <div class="file__btn">upload CV</div>
-                <p class="file__info">No files attached…</p>
-              </label>
-              <label class="form__checkbox">
-                <input type="checkbox">
-                <div class="checkbox__box"></div>
-                <p>Send me Job Alerts as they become available</p>
-              </label>
-              <div class="form__submit">
-                <input type="submit" value="Register now">
-              </div>
-            </div>
-          </form>
+          <%= render 'contact_candidate/form' %>
         </div>
       </div>
     </div>
@@ -163,7 +128,7 @@
           </div>
           <div class="charter__item-total  charter__item-total--blue">
             <p>Our role is to help you to win the role you are targeting. You may not be successful first time with every application that you submit, but we aim to ensure you still benefit from the experience. And you will be joining our extended network of people who we encourage to interact, exchange contacts, and share knowledge. We also want you to enjoy the experience</p>
-            <a href="#">Register now</a>
+            <a href="#register-interest">Register now</a>
           </div>
         </div>
       </div>

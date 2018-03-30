@@ -4,6 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
+    @candidate_form = RegisterCandidateForm.new
     @jobs = Job.all
 
     if params[:salary_range]
