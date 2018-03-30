@@ -19,50 +19,9 @@
     <div class="row">
       <div class="col-12">
         <div class="register-vacancy__container">
-          <h3 class="register-vacancy__title">Register a Vacancy</h3>
+          <h3 class="register-vacancy__title" style="order: 0;">Register a Vacancy</h3>
+          <%= render 'contact_client/form' %>
           <p class="register-vacancy__descr">We’ll be in touch within one working day to discuss the job description and understand the uniqness of your organisation.</p>
-          <form action="" class="register-vacancy__form  form__register-vacancy">
-            <div class="form__select">
-              <select class="js-select2" data-placeholder="Title">
-                <option><!-- Empty "option" needed for placeholder --></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="phone / mobile...">
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="your role...">
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="first name...">
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="email...">
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="last name...">
-            </div>
-            <div class="form__input">
-              <input type="text" placeholder="company name...">
-            </div>
-            <div class="form__group">
-              <label class="form__file">
-                <input type="file">
-                <div class="file__btn">upload job</div>
-                <p class="file__info">No files attached…</p>
-              </label>
-              <label class="form__checkbox">
-                <input type="checkbox">
-                <div class="checkbox__box"></div>
-                <p>Send me Job Alerts as they become available</p>
-              </label>
-              <div class="form__submit">
-                <input type="submit" value="Register now">
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </div>
