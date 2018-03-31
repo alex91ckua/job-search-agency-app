@@ -1,0 +1,87 @@
+<% content_for :body_class, 'contact-us contact-us--join-our-team' %>
+
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Join our team</h1>
+        <div class="round"></div>
+        <h3>Help us put the pride back into recruiting.</h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-10.png') %>" alt="">
+  </div>
+</div>
+<div id="join-form" class="contact-us-form  contact-us-form--join-our-team">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="contact-us-form__container">
+          <h3 class="contact-us-form__title">Register Interest to work at Global Accounting Network</h3>
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="our-history">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="our-history__title  title-block">
+          <h3>A little bit of history</h3>
+          <div class="round"></div>
+          <p>Founded in 2011, Global Accounting Network has grown to become one of the most respected boutique search and recruitment firms in the UK. From two Directors sat in a silent office with a phone that didn’t ring, no clients and no candidates – we are now a multi-million turnover business working with exceptional candidates, an array of FTSE clients and some really interesting SMEs.</p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="our-history__content">
+          <div class="content__left-column">
+            <h5>Recruiting is an easy job to be bad at, but a very difficult job to excel at. We happen to have a very good track record. Global Accounting Network is always looking for high performing Recruiters and Recruitment Leaders who can help us re-write the stereotypes of the industry.</h5>
+            <h6>YOU NEED TO BE:</h6>
+            <ul>
+              <li>An excellent communicator</li>
+              <li>Someone who takes ownership</li>
+              <li>Have strong degrees of empathy</li>
+              <li>Really understand how to build relationships built on trust</li>
+              <li>Driven to deliver, even in difficult circumstances</li>
+              <li>Fun for candidates, clients and colleagues to work with</li>
+            </ul>
+            <h5>You don’t need recruitment experience. We have a proven pedigree in making new entries to the market very successful recruiters. You do, however, need to fit with our values.</h5>
+            <h6>What will we do for you, I hear you ask?</h6>
+            <ul>
+              <li>Train and develop you to well above market levels of skill </li>
+              <li>Treat you well, understanding you are an individual not a number</li>
+              <li>Really reward your performance, with an excellent uncapped commission scheme and great benefits</li>
+              <li>Take you on incentive trips, lunches, away days</li>
+              <li>Introduce you to some of the best and brightest finance and business professionals</li>
+              <li>Give you all the tools needed to excel at this job</li>
+              <li>Make work fun and rewarding</li>
+              <li>Make you proud to be a recruiter!</li>
+            </ul>
+            <h6>How to apply?</h6>
+            <p>Hit the button below or call Matt or Adrian on 020 3617 9197.</p>
+            <a href="#join-form" class="register-interest">Register Interest now</a>
+            <h6>Please do not apply if:</h6>
+            <ul>
+              <li>You’re out for a quick buck</li>
+              <li>Driven purely by money not service</li>
+              <li>Don’t have a strong track record of achievement</li>
+              <li>Take yourself too seriously</li>
+            </ul>
+          </div>
+          <div class="content__right-column">
+            <img src="<%= asset_path('team-photo-1.jpg') %>" alt="Our Team">
+            <img src="<%= asset_path('team-photo-2.jpg') %>" alt="Our Team">
+            <a class="content__video" href="#">
+              <img src="<%= asset_path('team-photo-3.jpg') %>" alt="Our Team">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

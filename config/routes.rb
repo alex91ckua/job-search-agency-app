@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :companies, only: [:index, :show]
   resource :candidate, only: [:create]
   get 'client-services', to: 'client_services#index'
+  get 'join-us', to: 'join_us#index'
+  post 'join-us', to: 'join_us#create'
   get 'contact-us', to: 'contact_us#index'
   get 'about-us', to: 'about_us#index'
 
