@@ -335,5 +335,13 @@ $j( document ).on('turbolinks:load', function() {
 
         $j(".blog-posts__load-more-btn").slideToggle();
       });
+      
+        // Bootstrap accordion fix
+        $j("#accordion").children().click(function (e) {
+            if ($j(e.currentTarget).siblings().children(".collapsing").length > 0 ) {
+                return false;
+            }
+        })
+
     });
 });
