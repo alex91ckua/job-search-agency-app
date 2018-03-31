@@ -1,6 +1,12 @@
 class ContactCandidateController < ApplicationController
   def index
     @candidate_form = RegisterCandidateForm.new
+
+    set_meta_tags title: 'Register Interest - Gain Access To Our Network',
+                  description: 'When you register interest with us,
+                  our first step is to meet with you to understand
+                  your needs and long-term goals, and your capabilities.',
+                  og: { title: 'Register Interest - Gain Access To Our Network' }
   end
 
   def create
