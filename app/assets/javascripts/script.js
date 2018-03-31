@@ -197,6 +197,11 @@ function setMap(url) {
 $j( document ).on('turbolinks:load', function() {
 
     $j(document).ready(function() {
+
+      $j('#search_job_submit_btn').on('click',function (e) {
+        $j(this).val('Searching...');
+      });
+
       // Smooth scrolling to internal links
       $j('a[href^="#"]').on('click',function (e) {
           e.preventDefault();

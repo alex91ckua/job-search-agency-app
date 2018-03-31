@@ -1,5 +1,7 @@
 jQuery('#job-results').html('<%= j render 'jobs/jobs_list' %>');
-jQuery("html, body").animate({ scrollTop: jQuery('#job-results').offset().top }, 1000);
+// jQuery("html, body").animate({ scrollTop: jQuery('#job-results').offset().top }, 1000);
+jQuery("#search_job_submit_btn").prop("disabled",false);
+jQuery("#search_job_submit_btn").val('<%= @jobs.count %> Jobs Found');
 window.history.replaceState('', '', "<%= request.fullpath %>");
 
 // Initialize Direction Aware Hover
