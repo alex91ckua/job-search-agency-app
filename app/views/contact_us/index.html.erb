@@ -21,7 +21,7 @@
         <div class="locations__nav-desktop">
           <!-- Map path set here -->
           <% @offices.each_with_index do |office, i| %>
-            <button class="nav-desktop__item  <%= (i == 0) ? '' : 'collapsed' %>" data-map="https://maps.googleapis.com/maps/api/staticmap?center=<%=u office.address %>+<%=u office.name %>&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%=u office.address %>+<%=u office.name %>"  data-toggle="collapse" data-target="#locationCollapse<%= office.id %>" aria-expanded="true" aria-controls="locationCollapse<%= office.id %>">
+            <button class="nav-desktop__item  <%= (i == 0) ? '' : 'collapsed' %>" data-map="https://maps.googleapis.com/maps/api/staticmap?center=<%=u office.address %>&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%=u office.address %>"  data-toggle="collapse" data-target="#locationCollapse<%= office.id %>" aria-expanded="true" aria-controls="locationCollapse<%= office.id %>">
               <%= office.name %>
             </button>
           <% end %>
@@ -31,7 +31,7 @@
 
           <div class="location">
             <!-- Map path also set here -->
-            <button class="location__nav-mobile" data-map="https://maps.googleapis.com/maps/api/staticmap?center=<%=u office.address %>+<%=u office.name %>&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%=u office.address %>+<%=u office.name %>" data-toggle="collapse" data-target="#locationCollapse<%= office.id %>" aria-expanded="true" aria-controls="locationCollapse<%= office.id %>">
+            <button class="location__nav-mobile" data-map="https://maps.googleapis.com/maps/api/staticmap?center=<%=u office.address %>&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C<%=u office.address %>" data-toggle="collapse" data-target="#locationCollapse<%= office.id %>" aria-expanded="true" aria-controls="locationCollapse<%= office.id %>">
               London
             </button>
             <div class="location__items  collapse  <%= (i == 0) ? 'collapse  show' : 'collapsed' %>"  id="locationCollapse<%= office.id %>" aria-labelledby="locationHeading<%= office.id %>" data-parent="#accordion">
