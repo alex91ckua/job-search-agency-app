@@ -7,4 +7,8 @@ module ApplicationHelper
       when 'alert' then "alert alert-error"
     end
   end
+
+  def format_tel_number(phone)
+    phone.blank? ? '' : phone.gsub(/[^\w\s]/, '')
+  end
 end
