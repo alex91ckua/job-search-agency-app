@@ -1,0 +1,17 @@
+# config/app.yml for rails-settings-cached
+defaults: &defaults
+  phone: ''
+  email: ''
+  linkedin: ''
+  twitter: ''
+  google_play: ''
+  app_store: ''
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
