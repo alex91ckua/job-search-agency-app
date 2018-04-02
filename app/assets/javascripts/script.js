@@ -7,18 +7,41 @@ var showedBlogPost = 9;
 
 var file_api = ( window.File && window.FileReader && window.FileList && window.Blob ) ? true : false;
 
-
-// Parallax function for hero section
-function parallaxIt(e, target, movement){
-  var $this = $j('.hero');
-  var relX = e.pageX - $this.offset().left;
-  var relY = e.pageY - $this.offset().top;
-
-  TweenMax.to(target, 1, {
-    x: (relX - $this.width()/2) / $this.width() * movement,
-    y: (relY - $this.height()/2) / $this.height() * movement
-  })
+// Random number function
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 };
+
+
+// Parallax function
+function parallaxIt(target, movement){
+
+    var $this = $j('.hero');
+    var timeout = getRandomInt(3500, 5000);
+
+    TweenMax.to(target, (timeout/1000), {
+        x: getRandomInt(-30,30),
+        y: getRandomInt(-30,30)
+    });
+
+    setInterval(function() {
+        TweenMax.to(target, (timeout/1000), {
+            x: getRandomInt(-30,30),
+            y: getRandomInt(-30,30)
+        });
+    }, (timeout/2));
+
+    // $j($this).mousemove(function(e) {
+    //     var relX = e.pageX - $this.offset().left;
+    //     var relY = e.pageY - $this.offset().top;
+    //
+    //     TweenMax.to(target, 1, {
+    //         x: (relX - $this.width()/2) / $this.width() * movement,
+    //         y: (relY - $this.height()/2) / $this.height() * movement
+    //     });
+    // });
+};
+
 
 
 // Carousel that shows only on mobile resolution
@@ -233,32 +256,10 @@ $j( document ).on('turbolinks:load', function() {
       });
 
 
-      // Initialize parallax
-      $j('.homepage .hero').mousemove(function(e){
-        parallaxIt(e, '.hero__orb--1', -40);
-        parallaxIt(e, '.hero__orb--2', 10);
-        parallaxIt(e, '.hero__orb--3', -20);
-      });
-
-      $j('.current-jobs .hero').mousemove(function(e){
-        parallaxIt(e, '.hero__orb--1', -10);
-      });
-
-      $j('.client-services .hero').mousemove(function(e){
-        parallaxIt(e, '.hero__orb--1', -10);
-      });
-
-      $j('.contact-us .hero').mousemove(function(e){
-        parallaxIt(e, '.hero__orb--1', -10);
-      });
-
-      $j('.about-us .hero').mousemove(function(e){
-        parallaxIt(e, '.hero__orb--1', -10);
-      });
-
-      $j('.blog-page .hero').mousemove(function(e){
-        parallaxIt(e, '.hero__orb--1', -10);
-      });
+        // Initialize parallax
+        parallaxIt('.hero__orb--1', -10);
+        parallaxIt('.hero__orb--2', 10);
+        parallaxIt('.hero__orb--3', -10);
 
 
       // Initialize quotes owlCarousel
