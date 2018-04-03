@@ -56,6 +56,6 @@ ActiveAdmin.register Job do
       f.input :location
       f.input :company_job_alerts
     end
-    f.button 'Update Job'
+    f.actions
   end
 end
