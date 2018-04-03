@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  root 'home#index'
   resources :jobs, only: [:index, :show]
   resources :companies, only: [:index, :show]
+  resources :articles, only: [:index, :show]
   resource :candidate, only: [:create]
   get 'client-services', to: 'client_services#index'
   get 'join-us', to: 'join_us#index'
