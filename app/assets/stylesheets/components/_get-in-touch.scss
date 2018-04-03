@@ -3,7 +3,9 @@
   padding-bottom: 70px;
   background-image: image-url("homepage_about-us-l.jpg");
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 
   h4 {
