@@ -1,28 +1,43 @@
 <% content_for :body_class, 'blog-page' %>
 
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Words about numbers</h1>
+        <div class="round"></div>
+        <h3>Our take on the world around us</h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-10.png') %>" alt="">
+  </div>
+</div>
+<div class="blog-posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blog-posts__container">
+          <%= form_tag articles_path, method: 'get', class: 'blog-posts__sort', remote: true do %>
+            <p>Blog posts and news from the Global Team</p>
+            <div class="form__select">
+              <%= select_tag :order_by_tag, options_for_select(@striped_tags, params[:order_by_tag]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Sort by tags...', :onchange => ("javascript: Rails.fire(this.form, 'submit');")} %>
+            </div>
+          <% end %>
 
-<h1>Articles</h1>
+          <div id="articles-list" class="blog-posts__items">
+            <%= render partial: 'article', collection: @articles, as: :article %>
+          </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Tags</th>
-      <th>Admin user</th>
-    </tr>
-  </thead>
+          <div id="articles-load-more" class="blog-posts__load-more-btn">
+            <% if @articles.count > 9 %>
+              <button>load more</button>
+            <% end %>
+          </div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.description %></td>
-        <td><%= article.tags %></td>
-        <td><%= article.admin_user %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

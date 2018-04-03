@@ -1,0 +1,5 @@
+jQuery('#articles-list').html('<%= j render partial: 'article', collection: @articles, as: :article %>');
+<% if @articles.count > 9 %>
+  jQuery('#articles-load-more').html('<button>load more</button>');
+<% end %>
+window.history.replaceState('', '', "<%= request.fullpath %>");

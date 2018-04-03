@@ -1,0 +1,7 @@
+
+    <%= link_to article_path(article.id), class: 'blog-posts__item', style: "background-image: url('#{article.image.url ? article.image.url : ''}')" do %>
+      <div class="item__info">
+        <div class="info__title"><%= article.title %></div>
+        <div class="info__short-descr"><%= truncate(strip_tags(article.description.html_safe), length: 40) %><br><span>READ</span></div>
+      </div>
+    <% end %>
