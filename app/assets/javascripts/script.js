@@ -16,20 +16,20 @@ function getRandomInt(min, max) {
 // Parallax function
 function parallaxIt(target, movement){
 
-    var $this = $j('.hero');
-    var timeout = getRandomInt(3500, 5000);
-
-    TweenMax.to(target, (timeout/1000), {
-        x: getRandomInt(-30,30),
-        y: getRandomInt(-30,30)
-    });
-
-    setInterval(function() {
-        TweenMax.to(target, (timeout/1000), {
-            x: getRandomInt(-50,40),
-            y: getRandomInt(-50,40)
-        });
-    }, (timeout/2));
+    // var $this = $j('.hero');
+    // var timeout = getRandomInt(3500, 5000);
+    //
+    // TweenMax.to(target, (timeout/1000), {
+    //     x: getRandomInt(-30,30),
+    //     y: getRandomInt(-30,30)
+    // });
+    //
+    // setInterval(function() {
+    //     TweenMax.to(target, (timeout/1000), {
+    //         x: getRandomInt(-50,40),
+    //         y: getRandomInt(-50,40)
+    //     });
+    // }, (timeout/2));
 
     // $j($this).mousemove(function(e) {
     //     var relX = e.pageX - $this.offset().left;
@@ -40,6 +40,14 @@ function parallaxIt(target, movement){
     //         y: (relY - $this.height()/2) / $this.height() * movement
     //     });
     // });
+
+    $j(document).on("scroll", function() {
+
+        TweenMax.to(target, 0, {
+            y: ($j(window).scrollTop()) / movement * (-10)
+        });
+    });
+
 };
 
 
@@ -257,9 +265,9 @@ $j( document ).on('turbolinks:load', function() {
 
 
         // Initialize parallax
-        parallaxIt('.hero__orb--1', -10);
-        parallaxIt('.hero__orb--2', 10);
-        parallaxIt('.hero__orb--3', -10);
+        parallaxIt('.hero__orb--1', 10);
+        parallaxIt('.hero__orb--2', 20);
+        parallaxIt('.hero__orb--3', 15);
 
 
       // Initialize quotes owlCarousel
@@ -325,9 +333,8 @@ $j( document ).on('turbolinks:load', function() {
       // Init map handler
       contcatsMapHandler();
 
-
       // Blog page - load more btn Handler
-      $j(".blog-posts__load-more-btn  button").on("click", function(e) {
+      $j(".blog-posts__load-more-btn").on("click", "button", function(e) {
         e.preventDefault();
         $j(".blog-posts__item:not(:nth-child(-n+9))").slideToggle('medium', function() {
           if ($j(this).is(':visible'))
