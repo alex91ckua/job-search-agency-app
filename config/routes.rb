@@ -24,4 +24,10 @@ Rails.application.routes.draw do
     get 'request-callback', to: 'request_callback#index'
     post 'request-callback', to: 'request_callback#create'
   end
+
+  # redirects from old website page
+  get '/team', to: redirect('/about-us', status: 301)
+  get '/vacancies', to: redirect('/jobs', status: 301)
+  get '/contact', to: redirect('/contact-us', status: 301)
+  get '/finance-accounting', to: redirect('/about-us', status: 301)
 end
