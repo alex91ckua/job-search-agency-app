@@ -26,8 +26,8 @@ function parallaxIt(target, movement){
 
     setInterval(function() {
         TweenMax.to(target, (timeout/1000), {
-            x: getRandomInt(-30,30),
-            y: getRandomInt(-30,30)
+            x: getRandomInt(-50,40),
+            y: getRandomInt(-50,40)
         });
     }, (timeout/2));
 
