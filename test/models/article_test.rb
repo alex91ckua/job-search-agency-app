@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'should not save article without admin_user' do
+    article = Article.new(title: 'Title',
+                          description: 'Description',
+                          tags: 'Tags')
+    assert_not article.save
+  end
 end
