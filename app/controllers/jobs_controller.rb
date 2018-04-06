@@ -8,7 +8,7 @@ class JobsController < ApplicationController
     @candidate_form = RegisterCandidateForm.new
     @jobs = Job.all
 
-    if params[:salary_range]
+    if params[:salary_range] && params[:salary_range].match(/^\d*-\d*$/)
       salary = params[:salary_range].split('-')
       @jobs = @jobs.salary_from(salary[0]) if salary[0].present?
       @jobs = @jobs.salary_to(salary[1]) if salary[1].present?
