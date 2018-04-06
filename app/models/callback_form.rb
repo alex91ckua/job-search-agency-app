@@ -13,9 +13,9 @@ class CallbackForm < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-        :subject => 'Call me Back request - Global Accounting',
-        :to => "your_email@your_domain.com",
-        :from => %("#{first_name} #{last_name}" <#{email}>)
+      subject: 'Call me Back request - Global Accounting',
+      to: Setting.email,
+      from: %("#{first_name} #{last_name}" <#{email}>)
     }
   end
 end

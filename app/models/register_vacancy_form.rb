@@ -13,9 +13,9 @@ class RegisterVacancyForm < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-        :subject => 'Register Vacancy request - Global Accounting',
-        :to => "your_email@your_domain.com",
-        :from => %("#{first_name} #{last_name}" <#{email}>)
+      subject: 'Register Vacancy request - Global Accounting',
+      to: Setting.email,
+      from: %("#{first_name} #{last_name}" <#{email}>)
     }
   end
 end
