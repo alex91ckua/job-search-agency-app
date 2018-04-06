@@ -2,6 +2,7 @@
 defaults: &defaults
   phone: ''
   email: ''
+  currency_symbol: '£'
   linkedin: ''
   twitter: ''
   google_play: ''

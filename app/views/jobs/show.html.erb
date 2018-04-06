@@ -21,10 +21,10 @@
         <div class="job-detail__container">
           <div class="job-detail__main-info">
             SECTOR: <%= @job.sector %><br>
-            SALARY: <%= @job.salary %><br>
+            SALARY: <%= "#{Setting.currency_symbol}#{@job.salary}" %><br>
             LOCATION: <%= @job.location %><br>
             JOB TYPE: <%= @job.job_type.humanize.capitalize %><br>
-            REERENCE: <%= @job.ref_id %>
+            REFERENCE: <%= @job.ref_id %>
           </div>
           <div class="job-detail__about-company">
             <%= @job.company.description %>

@@ -5,7 +5,7 @@
         <h4 class="vacancy__title"><%= job.title %></h4>
         <p class="vacancy__details">
           Sector: 		<%= job.sector %><br>
-          Salary: 		<%= job.salary %><br>
+          Salary: 		<%= "#{Setting.currency_symbol}#{job.salary}" %><br>
           Location: 	<%= job.location %><br>
           Job Type: 	<%= job.job_type.humanize.capitalize %><br>
           Reference: 	<%= job.ref_id %><br>
@@ -19,7 +19,7 @@
     <% end %>
   </div>
   <div class="result__link">
-    <a href="#current_jobs" data-turbolinks="false">Back to Top</a>
+    <a href="#current_jobs">Back to Top</a>
   </div>
 <% else %>
   <%= t('Sorry, no jobs found.') %>
