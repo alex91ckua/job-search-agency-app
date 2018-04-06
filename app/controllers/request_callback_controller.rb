@@ -9,11 +9,13 @@ class RequestCallbackController < ApplicationController
     if @callback.deliver
       @callback = CallbackForm.new
       flash.now[:success] = 'Thank you for your message!'
+      status_code = 200
     else
       flash.now[:error] = @callback.errors.full_messages.to_sentence
+      status_code = 400
     end
     respond_to do |format|
-      format.html { render :index }
+      format.html { render :index, status: status_code }
       format.js
     end
   end
