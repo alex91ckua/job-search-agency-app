@@ -234,7 +234,7 @@ $j( document ).on('turbolinks:load', function() {
       });
 
       // Smooth scrolling to internal links
-      $j('a[href^="#"]').on('click',function (e) {
+      $j('body').on('click', 'a[href^="#"]',function (e) {
           e.preventDefault();
         if ($j(this).hasClass("carousel-control-prev")  || $j(this).hasClass("carousel-control-next")) { return };
           var target = this.hash;
