@@ -15,8 +15,8 @@ class ArticlesController < InheritedResources::Base
 
   private
 
-    def article_params
-      params.require(:article).permit(:title, :description, :tags, :admin_user_id)
-    end
+    # def article_params
+    #   params.require(:article).permit(:title, :description, :tags, :admin_user_id)
+    # end
 end
 
