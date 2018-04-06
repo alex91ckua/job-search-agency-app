@@ -6,7 +6,7 @@ one:
   sector: MyString
   salary: 1
   description: MyString
-  company: 1
+  company: one
   responsibilities: MyString
   location: MyString
 
@@ -16,6 +16,6 @@ two:
   sector: MyString
   salary: 1
   description: MyString
-  company: 2
+  company: two
   responsibilities: MyString
   location: MyString
