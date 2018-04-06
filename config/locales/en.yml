@@ -38,6 +38,7 @@ en:
       twitter: 'Twitter URL'
       google_play: 'Google Play URL'
       app_store: 'App Store URL'
+      currency_symbol: 'Currency Symbol ("£" by default)'
   callback_form:
     subject: 'Call me Back request - Global Accounting'
   register_vacancy_form:
