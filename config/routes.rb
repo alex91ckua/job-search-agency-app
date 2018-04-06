@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   get 'about-us', to: 'about_us#index'
 
   scope 'contact-us' do
-    get 'contact-client', to: 'contact_client#index'
-    post 'contact-client', to: 'contact_client#create'
+    get 'register-a-vacancy', to: 'contact_client#index'
+    post 'register-a-vacancy', to: 'contact_client#create'
 
-    get 'contact-candidate', to: 'contact_candidate#index'
-    post 'contact-candidate', to: 'contact_candidate#create'
+    get 'register-interest', to: 'contact_candidate#index'
+    post 'register-interest', to: 'contact_candidate#create'
   end
 
   scope 'client-services' do

@@ -1,5 +1,5 @@
 <div id="contact-client-form" >
-  <%= form_for @vacancy_form, url: contact_client_path, method: :create, remote: true, :html => { :multipart => true, :class => 'form__register-vacancy' } do |f| %>
+  <%= form_for @vacancy_form, url: register_a_vacancy_path, method: :create, remote: true, :html => { :multipart => true, :class => 'form__register-vacancy' } do |f| %>
 
     <div class="form__select">
       <select class="js-select2" data-placeholder="Mr">
