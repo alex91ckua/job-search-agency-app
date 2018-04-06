@@ -50,7 +50,29 @@ function parallaxIt(target, movement){
 
 };
 
+function orbAppearanceAnimation(target, direction) {
 
+    switch (direction) {
+
+        case 'topToBottom':
+            TweenMax.to(target, 0, { y: -1000 });
+            $j(target).css('opacity', 1);
+            TweenMax.to(target, 2.5, { y: 0, ease: Expo.easeOut, delay: 0.5 });
+            break;
+
+        case 'leftToRight':
+            TweenMax.to(target, 0, { x: -500 });
+            $j(target).css('opacity', 1);
+            TweenMax.to(target, 2.5, { x: 0, ease: Expo.easeOut, delay: 0.5 });
+            break;
+
+        case 'rightToLeft':
+            TweenMax.to(target, 0, { x: 500 });
+            $j(target).css('opacity', 1);
+            TweenMax.to(target, 2.5, { x: 0, ease: Expo.easeOut, delay: 0.5 });
+            break;
+    };
+}
 
 // Carousel that shows only on mobile resolution
 function owlCarouselMobileOnly(item) {
@@ -224,132 +246,141 @@ function setMap(url) {
   $j(".contacts__map").css('background-image', 'url("' + url + '")');
 };
 
+$j(document).on("turbolinks:before-cache", function() {
+    $j('.hero__orb--1, .hero__orb--2, .hero__orb--3').css('opacity', 0);
+
+    $j("#header").removeClass("header--open");
+})
 
 $j( document ).on('turbolinks:load', function() {
 
-    $j(document).ready(function() {
+    // Initialize orbAppearanceAnimation
+    orbAppearanceAnimation('.hero__orb--1', 'topToBottom');
+    orbAppearanceAnimation('.hero__orb--2', 'leftToRight');
+    orbAppearanceAnimation('.hero__orb--3', 'rightToLeft');
 
-      $j('#search_job_submit_btn').on('click',function (e) {
-        $j(this).val('Searching...');
-      });
-
-      // Smooth scrolling to internal links
-      $j('body').on('click', 'a[href^="#"]',function (e) {
-          e.preventDefault();
-        if ($j(this).hasClass("carousel-control-prev")  || $j(this).hasClass("carousel-control-next")) { return };
-          var target = this.hash;
-          var $target = $j(target);
-
-        $j('html, body').stop().animate({
-          'scrollTop': $target.offset().top
-        }, 900, 'swing');
-      });
+    // Initialize parallax
+    parallaxIt('.hero__orb--1', 10);
+    parallaxIt('.hero__orb--2', 20);
+    parallaxIt('.hero__orb--3', 15);
 
 
-      // Nav toggle
-      $j("#headerNavToggle").on("click", function(e) {
+    // Nav toggle
+    $j("#headerNavToggle").on("click", function (e) {
         e.preventDefault();
         $j("#header").toggleClass("header--open");
-      });
+    });
+
+    $j('#search_job_submit_btn').on('click', function (e) {
+        $j(this).val('Searching...');
+    });
+
+    // Smooth scrolling to internal links
+    $j('body').on('click', 'a[href^="#"]', function (e) {
+        e.preventDefault();
+        if ($j(this).hasClass("carousel-control-prev") || $j(this).hasClass("carousel-control-next")) {
+            return
+        }
+        ;
+        var target = this.hash;
+        var $target = $j(target);
+
+        $j('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing');
+    });
 
 
-      // Initialize Select2
-      $j('.js-select2').each(function() {
+    // Initialize Select2
+    $j('.js-select2').each(function () {
         var placeholder = $j(this).data('placeholder');
 
         $j(this).select2({
-          minimumResultsForSearch: -1,
-          placeholder: placeholder
+            minimumResultsForSearch: -1,
+            placeholder: placeholder
         });
-      });
+    });
 
 
-        // Initialize parallax
-        parallaxIt('.hero__orb--1', 10);
-        parallaxIt('.hero__orb--2', 20);
-        parallaxIt('.hero__orb--3', 15);
-
-
-      // Initialize quotes owlCarousel
-      $j(".quotes .owl-carousel").owlCarousel({
+    // Initialize quotes owlCarousel
+    $j(".quotes .owl-carousel").owlCarousel({
         items: 1,
         loop: true,
         nav: true,
         dots: true,
         autoplay: true,
         autoplayTimeout: 10000
-      });
+    });
 
 
-      // Initialize current-jobs owlCarousel
-      owlCarouselMobileOnly('.charter__items');
-      owlCarouselMobileOnly('.our-team .owl-carousel');
+    // Initialize current-jobs owlCarousel
+    owlCarouselMobileOnly('.charter__items');
+    owlCarouselMobileOnly('.our-team .owl-carousel');
 
 
-      // Initialize Stats owlCarousel
-      $j(".stats__slider").owlCarousel({
+    // Initialize Stats owlCarousel
+    $j(".stats__slider").owlCarousel({
         items: 1,
         loop: true,
         nav: true,
         dots: true,
         autoplay: true,
         autoplayTimeout: 10000
-      });
+    });
 
 
-      // Initialize Direction Aware Hover
-      searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");
-      directionAwareHover(searchJobsItems);
+    // Initialize Direction Aware Hover
+    searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");
+    directionAwareHover(searchJobsItems);
 
 
-      // File input handler
-      $j('.form__file').change(function() {
+    // File input handler
+    $j('.form__file').change(function () {
         var fullPath = $j(this).find("input").val();
         if (fullPath) {
-          var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-          var fileName = fullPath.substring(startIndex);
-          if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
-              fileName = fileName.substring(1);
-          }
-          $j(this).find(".file__info").html("Attached: " + fileName);
-          $j(this).find(".file__btn").addClass("file__btn--added-file");
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var fileName = fullPath.substring(startIndex);
+            if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
+                fileName = fileName.substring(1);
+            }
+            $j(this).find(".file__info").html("Attached: " + fileName);
+            $j(this).find(".file__btn").addClass("file__btn--added-file");
         }
-      });
+    });
 
-      // Our team - "load more" handler
-      $j(".members__show-all-btn").on("click", function(e) {
+    // Our team - "load more" handler
+    $j(".members__show-all-btn").on("click", function (e) {
         e.preventDefault();
         if ($j(window).outerWidth() < 992) {
-          $j(".our-team__member:not(:nth-child(-n+2))").slideToggle();
+            $j(".our-team__member:not(:nth-child(-n+2))").slideToggle();
         } else {
-          $j(".our-team__member:not(:nth-child(-n+3))").slideToggle();
+            $j(".our-team__member:not(:nth-child(-n+3))").slideToggle();
         }
         $j(".our-team__members--hide").removeClass("our-team__members--hide");
         $j(".members__join-our-team-btn").slideToggle();
         $j(".members__show-all-btn").slideToggle();
-      });
+    });
 
 
-      // Init map handler
-      contcatsMapHandler();
+    // Init map handler
+    contcatsMapHandler();
 
-      // Blog page - load more btn Handler
-      $j(".blog-posts__load-more-btn").on("click", "button", function(e) {
+    // Blog page - load more btn Handler
+    $j(".blog-posts__load-more-btn").on("click", "button", function (e) {
         e.preventDefault();
-        $j(".blog-posts__item:not(:nth-child(-n+9))").slideToggle('medium', function() {
-          if ($j(this).is(':visible'))
-              $j(this).css('display','block');
+        $j(".blog-posts__item:not(:nth-child(-n+9))").slideToggle('medium', function () {
+            if ($j(this).is(':visible'))
+                $j(this).css('display', 'block');
         });
 
         $j(".blog-posts__load-more-btn").slideToggle();
-      });
-
-        // Bootstrap accordion fix
-        $j("#accordion").children().click(function (e) {
-            if ($j(e.currentTarget).siblings().children(".collapsing").length > 0 ) {
-                return false;
-            }
-        })
-
     });
+
+    // Bootstrap accordion fix
+    $j("#accordion").children().click(function (e) {
+        if ($j(e.currentTarget).siblings().children(".collapsing").length > 0) {
+            return false;
+        }
+    })
+
 });
