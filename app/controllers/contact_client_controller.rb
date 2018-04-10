@@ -1,4 +1,7 @@
 class ContactClientController < ApplicationController
+
+  before_action :prepare_vacancy_form, only: :create
+
   def index
     @vacancy_form = RegisterVacancyForm.new
 
@@ -10,8 +13,6 @@ class ContactClientController < ApplicationController
   end
 
   def create
-    @vacancy_form = RegisterVacancyForm.new(params['register_vacancy_form'])
-    @vacancy_form.request = request
     if @vacancy_form.deliver
       flash.now[:success] = 'Thank you for your message!'
     else
@@ -22,4 +23,12 @@ class ContactClientController < ApplicationController
       format.js
     end
   end
+
+  private
+
+  def prepare_vacancy_form
+    @vacancy_form = RegisterVacancyForm.new(params['register_vacancy_form'])
+    @vacancy_form.request = request
+  end
+
 end

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class RequestCallbackControllerTest < ActionDispatch::IntegrationTest
-
   test 'should get index' do
     get request_callback_url
     assert_response :success
@@ -38,5 +37,4 @@ class RequestCallbackControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 400
   end
-
 end

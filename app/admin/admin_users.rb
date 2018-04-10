@@ -6,7 +6,7 @@ ActiveAdmin.register AdminUser do
     def update
       model = :admin_user
       if params[model][:password].blank?
-        %w(password password_confirmation).each { |p| params[model].delete(p) }
+        %w[password password_confirmation].each { |p| params[model].delete(p) }
       end
       super
     end

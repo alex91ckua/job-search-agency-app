@@ -14,6 +14,14 @@ module ApplicationHelper
 
   def google_static_map_url(address)
     require 'cgi'
-    address.blank? ? '' : "https://maps.googleapis.com/maps/api/staticmap?center=#{CGI.escape(address)}&zoom=14&scale=2&size=640x600&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C#{CGI.escape(address)}&key=#{Setting.google_static_maps_key}"
+    if address.blank?
+      ''
+    else
+      'https://maps.googleapis.com/maps/api/staticmap?'\
+      "center=#{CGI.escape(address)}&zoom=14&scale=2&size=640x600"\
+      '&maptype=roadmap&format=png&visual_refresh=true'\
+      '&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C'\
+      "#{CGI.escape(address)}&key=#{Setting.google_static_maps_key}"
+    end
   end
 end

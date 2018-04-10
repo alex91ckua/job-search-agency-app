@@ -50,7 +50,14 @@ ActiveAdmin.register Article do
       f.input :image, :as => :file, :hint => f.object.image.present? ? \
                                               image_tag(f.object.image.url, width: 100) : \
                                               content_tag(:span, 'no image selected')
-      f.input :description, as: :froala_editor, input_html: {data: {options: {height: 300}}}
+      f.input :description, as: :froala_editor, input_html:
+          {
+            data: {
+              options: {
+                height: 300
+              }
+            }
+          }
       f.input :tags
       f.input :admin_user_id, as: :select, :collection => Hash[AdminUser.all.map{|u| ["#{u.first_name} #{u.last_name}",u.id]}]
     end

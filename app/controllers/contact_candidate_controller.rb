@@ -1,4 +1,8 @@
+# Contact candidate form controller
 class ContactCandidateController < ApplicationController
+
+  before_action :prepare_candidate_form, only: :create
+
   def index
     @candidate_form = RegisterCandidateForm.new
 
@@ -6,12 +10,12 @@ class ContactCandidateController < ApplicationController
                   description: 'When you register interest with us,
                   our first step is to meet with you to understand
                   your needs and long-term goals, and your capabilities.',
-                  og: { title: 'Register Interest - Gain Access To Our Network' }
+                  og: {
+                    title: 'Register Interest - Gain Access To Our Network'
+                  }
   end
 
   def create
-    @candidate_form = RegisterCandidateForm.new(params['register_candidate_form'])
-    @candidate_form.request = request
     if @candidate_form.deliver
       flash.now[:success] = 'Thank you for your message!'
     else
@@ -22,4 +26,12 @@ class ContactCandidateController < ApplicationController
       format.js
     end
   end
+
+  private
+
+  def prepare_candidate_form
+    @candidate_form = RegisterCandidateForm.new(params['register_candidate_form'])
+    @candidate_form.request = request
+  end
+
 end
