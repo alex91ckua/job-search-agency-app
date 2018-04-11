@@ -107,7 +107,7 @@
     transform: translateX(-50%) translateY(98%);
 
     @include media-breakpoint-up(md) {
-      border-width: 15.4px 16px 0 16px;
+      border-width: 15.3px 16px 0 16px;
     }
 
     @include media-breakpoint-up(lg) {
@@ -115,7 +115,7 @@
     }
 
     @include media-breakpoint-up(xl) {
-      border-width: 22.7px 23.7px 0 23.7px;
+      border-width: 22.8px 23.7px 0 23.7px;
     }
   }
 
