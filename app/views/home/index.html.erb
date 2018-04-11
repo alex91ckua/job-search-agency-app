@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="hero__dropdown  container-fluid" id="accordion">
-    <div class="row" >
+    <div class="row">
       <div class="container">
         <div class="row" >
           <div class="dropdown__btns  col-12">
@@ -115,32 +115,32 @@
     <div class="row">
       <div class="col-12">
         <div class="advantages__items">
-          <div class="advantages__item  advantages__item--1">
+          <div class="advantages__item  advantages__item--1" data-aos="fade-up" data-aos-duration="600">
             <h4>Pharmaceuticals<br>& Life Sciences</h4>
             <img src="<%= asset_path('orb-4.png') %>" alt="">
             <p>Our consultants have a strong and successful track record of delivering world-class talent into the top performing businesses in the pharmaceutical and life sciences sector. Lorem ipsum dolor sit amet.</p>
           </div>
-          <div class="advantages__item  advantages__item--2">
+          <div class="advantages__item  advantages__item--2" data-aos="fade-up" data-aos-duration="600">
             <h4>Retail, FMCG<br>& Hospitality</h4>
             <img src="<%= asset_path('orb-5.png') %>" alt="">
             <p>If you are a finance professional in retail, FMCG or hospitality, we have the network, track record and expertise to help you find hard to resource talent, or that elusive strategic career step.</p>
           </div>
-          <div class="advantages__item  advantages__item--3">
+          <div class="advantages__item  advantages__item--3" data-aos="fade-up" data-aos-duration="600">
             <h4>Private<br>Equity</h4>
             <img src="<%= asset_path('orb-6.png') %>" alt="">
             <p>Our track record of delivering both directly into PE firms and also into PE backed businesses, makes us a great choice for both hiring top talent into the sector and also finding you the right role in investor backed businesses.</p>
           </div>
-          <div class="advantages__item  advantages__item--4">
+          <div class="advantages__item  advantages__item--4" data-aos="fade-up" data-aos-duration="600">
             <h4>Technology,<br>Media & Telecoms</h4>
             <img src="<%= asset_path('orb-7.png') %>" alt="">
             <p>The only constant in this sector is change, and our Consultants have their finger on the pulse in order to provide forward thinking candidates to progressive businesses, and vice versa.</p>
           </div>
-          <div class="advantages__item  advantages__item--5">
+          <div class="advantages__item  advantages__item--5" data-aos="fade-up" data-aos-duration="600">
             <h4>Property, FM<br>& Construction</h4>
             <img src="<%= asset_path('orb-8.png') %>" alt="">
             <p>In a sector that often requires some very niche and specific skills, we have developed a great understanding of the drivers and levers of success, enabling us to provide the right people to the right opportunities.</p>
           </div>
-          <div class="advantages__item  advantages__item--6">
+          <div class="advantages__item  advantages__item--6" data-aos="fade-up" data-aos-duration="600">
             <h4>Engineering &<br>Infrastructure</h4>
             <img src="<%= asset_path('orb-9.png') %>" alt="">
             <p>In a set of sectors where attraction can be difficult, we have succeeded in developing a network of some of the best employers and candidates, both locally and overseas.</p>
@@ -154,10 +154,11 @@
   <div class="container">
     <div class="row">
       <div class="col-10  offset-1">
-        <h4>What’s on your horizon?</h4>
-        <div class="round"></div>
-        <p>Whatever your aspirations or career ambitions, the team at Global Accounting Network are interested in making your plans a reality. We’re a highly professional team, but we never lose sight of being genuine and honest with everyone we work with.</p>
-        <%= link_to 'More About Us', about_us_path %>
+
+        <h4 data-aos="fade-zoom-in" >What’s on your horizon?</h4>
+        <div data-aos="fade-zoom-in" class="round"></div>
+        <p data-aos="fade-zoom-in" >Whatever your aspirations or career ambitions, the team at Global Accounting Network are interested in making your plans a reality. We’re a highly professional team, but we never lose sight of being genuine and honest with everyone we work with.</p>
+        <%= link_to 'More About Us', about_us_path, data: { 'aos': 'fade-zoom-in', 'aos-easing': 'ease-in-sine' } %>
       </div>
     </div>
   </div>

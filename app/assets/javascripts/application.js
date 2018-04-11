@@ -17,4 +17,5 @@
 //= require select2.min
 //= require TweenMax.min
 //= require owl.carousel.min
+//= require aos
 //= require script

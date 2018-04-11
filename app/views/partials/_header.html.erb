@@ -1,33 +1,35 @@
 <header class="header" id="header">
-  <%= link_to root_path, class: 'header__logo' do %>
-    <img src="<%= asset_path('logo.png') %>" alt="">
-  <% end %>
-  <div class="header__nav">
-    <a href="tel:<%= format_tel_number(Setting.phone) %>" class="nav__phone">
-      <p><%= Setting.phone %></p>
-      <div class="phone__icon">
-        <svg viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path id="path0_fill" fill-rule="evenodd" d="M 13.2614 13.7936C 16.3677 10.5551 17.4991 8.49609 16.6553 7.61649C 16.617 7.5765 16.5403 7.49654 16.4252 7.3766C 15.85 6.77687 15.4569 6.2971 15.246 5.93726C 15.0351 5.57743 14.9967 5.03768 15.1309 4.31801C 15.2652 3.59834 15.7349 2.71875 16.5403 1.67923C 16.9238 1.19944 17.2785 0.809628 17.6045 0.509765C 17.9305 0.209902 18.266 0.049977 18.6112 0.0299862C 18.9563 0.00999529 19.244 0 19.4741 0C 19.7042 0 19.9822 0.129939 20.3082 0.38982C 20.6341 0.649702 20.8642 0.829617 20.9985 0.929571C 21.1327 1.02953 21.382 1.27941 21.7463 1.67923C 22.1106 2.07904 22.312 2.29894 22.3503 2.33892C 23.2707 3.29848 23.2132 5.23757 22.1777 8.15624C 21.1423 11.0749 19.1865 14.0135 16.3102 16.9722C 13.4339 19.9708 10.6057 22.0198 7.82529 23.1193C 5.04491 24.2188 3.19455 24.2888 2.27415 23.3292C 2.2358 23.2893 2.01529 23.0694 1.61261 22.6695C 1.20994 22.2697 0.970252 22.0198 0.893552 21.9199C 0.816852 21.8199 0.644279 21.58 0.375829 21.2002C 0.107378 20.8204 -0.0172575 20.5105 0.00191753 20.2706C 0.0210926 20.0308 0.0402673 19.7309 0.0594423 19.3711C 0.0786174 19.0112 0.222428 18.6614 0.490878 18.3215C 0.759329 17.9817 1.12365 17.6119 1.58385 17.2121C 2.3892 16.5324 3.06032 16.0626 3.59722 15.8027C 4.13412 15.5428 4.65184 15.5228 5.15039 15.7427C 5.64894 15.9626 5.9845 16.1426 6.15707 16.2825C 6.32965 16.4224 6.70355 16.7923 7.27881 17.392C 8.12251 18.2716 10.1167 17.0721 13.2614 13.7936Z"/>
-        </svg>
+  <div class="header-container">
+    <%= link_to root_path, class: 'header__logo' do %>
+      <img src="<%= asset_path('logo.png') %>" alt="">
+    <% end %>
+    <div class="header__nav">
+      <a href="tel:<%= format_tel_number(Setting.phone) %>" class="nav__phone">
+        <p><%= Setting.phone %></p>
+        <div class="phone__icon">
+          <svg viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="path0_fill" fill-rule="evenodd" d="M 13.2614 13.7936C 16.3677 10.5551 17.4991 8.49609 16.6553 7.61649C 16.617 7.5765 16.5403 7.49654 16.4252 7.3766C 15.85 6.77687 15.4569 6.2971 15.246 5.93726C 15.0351 5.57743 14.9967 5.03768 15.1309 4.31801C 15.2652 3.59834 15.7349 2.71875 16.5403 1.67923C 16.9238 1.19944 17.2785 0.809628 17.6045 0.509765C 17.9305 0.209902 18.266 0.049977 18.6112 0.0299862C 18.9563 0.00999529 19.244 0 19.4741 0C 19.7042 0 19.9822 0.129939 20.3082 0.38982C 20.6341 0.649702 20.8642 0.829617 20.9985 0.929571C 21.1327 1.02953 21.382 1.27941 21.7463 1.67923C 22.1106 2.07904 22.312 2.29894 22.3503 2.33892C 23.2707 3.29848 23.2132 5.23757 22.1777 8.15624C 21.1423 11.0749 19.1865 14.0135 16.3102 16.9722C 13.4339 19.9708 10.6057 22.0198 7.82529 23.1193C 5.04491 24.2188 3.19455 24.2888 2.27415 23.3292C 2.2358 23.2893 2.01529 23.0694 1.61261 22.6695C 1.20994 22.2697 0.970252 22.0198 0.893552 21.9199C 0.816852 21.8199 0.644279 21.58 0.375829 21.2002C 0.107378 20.8204 -0.0172575 20.5105 0.00191753 20.2706C 0.0210926 20.0308 0.0402673 19.7309 0.0594423 19.3711C 0.0786174 19.0112 0.222428 18.6614 0.490878 18.3215C 0.759329 17.9817 1.12365 17.6119 1.58385 17.2121C 2.3892 16.5324 3.06032 16.0626 3.59722 15.8027C 4.13412 15.5428 4.65184 15.5228 5.15039 15.7427C 5.64894 15.9626 5.9845 16.1426 6.15707 16.2825C 6.32965 16.4224 6.70355 16.7923 7.27881 17.392C 8.12251 18.2716 10.1167 17.0721 13.2614 13.7936Z"/>
+          </svg>
+        </div>
+      </a>
+      <div class="nav__toggle" id="headerNavToggle">
+        <div class="toggle__text  toggle__text--nav-closed">menu</div>
+        <div class="toggle__text  toggle__text--nav-open">close</div>
+        <div class="toggle__btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    </a>
-    <div class="nav__toggle" id="headerNavToggle">
-      <div class="toggle__text  toggle__text--nav-closed">menu</div>
-      <div class="toggle__text  toggle__text--nav-open">close</div>
-      <div class="toggle__btn">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="nav__links">
+        <%= link_to 'Home', root_path, {:style => 'color: #0E0E77', :class => 'nav__link'} %>
+        <%= link_to 'Current Jobs', jobs_path, {:style => 'color: #008CFF', :class => 'nav__link'} %>
+        <%= link_to 'Client Services', client_services_path, {:style => 'color: #D21E46', :class => 'nav__link'} %>
+        <%= link_to 'About Us', about_us_path, {:style => 'color: #8CC832', :class => 'nav__link'} %>
+        <%= link_to 'Work at Global', join_us_path, {:style => 'color: #F58A23', :class => 'nav__link'} %>
+        <%= link_to 'News Blog', articles_path, {:style => 'color: #6D10E0', :class => 'nav__link'} %>
+        <%= link_to 'Contact Us', contact_us_path, {:style => 'color: #0E0E77', :class => 'nav__link'} %>
       </div>
-    </div>
-    <div class="nav__links">
-      <%= link_to 'Home', root_path, {:style => 'color: #0E0E77', :class => 'nav__link'} %>
-      <%= link_to 'Current Jobs', jobs_path, {:style => 'color: #008CFF', :class => 'nav__link'} %>
-      <%= link_to 'Client Services', client_services_path, {:style => 'color: #D21E46', :class => 'nav__link'} %>
-      <%= link_to 'About Us', about_us_path, {:style => 'color: #8CC832', :class => 'nav__link'} %>
-      <%= link_to 'Work at Global', join_us_path, {:style => 'color: #F58A23', :class => 'nav__link'} %>
-      <%= link_to 'News Blog', articles_path, {:style => 'color: #6D10E0', :class => 'nav__link'} %>
-      <%= link_to 'Contact Us', contact_us_path, {:style => 'color: #0E0E77', :class => 'nav__link'} %>
     </div>
   </div>
 </header>

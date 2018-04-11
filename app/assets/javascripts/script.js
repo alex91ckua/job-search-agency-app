@@ -5,6 +5,8 @@ var $j = jQuery.noConflict();
 var searchJobsItems;
 var showedBlogPost = 9;
 
+var AOS;
+
 var file_api = ( window.File && window.FileReader && window.FileList && window.Blob ) ? true : false;
 
 // Random number function
@@ -44,10 +46,22 @@ function parallaxIt(target, movement){
     $j(document).on("scroll", function() {
 
         TweenMax.to(target, 0, {
-            y: ($j(window).scrollTop()) / movement * (-10)
+            y: ($j(window).scrollTop()) / movement * (-10),
+            rotation: ($j(window).scrollTop())  / movement * 2
         });
     });
 
+};
+
+// Check if element is viewed in broswer window
+function isScrolledIntoView(elem) {
+    var docViewTop = $j(window).scrollTop();
+    var docViewBottom = docViewTop + $j(window).height();
+
+    var elemTop = $j(elem).offset().top;
+    var elemBottom = elemTop + $j(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 };
 
 function orbAppearanceAnimation(target, direction) {
@@ -253,6 +267,34 @@ $j(document).on("turbolinks:before-cache", function() {
 })
 
 $j( document ).on('turbolinks:load', function() {
+
+    // Add/remove background to header on scroll
+    $j(window).on("scroll", function() {
+        var heroBg = $j('.hero').css('background-color');
+        if ($j(window).scrollTop() > 50) {
+            $j('.header').css('background-color', heroBg);
+        } else {
+            $j('.header').css('background-color', 'rgba(255,255,255,0)');
+        }
+    });
+
+    // Hero dropdown scroll to content on click
+    $j('.hero__dropdown').on('shown.bs.collapse', function (e) {
+        var $panel = $j(this).find('.show');
+        var headerHeight = $j('.header').height();
+        $j('html,body').animate({
+            scrollTop: $panel.offset().top - headerHeight + 2
+        }, 1000);
+    });
+
+
+    // Initialize AOS
+    if (AOS) {
+        AOS.init({
+            once: true,
+            offset: 20
+        });
+    };
 
     // Initialize orbAppearanceAnimation
     orbAppearanceAnimation('.hero__orb--1', 'topToBottom');

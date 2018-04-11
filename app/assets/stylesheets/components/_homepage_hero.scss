@@ -342,18 +342,26 @@
 @include media-breakpoint-up(lg) {
 
 .homepage .hero {
-  padding-top: 260px;
+  // padding-top: 260px;
+  padding-top: 0;
 
   .hero__title {
 
+    height: calc(100vh - 106px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     h1 {
+      margin-top: auto;
       margin-bottom: 8px;
       font-size: 64px;
       line-height: 64px;
     }
 
     h3 {
-      margin-bottom: 185px;
+      margin-top: 0;
+      margin-bottom: auto;
       font-size: 26px;
       line-height: 42px;
     }
@@ -446,9 +454,10 @@
 @include media-breakpoint-up(xl) {
 
 .homepage .hero {
-  padding-top: 355px;
 
   .hero__title {
+
+    height: calc(100vh - 145px);
 
     h1 {
       margin-bottom: 10px;
