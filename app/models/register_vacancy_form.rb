@@ -5,7 +5,6 @@ class RegisterVacancyForm < MailForm::Base
   attribute :company_name, validate: true
   attribute :role, validate: true
   attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :job_alerts
   attribute :attachment, attachment: true
   attribute :nickname, captcha: true
 
