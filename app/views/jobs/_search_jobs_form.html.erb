@@ -1,7 +1,7 @@
 <%= form_tag jobs_path, method: 'get', class: 'content__form  form__search-current-jobs', id: 'job-search-form', remote: (is_remote ||= false) do %>
 
-  <div class="form__input">
-    <%= text_field_tag :title, nil, placeholder: 'Add a Keyword / Job function' %>
+  <div class="form__select">
+    <%= select_tag :job_function, options_for_select(Job.job_functions_options, params[:job_function]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Job function'} %>
   </div>
 
   <div class="form__select">
@@ -27,5 +27,5 @@
 <% end %>
 
 <div class="text-left ml-1" >
-  <%= link_to 'Clear Filters', jobs_path %>
+  <%= link_to 'Clear Filters', jobs_path, class: 'search-filter__clear' %>
 </div>

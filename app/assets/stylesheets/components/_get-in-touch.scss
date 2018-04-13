@@ -45,7 +45,7 @@
 @include media-breakpoint-up(md) {
 
 .get-in-touch {
-  padding-top: 170px;
+  padding-top: 130px;
   padding-bottom: 130px;
   background-image: image-url("homepage_about-us-m.jpg");
 
@@ -71,7 +71,7 @@
 @include media-breakpoint-up(lg) {
 
 .get-in-touch {
-  padding-top: 270px;
+  padding-top: 150px;
   padding-bottom: 150px;
   background-image: image-url("homepage_about-us-l.jpg");
 
@@ -100,7 +100,7 @@
 @include media-breakpoint-up(xl) {
 
 .get-in-touch {
-  padding-top: 350px;
+  padding-top: 190px;
   padding-bottom: 190px;
   background-image: image-url("homepage_about-us-xl.jpg");
 

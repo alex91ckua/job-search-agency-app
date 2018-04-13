@@ -8,6 +8,7 @@
           Salary: 		<%= "#{Setting.currency_symbol}#{job.salary}" %><br>
           Location: 	<%= job.location %><br>
           Job Type: 	<%= job.job_type.humanize.capitalize %><br>
+          Job Function: 	<%= job.job_function.humanize.capitalize %><br>
           Reference: 	<%= job.ref_id %><br>
         </p>
         <div class="vacancy__descr">

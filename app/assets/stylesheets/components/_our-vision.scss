@@ -1,13 +1,19 @@
 .our-vision {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-image: image_url('homepage_about-us-l.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
 
   .our-vision__group-1 {
     margin-bottom: 30px;
     font-family: "MuseoSlab300";
     font-size: 20px;
     text-align: center;
-    color: #0E0E77;
+    color: $white;
   }
 
   .our-vision__group-2 {
@@ -37,6 +43,7 @@
 .our-vision {
   padding-top: 30px;
   padding-bottom: 30px;
+  background-image: image_url('homepage_about-us-m.jpg');
 
   .our-vision__group-2 {
     max-width: 100%;
@@ -56,6 +63,7 @@
 .our-vision {
   padding-top: 40px;
   padding-bottom: 40px;
+  background-image: image_url('homepage_about-us-l.jpg');
 
   .our-vision__group-1 {
     margin-bottom: 55px;
@@ -83,6 +91,7 @@
 .our-vision {
   padding-top: 50px;
   padding-bottom: 50px;
+  background-image: image_url('homepage_about-us-xl.jpg');
 
   .our-vision__group-1 {
     margin-bottom: 70px;

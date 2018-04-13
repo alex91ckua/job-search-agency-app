@@ -23,7 +23,7 @@ class JobsController < ApplicationController
   def filter_jobs
     @jobs = @jobs.location(params[:location]) if params[:location].present?
     @jobs = @jobs.job_type(params[:job_type]) if params[:job_type].present?
-    @jobs = @jobs.title(params[:title]) if params[:title].present?
+    @jobs = @jobs.job_function(params[:job_function]) if params[:job_function].present?
     @jobs = @jobs.sector(params[:sector]) if params[:sector].present?
     @jobs = @jobs.ordered_by_date if params[:order_by] == 'date'
     @jobs = @jobs.ordered_by_title if params[:order_by] == 'title'

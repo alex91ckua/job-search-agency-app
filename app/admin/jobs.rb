@@ -1,11 +1,13 @@
 ActiveAdmin.register Job do
-  permit_params :title, :job_type, :sector, :salary, :description, :company_id, :responsibilities, :location, :company_job_alerts
+  permit_params :title, :job_type, :sector, :salary, :description, :company_id,
+                :responsibilities, :location, :company_job_alerts, :job_function
 
   index do
     column :id
     column :ref_id
     column :title
     column :job_type
+    column :job_function
     column :sector
     column :salary
     column :description
@@ -22,6 +24,7 @@ ActiveAdmin.register Job do
       row :ref_id
       row :title
       row :job_type
+      row :job_function
       row :sector
       row :salary
       row :description
@@ -47,11 +50,12 @@ ActiveAdmin.register Job do
   form do |f|
     inputs do
       f.input :title
-      f.input :job_type, as: :select, :include_blank => '-- Please select --'
+      f.input :job_type, as: :select, include_blank: '-- Please select --'
+      f.input :job_function, as: :select, include_blank: '-- Please select --'
       f.input :sector
       f.input :salary
       f.input :description, as: :text
-      f.input :company, as: :select, :include_blank => '-- Please select --'
+      f.input :company, as: :select, include_blank: '-- Please select --'
       f.input :responsibilities, as: :text
       f.input :location
       f.input :company_job_alerts

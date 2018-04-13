@@ -273,8 +273,10 @@ $j( document ).on('turbolinks:load', function() {
         var heroBg = $j('.hero').css('background-color');
         if ($j(window).scrollTop() > 50) {
             $j('.header').css('background-color', heroBg);
+            $j('.header').addClass('header--scroll');
         } else {
             $j('.header').css('background-color', 'rgba(255,255,255,0)');
+            $j('.header').removeClass('header--scroll');
         }
     });
 
@@ -292,7 +294,7 @@ $j( document ).on('turbolinks:load', function() {
     if (AOS) {
         AOS.init({
             once: true,
-            offset: 20
+            offset: -300
         });
     };
 
