@@ -5,7 +5,7 @@ class ArticlesController < InheritedResources::Base
     @articles = @articles.where_tag(params[:order_by_tag]) if params[:order_by_tag].present?
     tags = Article.pluck(:tags)
     @striped_tags = []
-    tags.each { |t| t.split(',').each { |tag| @striped_tags.push tag.strip } }
+    tags.each { |t| t ? t.split(',').each { |tag| @striped_tags.push tag.strip } : '' }
   end
 
   def show
