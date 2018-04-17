@@ -13,6 +13,14 @@
     font-family: "MuseoSansRounded300";
     font-size: 12px;
     color: #4A4A4A;
+
+    td {
+      vertical-align: top;
+
+      &:nth-child(1) {
+        padding-right: 10px;
+      }
+    }
   }
 
   .job-detail__about-company {
@@ -86,6 +94,10 @@
     border-bottom-right-radius: 8px;
     font-size: 14.4px;
     line-height: 20px;
+
+    td:nth-child(1) {
+      padding-right: 15px;
+    }
   }
 
   .job-detail__about-company {
@@ -139,6 +151,10 @@
     margin-right: 0;
     margin-left: auto;
     margin-bottom: auto;
+
+    td:nth-child(1) {
+      padding-right: 20px;
+    }
   }
 
   .job-detail__about-role {

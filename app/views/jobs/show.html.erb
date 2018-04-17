@@ -20,11 +20,28 @@
       <div class="col-12">
         <div class="job-detail__container">
           <div class="job-detail__main-info">
-            SECTOR: <%= @job.sector %><br>
-            SALARY: <%= "#{Setting.currency_symbol}#{@job.salary}" %><br>
-            LOCATION: <%= @job.location %><br>
-            JOB TYPE: <%= @job.job_type.humanize.capitalize %><br>
-            REFERENCE: <%= @job.ref_id %>
+            <table>
+              <tr>
+                <td>SECTOR: </td>
+                <td><%= @job.sector %></td>
+              </tr>
+              <tr>
+                <td>SALARY:</td>
+                <td><%= "#{Setting.currency_symbol}#{@job.salary}" %></td>
+              </tr>
+              <tr>
+                <td>LOCATION:</td>
+                <td><%= @job.location %></td>
+              </tr>
+              <tr>
+                <td>JOB TYPE:</td>
+                <td><%= @job.job_type.humanize.capitalize %></td>
+              </tr>
+              <tr>
+                <td>REERENCE:</td>
+                <td><%= @job.ref_id %></td>
+              </tr>
+            </table>
           </div>
           <div class="job-detail__about-company">
             <%= @job.company.description %>
