@@ -13,7 +13,23 @@ class Job < ApplicationRecord
   has_many :candidates
 
   enum job_type: %i[full_time part_time]
-  enum job_function: %i[some_function_1 some_function_2]
+  enum job_function: %i[
+    finance_director
+    cfo
+    financial_controller
+    fp&a
+    business_partner
+    systems_accountant
+    finance_transformation
+    group_accounting
+    financial_accountant
+    management_accountant
+    finance_manager
+    internal_audit
+    project_accountant
+    commercial_analysis
+    financial_analysis
+  ]
 
   scope :salary_from, ->(salary_from) { where('salary >= ?', salary_from) }
   scope :salary_to, ->(salary_to) { where('salary <= ?', salary_to) }
