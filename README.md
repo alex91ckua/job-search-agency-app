@@ -11,10 +11,23 @@ Features
 * company can receive job alerts once someone applied to their job post
 * blog functionality
 
-
 Main gems
 
-* carrierwave
-* active admin
-* devise
+* carrierwave - as file uploader
+* active admin - simple admin panel
+* devise - admin login
 
+Installation
+
+```
+git clone https://github.com/alex91ckua/job-search-agency-app
+bundle
+rails db:create db:migrate
+rails s
+```
+
+Additionally you can add ActiveAdmin user like this
+
+```
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+```
