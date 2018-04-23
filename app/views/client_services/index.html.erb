@@ -1,19 +1,6 @@
 <% content_for :body_class, 'client-services' %>
 
-<div class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="hero__title  col-12">
-        <h1>Recruiting in a world where people count</h1>
-        <div class="round"></div>
-        <h3>Finance talent for your business</h3>
-      </div>
-    </div>
-  </div>
-  <div class="hero__orb  hero__orb--1">
-    <img src="<%= asset_path('orb-10.png') %>" alt="">
-  </div>
-</div>
+<%= render 'partials/text_page_hero_section.html', title: 'Recruiting in a world where people count', subtitle: 'Finance talent for your business' %>
 <div class="register-vacancy">
   <div class="container">
     <div class="row">

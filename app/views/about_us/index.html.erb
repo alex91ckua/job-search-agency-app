@@ -1,19 +1,6 @@
 <% content_for :body_class, 'about-us' %>
 
-<div class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="hero__title  col-12">
-        <h1>Strong Principles for Serious Recruitment</h1>
-        <div class="round"></div>
-        <h3>We aim to get it right for the right reasons</h3>
-      </div>
-    </div>
-  </div>
-  <div class="hero__orb  hero__orb--1">
-    <img src="<%= asset_path('orb-10.png') %>" alt="">
-  </div>
-</div>
+<%= render 'partials/text_page_hero_section.html', title: 'Strong Principles for Serious Recruitment', subtitle: 'We aim to get it right for the right reasons' %>
 <div class="stats">
   <div class="container">
     <div class="row">

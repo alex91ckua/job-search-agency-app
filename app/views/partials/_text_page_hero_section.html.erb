@@ -1,0 +1,22 @@
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1><%= title.html_safe %></h1>
+        <% if defined? subtitle %>
+          <div class="round"></div>
+          <h3><%= subtitle %></h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-10.png') %>" alt="">
+  </div>
+  <div class="hero__orb  hero__orb--2">
+    <img src="<%= asset_path('orb-2.png') %>" alt="">
+  </div>
+  <div class="hero__orb  hero__orb--3">
+    <img src="<%= asset_path('orb-3.png') %>" alt="">
+  </div>
+</div>

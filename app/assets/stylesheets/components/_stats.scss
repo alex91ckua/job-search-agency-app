@@ -75,8 +75,8 @@
   }
 
   .slider__item {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 50px;
+    padding-right: 50px;
     text-align: center;
 
     h2 {
@@ -141,6 +141,8 @@
   }
 
   .slider__item {
+    padding-left: 70px;
+    padding-right: 70px;
 
     h2 {
       margin-bottom: 10px;
@@ -159,10 +161,15 @@
 
 @include media-breakpoint-up(lg) {
 
-.stats {
-  padding-top: 85px;
-  padding-bottom: 85px;
-}
+  .stats {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .slider__item {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 

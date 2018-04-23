@@ -121,15 +121,36 @@
   }
 
   .hero__orb {
-    display: block;
-    position: absolute;
-    width: 465px;
-    height: 465px;
-    top: -60px;
-    left: calc(50% - 232.5px);
 
     img {
       width: 100%;
+    }
+
+    &--1 {
+      display: block;
+      position: absolute;
+      width: 465px;
+      height: 465px;
+      top: -60px;
+      left: calc(50% - 232.5px);
+    }
+
+    &--2 {
+      display: block;
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      top: 50px;
+      left: -200px;
+    }
+
+    &--3 {
+      display: block;
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      top: 140px;
+      right: -400px;
     }
   }
 }
@@ -146,7 +167,19 @@
   padding-bottom: 120px;
 
   .hero__orb {
-    top: -15px;
+
+    &--1 {
+      top: -15px;
+    }
+
+    &--2 {
+      left: auto;
+      right: calc(50% + 450px);
+    }
+
+    &--3 {
+      left: calc(50% + 400px)
+    }
   }
 }
 }

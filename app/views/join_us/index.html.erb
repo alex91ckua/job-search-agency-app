@@ -1,19 +1,6 @@
 <% content_for :body_class, 'contact-us contact-us--join-our-team' %>
 
-<div class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="hero__title  col-12">
-        <h1>Join our team</h1>
-        <div class="round"></div>
-        <h3>Help us put the pride back into recruiting.</h3>
-      </div>
-    </div>
-  </div>
-  <div class="hero__orb  hero__orb--1">
-    <img src="<%= asset_path('orb-10.png') %>" alt="">
-  </div>
-</div>
+<%= render 'partials/text_page_hero_section.html', title: 'Join our team', subtitle: 'Help us put the pride back into recruiting.' %>
 <div id="join-form" class="contact-us-form  contact-us-form--join-our-team">
   <div class="container">
     <div class="row">

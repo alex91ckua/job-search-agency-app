@@ -1,17 +1,6 @@
 <% content_for :body_class, 'contact-us  contact-us-clients' %>
 
-<div class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="hero__title  col-12">
-        <h1>Get in touch</h1>
-      </div>
-    </div>
-  </div>
-  <div class="hero__orb  hero__orb--1">
-    <img src="<%= asset_path('orb-10.png') %>" alt="">
-  </div>
-</div>
+<%= render 'partials/text_page_hero_section.html', title: 'Get in touch' %>
 <div class="contact-us-form  contact-us-form--clients">
   <div class="container">
     <div class="row">
@@ -19,9 +8,7 @@
         <div class="contact-us-form__container">
           <h3 class="contact-us-form__title">Register a Vacancy</h3>
           <p class="contact-us-form__descr">We’ll be in touch within one working day to discuss the job description and understand the uniqness of your organisation.</p>
-
           <%= render 'form' %>
-
         </div>
       </div>
     </div>

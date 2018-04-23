@@ -1,19 +1,6 @@
 <% content_for :body_class, 'current-jobs' %>
 
-<div class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="hero__title  col-12">
-        <h1>Top candidates.<br> Great companies.</h1>
-        <div class="round"></div>
-        <h3>We make the match</h3>
-      </div>
-    </div>
-  </div>
-  <div data-parallax="scroll" data-image-src="" class="hero__orb  hero__orb--1">
-    <img src="<%= asset_path('orb-10.png') %>" alt="">
-  </div>
-</div>
+<%= render 'partials/text_page_hero_section.html', title: 'Top candidates.<br> Great companies.', subtitle: 'We make the match' %>
 <div class="search-current-jobs">
   <div class="container">
     <div class="row">
