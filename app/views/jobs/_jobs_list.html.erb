@@ -3,14 +3,34 @@
     <% @jobs.each do |job| %>
       <%= link_to job, { :class => 'result__vacancy' } do %>
         <h4 class="vacancy__title"><%= job.title %></h4>
-        <p class="vacancy__details">
-          Sector: 		<%= job.sector %><br>
-          Salary: 		<%= "#{Setting.currency_symbol}#{job.salary}" %><br>
-          Location: 	<%= job.location %><br>
-          Job Type: 	<%= job.job_type.humanize.capitalize %><br>
-          Job Function: 	<%= job.job_function.humanize.capitalize %><br>
-          Reference: 	<%= job.ref_id %><br>
-        </p>
+        <div class="vacancy__details">
+          <table>
+            <tr>
+              <td>SECTOR: </td>
+              <td><%= job.sector %></td>
+            </tr>
+            <tr>
+              <td>SALARY:</td>
+              <td><%= "#{Setting.currency_symbol}#{job.salary}" %></td>
+            </tr>
+            <tr>
+              <td>LOCATION:</td>
+              <td><%= job.location %></td>
+            </tr>
+            <tr>
+              <td>JOB TYPE:</td>
+              <td><%= job.job_type.humanize.capitalize %></td>
+            </tr>
+            <tr>
+              <td>JOB FUNCTION:</td>
+              <td><%= job.job_function.humanize.capitalize %></td>
+            </tr>
+            <tr>
+              <td>REFERENCE:</td>
+              <td><%= job.ref_id %></td>
+            </tr>
+          </table>
+        </div>
         <div class="vacancy__descr">
           <div>
             <p><%= truncate(job.description, length: 50) %></p>
