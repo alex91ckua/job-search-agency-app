@@ -1,6 +1,10 @@
 <% content_for :body_class, 'current-jobs' %>
 
-<%= render 'partials/text_page_hero_section.html', title: @job.title, subtitle: "Job Ref: #{@job.ref_id}" %>
+<%= render 'partials/text_page_hero_section.html',
+           title: @job.title,
+           subtitle: "Job Ref: #{@job.ref_id}",
+           orb_2: 'orb-3.png'
+%>
 <div class="job-detail">
   <div class="container">
     <div class="row">
