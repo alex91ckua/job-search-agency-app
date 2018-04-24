@@ -334,14 +334,19 @@ $j( document ).on('turbolinks:load', function() {
         }, 900, 'swing');
     });
 
+    // Remove empty value attribute
+    $j(this).find('option').filter(function() {
+        return !this.value || $j.trim(this.value).length == 0;
+    }).removeAttr('value');
 
     // Initialize Select2
     $j('.js-select2').each(function () {
+        $j(this).prepend('<option></option>');
         var placeholder = $j(this).data('placeholder');
-
         $j(this).select2({
             minimumResultsForSearch: -1,
-            placeholder: placeholder
+            placeholder: placeholder,
+            allowClear: true
         });
     });
 

@@ -30,6 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  forms:
+    all_option_text: 'All'
+    clear_filters: 'Clear Filters'
   settings:
     attributes:
       email: 'Administration Email'

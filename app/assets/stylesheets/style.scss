@@ -56,3 +56,8 @@
 @import "components/blog-posts";
 @import "components/blog-post";
 
+// Custom fixes
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+  margin-right: 50px;
+}
