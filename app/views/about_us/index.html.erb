@@ -159,7 +159,7 @@
                 <div class="member__name"><%= person.name %></div>
                 <div class="member__avatar" style="background-image: url('<%= person.image.url %>')"></div>
                 <div class="member__info">
-                  <%= simple_format(person.description) %>
+                  <%= simple_format(person.description.html_safe) %>
                 </div>
               </div>
             <% end %>
