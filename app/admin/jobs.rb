@@ -21,7 +21,6 @@ ActiveAdmin.register Job do
 
   show do
     attributes_table do
-      selectable_column
       row :id
       row :ref_id
       row :title

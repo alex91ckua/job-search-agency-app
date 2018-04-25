@@ -21,10 +21,12 @@
               <td>JOB TYPE:</td>
               <td><%= job.job_type.humanize.capitalize %></td>
             </tr>
+            <% if job.job_function %>
             <tr>
               <td>JOB FUNCTION:</td>
               <td><%= job.job_function.humanize.capitalize %></td>
             </tr>
+            <% end %>
             <tr>
               <td>REFERENCE:</td>
               <td><%= job.ref_id %></td>

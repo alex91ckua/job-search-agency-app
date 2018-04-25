@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
   validates :title, presence: true
-  validates :job_function, presence: true
+  # validates :job_function, presence: true
   validates :job_type, presence: true
   validates :sector, presence: true
   validates :location, presence: true
@@ -12,6 +12,16 @@ class Job < ApplicationRecord
   }
   belongs_to :company, optional: true
   has_many :candidates
+
+  enum sector: [
+    'Technology, Media & Telecoms',
+    'Retail, FMCG & Hospitality',
+    'Private Equity',
+    'Infrastructure & Prof. Services',
+    'Property & Facility Management',
+    'Pharmaceuticals & Life Sciences',
+    'Mining, Energy & Oil & Gas'
+  ]
 
   enum job_type: %i[
     permament_full_time
@@ -65,7 +75,7 @@ class Job < ApplicationRecord
   end
 
   def self.sectors_options
-    distinct.pluck(:sector).map { |l| [l, l] }
+    sectors.map { |k, v| [k.humanize.capitalize, v] }
   end
 
 end

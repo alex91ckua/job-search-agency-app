@@ -28,10 +28,12 @@
                 <td>JOB TYPE:</td>
                 <td><%= @job.job_type.humanize.capitalize %></td>
               </tr>
+              <% if @job.job_function %>
               <tr>
                 <td>JOB FUNCTION:</td>
                 <td><%= @job.job_function.humanize.capitalize %></td>
               </tr>
+              <% end %>
               <tr>
                 <td>REERENCE:</td>
                 <td><%= @job.ref_id %></td>
@@ -44,15 +46,17 @@
             <% end %>
           </div>
           <div class="job-detail__about-role">
-            <%= @job.description %>
+            <%= @job.description.html_safe %>
           </div>
           <div class="job-detail__main-responsibilities">
-            <h4>Main responsibilities:</h4>
-            <ul>
-              <% @job.responsibilities.each_line do |responsibility| %>
-                <li><%= responsibility %></li>
-              <% end %>
-            </ul>
+            <% if @job.responsibilities %>
+              <h4>Main responsibilities:</h4>
+              <ul>
+                <% @job.responsibilities.each_line do |responsibility| %>
+                  <li><%= responsibility %></li>
+                <% end %>
+              </ul>
+            <% end %>
           </div>
           <div class="job-detail__back-btn">
             <%= link_to 'back to search results', jobs_path %>
