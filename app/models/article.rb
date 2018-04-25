@@ -10,6 +10,6 @@ class Article < ApplicationRecord
   scope :where_tag, ->(tag) { where('tags ilike ?', "%#{tag}%") }
 
   def should_generate_new_friendly_id?
-    title_changed?
+    title_changed? || new_record? || slug.blank?
   end
 end
