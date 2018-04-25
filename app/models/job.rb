@@ -12,7 +12,13 @@ class Job < ApplicationRecord
   belongs_to :company
   has_many :candidates
 
-  enum job_type: %i[full_time part_time]
+  enum job_type: %i[
+    permament_full_time
+    permament_part_time
+    fixed_term_full_time
+    fixed_term_part_time
+    contract
+  ]
   enum job_function: %i[
     finance_director
     cfo
