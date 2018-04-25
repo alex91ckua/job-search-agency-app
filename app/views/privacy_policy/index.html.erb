@@ -1,0 +1,13 @@
+<% content_for :body_class, 'contact-us' %>
+
+<%= render 'partials/text_page_hero_section.html',
+           title: 'Privacy Policy',
+           orb_1: 'orb-3.png',
+           orb_2: 'orb-2.png',
+           orb_3: 'orb-3.png'
+%>
+<div class="container">
+  <div class="row" >
+    <div class="plr-5 pt-5 col-md-12" style="background: #fff;" ><%= @privacy_policy_text.html_safe %></div>
+  </div>
+</div>

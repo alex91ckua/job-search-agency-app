@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'join-us', to: 'join_us#create'
   get 'contact-us', to: 'contact_us#index'
   get 'about-us', to: 'about_us#index'
+  get 'privacy-policy', to: 'privacy_policy#index'
 
   scope 'contact-us' do
     get 'register-a-vacancy', to: 'contact_client#index'

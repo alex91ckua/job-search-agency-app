@@ -8,6 +8,7 @@ defaults: &defaults
   google_play: ''
   app_store: ''
   google_static_maps_key: ''
+  privacy_policy_text: ''
 
 development:
   <<: *defaults

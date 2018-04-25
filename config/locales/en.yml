@@ -43,6 +43,7 @@ en:
       app_store: 'App Store URL'
       currency_symbol: 'Currency Symbol ("£" by default)'
       google_static_maps_key: 'Google Static Maps API Key'
+      privacy_policy_text: 'Privacy Policy Text'
   callback_form:
     subject: 'Call me Back request - Global Accounting'
   register_vacancy_form:
