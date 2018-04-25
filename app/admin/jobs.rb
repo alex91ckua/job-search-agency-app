@@ -3,6 +3,7 @@ ActiveAdmin.register Job do
                 :responsibilities, :location, :company_job_alerts, :job_function, :ref_id
 
   index do
+    selectable_column
     column :id
     column :ref_id
     column :title
@@ -20,6 +21,7 @@ ActiveAdmin.register Job do
 
   show do
     attributes_table do
+      selectable_column
       row :id
       row :ref_id
       row :title

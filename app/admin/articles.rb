@@ -11,6 +11,7 @@ ActiveAdmin.register Article do
   end
 
   index do
+    selectable_column
     column :id
     column :title
     column :subtitle

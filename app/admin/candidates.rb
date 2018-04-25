@@ -2,6 +2,7 @@ ActiveAdmin.register Candidate do
   actions :index, :show, :destroy
 
   index do
+    selectable_column
     column :id
     column :first_name
     column :last_name
