@@ -46,7 +46,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # end
 
   # Configure fog to serve using public URL
-  # def fog_public
-  #   false
-  # end
+  def fog_public
+    false
+  end
 end
