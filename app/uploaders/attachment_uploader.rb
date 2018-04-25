@@ -44,4 +44,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  # Configure fog to serve using public URL
+  def fog_public
+    false
+  end
 end
