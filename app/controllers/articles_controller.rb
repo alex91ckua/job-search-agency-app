@@ -1,7 +1,7 @@
 class ArticlesController < InheritedResources::Base
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc)
     @articles = @articles.where_tag(params[:order_by_tag]) if params[:order_by_tag].present?
     tags = Article.pluck(:tags)
     @striped_tags = []
@@ -11,7 +11,7 @@ class ArticlesController < InheritedResources::Base
 
   def show
     @article = Article.friendly.find(params[:id])
-    @related_articles = Article.where.not(id: params[:id]).limit(9)
+    @related_articles = Article.order('RANDOM()').where.not(slug: params[:id]).limit(15)
   end
 
   private
