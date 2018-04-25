@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-  permit_params :title, :subtitle, :description, :tags, :admin_user_id, :image
+  permit_params :title, :subtitle, :description, :tags, :admin_user_id, :image, :created_at
   menu label: 'Blog'
 
   index do
@@ -59,6 +59,7 @@ ActiveAdmin.register Article do
             }
           }
       f.input :tags
+      f.input :created_at
       f.input :admin_user_id, as: :select, :collection => Hash[AdminUser.all.map{|u| ["#{u.first_name} #{u.last_name}",u.id]}]
     end
     f.actions
