@@ -121,8 +121,26 @@ GEM
       dry-logic (~> 0.4, >= 0.4.2)
       inflecto (~> 0.0.0, >= 0.0.2)
     erubi (1.7.1)
+    excon (0.62.0)
     execjs (2.7.0)
     ffi (1.9.23)
+    fog-aws (3.0.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (2.1.0)
+      builder
+      excon (~> 0.58)
+      formatador (~> 0.2)
+      mime-types
+    fog-json (1.1.0)
+      fog-core (~> 2.0)
+      multi_json (~> 1.10)
+    fog-xml (0.1.3)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (0.2.5)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -139,6 +157,7 @@ GEM
       has_scope (~> 0.6)
       railties (>= 4.2, <= 5.2)
       responders
+    ipaddress (0.8.3)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -308,6 +327,7 @@ DEPENDENCIES
   carrierwave (~> 1.2.2)
   coffee-rails (~> 4.2)
   devise
+  fog-aws
   jbuilder (~> 2.5)
   letter_opener
   listen (>= 3.0.5, < 3.2)
