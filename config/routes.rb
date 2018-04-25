@@ -26,7 +26,10 @@ Rails.application.routes.draw do
   end
 
   # redirects from old website page
+  get '/blog', to: redirect('/articles', status: 301)
   get '/team', to: redirect('/about-us', status: 301)
+  get '/testimonials', to: redirect('/about-us', status: 301)
+  get '/term-of-use', to: redirect('/', status: 301)
   get '/vacancies', to: redirect('/jobs', status: 301)
   get '/contact', to: redirect('/contact-us', status: 301)
   get '/finance-accounting', to: redirect('/about-us', status: 301)
