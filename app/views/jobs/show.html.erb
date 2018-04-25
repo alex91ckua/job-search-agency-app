@@ -40,13 +40,12 @@
               </tr>
             </table>
           </div>
-          <% if @job.company %>
           <div class="job-detail__about-company">
+            <% if @job.company %>
               <%= @job.company.description %>
+            <% end %>
           </div>
-          <% end %>
-
-          <div class="job-detail__about-role" style="<%= @job.company ? '' : 'order: 1;' %>" >
+          <div class="job-detail__about-role">
             <%= @job.description.html_safe %>
           </div>
           <div class="job-detail__main-responsibilities">

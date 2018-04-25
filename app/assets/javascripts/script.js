@@ -266,7 +266,11 @@ $j(document).on("turbolinks:before-cache", function() {
     $j("#header").removeClass("header--open");
 })
 
+
+
 $j( document ).on('turbolinks:load', function() {
+
+
 
     // Add/remove background to header on scroll
     $j(window).on("scroll", function() {
@@ -288,15 +292,6 @@ $j( document ).on('turbolinks:load', function() {
             scrollTop: $panel.offset().top - headerHeight + 2
         }, 1000);
     });
-
-
-    // Initialize AOS
-    if (AOS) {
-        AOS.init({
-            once: true,
-            offset: -300
-        });
-    };
 
     // Initialize orbAppearanceAnimation
     orbAppearanceAnimation('.hero__orb--1', 'topToBottom');
@@ -432,4 +427,13 @@ $j( document ).on('turbolinks:load', function() {
         }
     })
 
+
+    // Initialize AOS
+    if (AOS) {
+        AOS.init({
+            once: true,
+            offset: -300
+        });
+    };
 });
+
