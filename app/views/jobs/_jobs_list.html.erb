@@ -35,7 +35,7 @@
         </div>
         <div class="vacancy__descr">
           <div>
-            <p><%= truncate(job.description, length: 50) %></p>
+            <p><%= truncate(strip_tags(job.description.html_safe), length: 300) %></p>
           </div>
         </div>
       <% end %>

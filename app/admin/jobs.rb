@@ -56,7 +56,14 @@ ActiveAdmin.register Job do
       f.input :ref_id
       f.input :sector
       f.input :salary
-      f.input :description, as: :text
+      f.input :description, as: :froala_editor, input_html:
+          {
+              data: {
+                  options: {
+                      height: 300
+                  }
+              }
+          }
       f.input :company, as: :select, include_blank: '-- Please select --'
       f.input :responsibilities, as: :text
       f.input :location
