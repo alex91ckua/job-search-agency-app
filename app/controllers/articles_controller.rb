@@ -6,6 +6,7 @@ class ArticlesController < InheritedResources::Base
     tags = Article.pluck(:tags)
     @striped_tags = []
     tags.each { |t| t ? t.split(',').each { |tag| @striped_tags.push tag.strip } : '' }
+    @striped_tags = @striped_tags.uniq # remove duplicates
   end
 
   def show
