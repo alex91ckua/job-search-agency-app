@@ -5,6 +5,7 @@ class Job < ApplicationRecord
   validates :sector, presence: true
   validates :location, presence: true
   validates :description, presence: true
+  validates :ref_id, presence: true, uniqueness: true
   validates :salary, presence: true, numericality: {
     only_integer: true,
     greater_than: 0
@@ -49,10 +50,6 @@ class Job < ApplicationRecord
   scope :title, ->(title) { where('title ilike ?', "%#{title}%") }
   scope :ordered_by_title, -> { order(title: :asc) }
   scope :ordered_by_date, -> { order(created_at: :desc) }
-
-  def ref_id
-    'JC%.5d' % id
-  end
 
   def self.job_functions_options
     # or use the I18n module to humanize the keys

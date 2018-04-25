@@ -1,6 +1,6 @@
 ActiveAdmin.register Job do
   permit_params :title, :job_type, :sector, :salary, :description, :company_id,
-                :responsibilities, :location, :company_job_alerts, :job_function
+                :responsibilities, :location, :company_job_alerts, :job_function, :ref_id
 
   index do
     column :id
@@ -52,6 +52,7 @@ ActiveAdmin.register Job do
       f.input :title
       f.input :job_type, as: :select, include_blank: '-- Please select --'
       f.input :job_function, as: :select, include_blank: '-- Please select --'
+      f.input :ref_id
       f.input :sector
       f.input :salary
       f.input :description, as: :text
