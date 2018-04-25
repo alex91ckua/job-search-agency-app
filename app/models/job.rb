@@ -10,7 +10,7 @@ class Job < ApplicationRecord
     only_integer: true,
     greater_than: 0
   }
-  belongs_to :company
+  belongs_to :company, optional: true
   has_many :candidates
 
   enum job_type: %i[

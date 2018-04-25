@@ -39,7 +39,9 @@
             </table>
           </div>
           <div class="job-detail__about-company">
-            <%= @job.company.description %>
+            <% if @job.company %>
+              <%= @job.company.description %>
+            <% end %>
           </div>
           <div class="job-detail__about-role">
             <%= @job.description %>
