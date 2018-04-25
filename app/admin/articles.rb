@@ -2,6 +2,14 @@ ActiveAdmin.register Article do
   permit_params :title, :subtitle, :description, :tags, :admin_user_id, :image, :created_at
   menu label: 'Blog'
 
+  controller do
+    def find_resource
+      scoped_collection.where(slug: params[:id]).last!
+    rescue ActiveRecord::RecordNotFound
+      scoped_collection.find(params[:id])
+    end
+  end
+
   index do
     column :id
     column :title

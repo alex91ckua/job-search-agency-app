@@ -9,7 +9,7 @@ class ArticlesController < InheritedResources::Base
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     @related_articles = Article.where.not(id: params[:id]).limit(9)
   end
 
