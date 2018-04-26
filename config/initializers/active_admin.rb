@@ -292,3 +292,9 @@ ActiveAdmin.setup do |config|
   #
   # config.order_clause = MyOrderClause
 end
+
+class ActiveAdmin::BaseController
+  if Rails.env.production?
+    # http_basic_authenticate_with :name => rails.application.secrets[:http_basic_auth_user], :password => rails.application.secrets[:http_basic_auth_pwd]
+  end
+end
