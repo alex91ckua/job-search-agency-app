@@ -21,7 +21,7 @@ ActiveAdmin.register Article do
       end
     end
     column :description do |a|
-      truncate(a.description, length: 100)
+      truncate(strip_tags(a.description), length: 100)
     end
     column :tags
     column :admin_user do |a|
