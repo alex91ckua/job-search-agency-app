@@ -9,7 +9,7 @@
   </div>
 
   <div class="form__select">
-    <%= select_tag :salary_range, options_for_select([["#{Setting.currency_symbol}10000-#{Setting.currency_symbol}20000", '10000-20000'], ["#{Setting.currency_symbol}20000-#{Setting.currency_symbol}40000", '20000-40000'], ["#{Setting.currency_symbol}40000-#{Setting.currency_symbol}100000", '20000-100000']]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Salary range'} %>
+    <%= select_tag :salary_range, options_for_select([["#{Setting.currency_symbol}10000-#{Setting.currency_symbol}20000", '10000-20000'], ["#{Setting.currency_symbol}20000-#{Setting.currency_symbol}40000", '20000-40000'], ["#{Setting.currency_symbol}40000-#{Setting.currency_symbol}100000", '20000-100000'], ["#{Setting.currency_symbol}100000+", '100000-999999']]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Salary range'} %>
   </div>
 
   <div class="form__select">
