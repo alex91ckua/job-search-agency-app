@@ -3,4 +3,5 @@ class Staff < ApplicationRecord
   validates :image, presence: true
   validates :description, presence: true
   mount_uploader :image, AttachmentUploader
+  acts_as_list
 end

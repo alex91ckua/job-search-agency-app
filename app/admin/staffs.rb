@@ -2,6 +2,24 @@ ActiveAdmin.register Staff do
 permit_params :name, :image, :description
 menu parent: 'Settings'
 
+config.sort_order = 'position_asc' # assuming Widget.insert_at modifies the `position` attribute
+config.paginate   = false
+reorderable
+
+  # Reorderable Index Table
+  index as: :reorderable_table do
+    column :id
+    column :name
+    column :image do |a|
+      if a.image.url
+        image_tag a.image.url, width: 100
+      end
+    end
+    column :description do |staff|
+      truncate(strip_tags(staff.description), length: 100)
+    end
+  end
+
   form do |f|
     inputs do
       f.input :name

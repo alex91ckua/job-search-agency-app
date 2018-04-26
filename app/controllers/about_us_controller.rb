@@ -1,6 +1,6 @@
 class AboutUsController < ApplicationController
   def index
-    @staff = Staff.all
+    @staff = Staff.all.order(position: :asc)
 
     set_meta_tags title: 'About Us',
                   description: 'Our Finance and Accounting practice means we
