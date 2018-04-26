@@ -78,4 +78,18 @@ class Job < ApplicationRecord
     sectors.map { |k, v| [k.humanize.capitalize, v] }
   end
 
+  def self.salary_ranges_options
+    [
+        ["#{Setting.currency_symbol}40000-#{Setting.currency_symbol}60000", '40000-60000'],
+        ["#{Setting.currency_symbol}60000-#{Setting.currency_symbol}80000", '60000-80000'],
+        ["#{Setting.currency_symbol}80000-#{Setting.currency_symbol}100000", '80000-100000'],
+        ["#{Setting.currency_symbol}100000-#{Setting.currency_symbol}150000", '100000-150000'],
+        ["#{Setting.currency_symbol}150000-#{Setting.currency_symbol}200000", '150000-200000'],
+        ["#{Setting.currency_symbol}200000-#{Setting.currency_symbol}250000", '200000-250000'],
+        ["#{Setting.currency_symbol}250000-#{Setting.currency_symbol}350000", '250000-350000'],
+        ["#{Setting.currency_symbol}350000+", '350000-9999999']
+    ]
+    # 40000-60000, 60000-80000, 80000-100000, 100000-150000, 150000-200000, 200000-250000, 250000-350000, 350000+
+  end
+
 end
