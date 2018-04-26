@@ -8,6 +8,7 @@ reorderable
 
   # Reorderable Index Table
   index as: :reorderable_table do
+    selectable_column
     column :id
     column :name
     column :image do |a|
@@ -18,6 +19,7 @@ reorderable
     column :description do |staff|
       truncate(strip_tags(staff.description), length: 100)
     end
+    actions
   end
 
   form do |f|
