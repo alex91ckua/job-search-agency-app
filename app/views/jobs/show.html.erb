@@ -10,54 +10,61 @@
     <div class="row">
       <div class="col-12">
         <div class="job-detail__container">
-          <div class="job-detail__main-info">
-            <table>
-              <tr>
-                <td>SECTOR: </td>
-                <td><%= @job.sector %></td>
-              </tr>
-              <tr>
-                <td>SALARY:</td>
-                <td><%= "#{Setting.currency_symbol}#{@job.salary}" %></td>
-              </tr>
-              <tr>
-                <td>LOCATION:</td>
-                <td><%= @job.location %></td>
-              </tr>
-              <tr>
-                <td>JOB TYPE:</td>
-                <td><%= @job.job_type.humanize.capitalize %></td>
-              </tr>
-              <% if @job.job_function %>
-              <tr>
-                <td>JOB FUNCTION:</td>
-                <td><%= @job.job_function.humanize.capitalize %></td>
-              </tr>
-              <% end %>
-              <tr>
-                <td>REFERENCE:</td>
-                <td><%= @job.ref_id %></td>
-              </tr>
-            </table>
-          </div>
-          <div class="job-detail__about-company">
-            <% if @job.company %>
-              <%= @job.company.description %>
-            <% end %>
-          </div>
-          <div class="job-detail__about-role">
-            <%= @job.description.html_safe %>
-          </div>
-          <div class="job-detail__main-responsibilities">
-            <% if @job.responsibilities %>
-              <h4>Main responsibilities:</h4>
-              <ul>
-                <% @job.responsibilities.each_line do |responsibility| %>
-                  <li><%= responsibility %></li>
+          <div class="job-detail__column-1">
+            <div class="job-detail__main-info">
+              <table>
+                <tr>
+                  <td>SECTOR: </td>
+                  <td><%= @job.sector %></td>
+                </tr>
+                <tr>
+                  <td>SALARY:</td>
+                  <td><%= "#{Setting.currency_symbol}#{@job.salary}" %></td>
+                </tr>
+                <tr>
+                  <td>LOCATION:</td>
+                  <td><%= @job.location %></td>
+                </tr>
+                <tr>
+                  <td>JOB TYPE:</td>
+                  <td><%= @job.job_type.humanize.capitalize %></td>
+                </tr>
+                <% if @job.job_function %>
+                <tr>
+                  <td>JOB FUNCTION:</td>
+                  <td><%= @job.job_function.humanize.capitalize %></td>
+                </tr>
                 <% end %>
-              </ul>
-            <% end %>
+                <tr>
+                  <td>REFERENCE:</td>
+                  <td><%= @job.ref_id %></td>
+                </tr>
+              </table>
+            </div>
+            <div class="job-detail__main-responsibilities">
+              <% unless @job.responsibilities.empty? %>
+                <h4>Main responsibilities:</h4>
+                <ul>
+                  <% @job.responsibilities.each_line do |responsibility| %>
+                    <li><%= responsibility %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
           </div>
+
+          <div class="job-detail__column-2" >
+            <% if @job.company %>
+              <div class="job-detail__about-company">
+                  <%= @job.company.description %>
+              </div>
+            <% end %>
+            <div class="job-detail__about-role">
+              <%= @job.description.html_safe %>
+            </div>
+          </div>
+
+
           <div class="job-detail__back-btn">
             <%= link_to 'back to search results', jobs_path %>
           </div>

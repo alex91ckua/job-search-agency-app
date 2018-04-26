@@ -49,6 +49,7 @@
     }
 
     ul {
+      margin-bottom: 0;
       padding: 0;
       list-style: none;
     }
@@ -60,7 +61,7 @@
 
       &::before {
         content: "•";
-        margin-right: 5px;
+        margin-right: 15px;
       }
     }
   }
@@ -118,7 +119,9 @@
     }
 
     li {
+      margin-bottom: 5px;
       font-size: 14.4px;
+      line-height: 18px;
     }
   }
 }
@@ -133,25 +136,30 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     border-radius: 8px;
   }
 
-  .job-detail__about-company {
-    order: 1;
+  .job-detail__column-1 {
+    order: 2;
     width: 45%;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .job-detail__column-2 {
+    order: 1;
     margin-right: auto;
-    margin-bottom: auto;
-    padding-top: 40px;
+    margin-left: 0;
+    width: 45%;
+  }
+
+  .job-detail__about-company {
+    padding-top: 20px;
+    margin-bottom: 0;
   }
 
   .job-detail__main-info {
-    order: 2;
-    width: 45%;
-    margin-right: 0;
-    margin-left: auto;
-    margin-bottom: auto;
 
     td:nth-child(1) {
       padding-right: 20px;
@@ -159,27 +167,16 @@
   }
 
   .job-detail__about-role {
-    order: 3;
-    width: 45%;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: auto;
-    margin-bottom: auto;
-    padding-top: 40px;
+    padding-top: 20px;
+    margin-bottom: 0;
   }
 
   .job-detail__main-responsibilities {
-    order: 4;
-    width: 45%;
-    margin-right: 0;
-    margin-left: auto;
-    margin-top: 0;
-    margin-bottom: auto;
     padding-top: 40px;
   }
 
   .job-detail__back-btn {
-    order: 5;
+    order: 3;
     width: 100%;
     padding-top: 30px;
     text-align: left;

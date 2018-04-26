@@ -36,7 +36,9 @@
             <div class="content__main-info">
               Date: 		<%= @article.created_at.strftime("%d %B %Y") %><br>
               Author: 	<%= "#{@article.admin_user.first_name} #{@article.admin_user.last_name}" %><br>
+              <% if @article.tags %>
               Tags: 		<%= @article.tags %>
+              <% end %>
             </div>
           </div>
           <div class="content__back-to-result">
