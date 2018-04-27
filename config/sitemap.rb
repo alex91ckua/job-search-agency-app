@@ -1,8 +1,7 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = Setting.primary_site_url
 
-SitemapGenerator::Sitemap.public_path = 'tmp/'
-SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.public_path = 'tmp/sitemaps/'
 
 SitemapGenerator::Sitemap.create do
 
