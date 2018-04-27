@@ -1,4 +1,6 @@
 .quotes {
+  background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Crect fill='%23fafafa' id='canvas_background' height='5' width='5' /%3E%3C/g%3E%3Cg%3E%3Cellipse stroke='%23fafafa' ry='1' rx='1' id='svg_4' cy='2.5' cx='2.5' stroke-width='0' fill='%23e1e1e1'/%3E%3C/g%3E%3C/svg%3E%0A");
+  background-repeat: repeat;
   background-color: rgba(209,214,217,0.25);
   padding-top: 50px;
   padding-bottom: 50px;
@@ -94,6 +96,9 @@
   }
 }
 
+.homepage .quotes {
+  padding-bottom: 180px;
+}
 
 @include media-breakpoint-up(md) {
 
@@ -198,6 +203,9 @@
     }
   }
 }
+  .homepage .quotes {
+    padding-bottom: 200px;
+  }
 }
 
 
@@ -237,6 +245,11 @@
     }
   }
 }
+
+  .homepage .quotes {
+    padding-bottom: 250px;
+  }
+
 }
 
 
@@ -297,4 +310,8 @@
     }
   }
 }
+
+  .homepage .quotes {
+    padding-bottom: 320px;
+  }
 }

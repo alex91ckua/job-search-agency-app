@@ -1,12 +1,26 @@
 .homepage .about-us {
   padding-top: 120px;
   padding-bottom: 120px;
-  background-image: image-url("homepage_about-us-l.jpg");
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+  //background-image: image-url("homepage_about-us-l.jpg");
+  //background-position: center;
+  //background-attachment: fixed;
+  //background-size: cover;
+  //background-repeat: no-repeat;
   text-align: center;
+
+  &:before {
+    content: '';
+    background-image: image_url("homepage_about-us-l.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
   h4 {
     margin-bottom: 20px;
@@ -47,7 +61,10 @@
 .homepage .about-us {
   padding-top: 130px;
   padding-bottom: 130px;
-  background-image: image-url("homepage_about-us-m.jpg");
+
+  &:before {
+    background-image: image-url("homepage_about-us-m.jpg");
+  }
 
   h4 {
     margin-bottom: 30px;
@@ -73,7 +90,10 @@
 .homepage .about-us {
   padding-top: 150px;
   padding-bottom: 150px;
-  background-image: image-url("homepage_about-us-l.jpg");
+
+  &:before {
+    background-image: image-url("homepage_about-us-l.jpg");
+  }
 
   h4 {
     margin-bottom: 35px;
@@ -102,7 +122,10 @@
 .homepage .about-us {
   padding-top: 190px;
   padding-bottom: 190px;
-  background-image: image-url("homepage_about-us-xl.jpg");
+
+  &:before {
+    background-image: image_url("homepage_about-us-xl.jpg");
+  }
 
   h4 {
     margin-bottom: 45px;

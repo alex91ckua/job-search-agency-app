@@ -1,6 +1,8 @@
 .register-interest {
   padding-top: 15px;
   padding-bottom: 15px;
+  background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Crect fill='%23fafafa' id='canvas_background' height='5' width='5' /%3E%3C/g%3E%3Cg%3E%3Cellipse stroke='%23fafafa' ry='1' rx='1' id='svg_4' cy='2.5' cx='2.5' stroke-width='0' fill='%23e1e1e1'/%3E%3C/g%3E%3C/svg%3E%0A");
+  background-repeat: repeat;
 
   .register-interest__container {
     padding: 25px 15px;
@@ -28,6 +30,13 @@
   }
 }
 
+.current-jobs .register-interest {
+  padding-bottom: 130px;
+}
+
+.job-detail + .register-interest {
+  padding-bottom: 15px;
+}
 
 @include media-breakpoint-up(md) {
 
@@ -56,8 +65,15 @@
     text-align: left;
   }
 }
-}
 
+  .current-jobs .register-interest {
+    padding-bottom: 150px;
+  }
+
+  .job-detail + .register-interest {
+    padding-bottom: 15px;
+  }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -100,6 +116,14 @@
     }
   }
 }
+
+  .current-jobs .register-interest {
+    padding-bottom: 200px;
+  }
+
+  .job-detail + .register-interest {
+    padding-bottom: 35px;
+  }
 }
 
 
@@ -129,4 +153,12 @@
     line-height: 43.7px;
   }
 }
+
+  .current-jobs .register-interest {
+    padding-bottom: 250px;
+  }
+
+  .job-detail + .register-interest {
+    padding-bottom: 35px;
+  }
 }

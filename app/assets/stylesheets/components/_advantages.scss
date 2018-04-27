@@ -1,11 +1,10 @@
 .advantages {
-  margin-top: 150px;
   padding-top: 20px;
-  background-image: url("../img/homepage_about-us-l.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  //background-image: image_url("homepage_about-us-l.jpg");
+  //background-attachment: fixed;
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
   text-align: center;
 
   .advantages__title {
@@ -122,9 +121,9 @@
 @include media-breakpoint-up(md) {
 
 .advantages {
-  margin-top: 200px;
+  //margin-top: 200px;
   padding-top: 60px;
-  background-image: image-url("homepage_about-us-m.jpg");
+  //background-image: image-url("homepage_about-us-m.jpg");
 
   .advantages__title {
     margin-top: -170px;
@@ -240,8 +239,7 @@
 @include media-breakpoint-up(lg) {
 
 .advantages {
-  margin-top: 250px;
-  background-image: image_url('homepage_about-us-l.jpg');
+  //background-image: image_url('homepage_about-us-l.jpg');
 
   .advantages__title {
     margin-top: -200px;
@@ -341,9 +339,8 @@
 @include media-breakpoint-up(xl) {
 
 .advantages {
-  margin-top: 300px;
   padding-top: 70px;
-  background-image: image_url('homepage_about-us-xl.jpg');
+  //background-image: image_url('homepage_about-us-xl.jpg');
 
   .advantages__title {
     margin-top: -250px;

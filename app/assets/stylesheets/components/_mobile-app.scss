@@ -1,12 +1,20 @@
 .mobile-app {
-  background-image: image-url("mobile-app_bg-xs.jpg");
-  background-position: center;
   padding-top: 50px;
   padding-bottom: 40px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  &::before {
+    content: '';
+    background-image: image_url("mobile-app_bg-xs.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
   .mobile-app__container {
     display: flex;
@@ -75,7 +83,10 @@
 @include media-breakpoint-up(md) {
 
 .mobile-app {
-  background-image: image-url("mobile-app_bg-l.jpg");
+
+  &::before {
+    background-image: image-url("mobile-app_bg-l.jpg");
+  }
 
   .mobile-app__phone-img {
     width: 120px;
@@ -169,6 +180,9 @@
 .mobile-app {
   padding-top: 100px;
   padding-bottom: 100px;
-  background-image: image-url("mobile-app_bg-xl.jpg");
+
+  &::before {
+    background-image: image-url("mobile-app_bg-xl.jpg");
+  }
 }
 }

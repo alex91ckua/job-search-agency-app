@@ -1,10 +1,5 @@
 .our-team {
   padding-top: 20px;
-  background-image: image_url('homepage_about-us-l.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
 
   .our-team__members {
@@ -174,7 +169,6 @@
 .our-team {
   padding-top: 30px;
   padding-bottom: 30px;
-  background-image: image_url('homepage_about-us-m.jpg');
 
   .our-team__members {
     margin-bottom: -80px;
@@ -341,7 +335,6 @@
 
 .our-team {
   padding-top: 80px;
-  background-image: image_url('homepage_about-us-l.jpg');
 
   .our-team__members {
     margin-bottom: -110px;
@@ -476,7 +469,6 @@
 @include media-breakpoint-up(xl) {
 
 .our-team {
-  background-image: image_url('homepage_about-us-xl.jpg');
 
   .our-team__members {
     padding: 40px;
