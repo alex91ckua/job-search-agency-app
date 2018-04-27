@@ -17,10 +17,11 @@ class Job < ApplicationRecord
     'Technology, Media & Telecoms',
     'Retail, FMCG & Hospitality',
     'Private Equity',
-    'Infrastructure & Prof. Services',
+    'Infrastructure',
     'Property & Facility Management',
     'Pharmaceuticals & Life Sciences',
-    'Mining, Energy & Oil & Gas'
+    'Mining, Energy & Oil & Gas',
+    'Professional Services'
   ]
 
   enum job_type: %i[
