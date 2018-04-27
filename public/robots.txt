@@ -1,1 +1,6 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-Agent: *
+
+Allow: /
+Disallow: /admin
+
+Sitemap: https://s3.eu-west-2.amazonaws.com/global-accounting-network/sitemaps/sitemap.xml.gz
