@@ -19,3 +19,8 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+// remove copy message
+a[href="https://www.froala.com/wysiwyg-editor?k=u"] {
+  display: none !important;
+}
