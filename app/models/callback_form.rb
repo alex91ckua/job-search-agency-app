@@ -1,7 +1,7 @@
 class CallbackForm < MailForm::Base
   attribute :first_name, validate: true
   attribute :last_name, validate: true
-  attribute :request_type, validate: %w[General Purpose]
+  attribute :request_type, validate: %w[General Propose]
   attribute :phone, validate: true
   attribute :company_name
   attribute :call_time
