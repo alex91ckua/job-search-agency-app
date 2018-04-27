@@ -42,7 +42,7 @@
               </table>
             </div>
             <div class="job-detail__main-responsibilities">
-              <% unless @job.responsibilities.empty? %>
+              <% if @job.responsibilities %>
                 <h4>Main responsibilities:</h4>
                 <ul>
                   <% @job.responsibilities.each_line do |responsibility| %>
