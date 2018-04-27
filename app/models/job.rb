@@ -24,8 +24,8 @@ class Job < ApplicationRecord
   ]
 
   enum job_type: %i[
-    permament_full_time
-    permament_part_time
+    permanent_full_time
+    permanent_part_time
     fixed_term_full_time
     fixed_term_part_time
     contract
