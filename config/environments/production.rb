@@ -97,4 +97,7 @@ Rails.application.configure do
       :user_name => ENV['GMAIL_SMTP_USERNAME'],
       :password => ENV['GMAIL_SMTP_PASSWORD'],
   }
+
+  # Google Analytics
+  GA.tracker = 'UA-57002128-1'
 end
