@@ -11,11 +11,11 @@ ActiveAdmin.register Job do
     column :job_function
     column :sector
     column :salary
-    column :description do |a|
-      truncate(strip_tags(a.description), length: 100)
-    end
+    # column :description do |a|
+    #   truncate(strip_tags(a.description), length: 100)
+    # end
     column :company
-    column :responsibilities
+    # column :responsibilities
     column :location
     column :company_job_alerts
     actions
