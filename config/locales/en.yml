@@ -44,6 +44,7 @@ en:
       currency_symbol: 'Currency Symbol ("£" by default)'
       google_static_maps_key: 'Google Static Maps API Key'
       privacy_policy_text: 'Privacy Policy Text'
+      primary_site_url: 'Primary site URL'
   callback_form:
     subject: 'Call me Back request - Global Accounting'
   register_vacancy_form:

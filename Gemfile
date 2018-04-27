@@ -63,10 +63,12 @@ gem 'fog-aws'
 # Pretty id for articles
 gem 'friendly_id', '~> 5.1.0'
 
-#
+# Reorder active-record
 gem 'activeadmin_reorderable'
-
 gem 'acts_as_list'
+
+# Sitemap
+gem 'sitemap_generator'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -9,6 +9,7 @@ defaults: &defaults
   app_store: ''
   google_static_maps_key: ''
   privacy_policy_text: ''
+  primary_site_url: ''
 
 development:
   <<: *defaults
