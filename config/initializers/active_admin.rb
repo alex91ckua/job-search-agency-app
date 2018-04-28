@@ -295,6 +295,6 @@ end
 
 class ActiveAdmin::BaseController
   if Rails.env.production?
-    # http_basic_authenticate_with :name => rails.application.secrets[:http_basic_auth_user], :password => rails.application.secrets[:http_basic_auth_pwd]
+    http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_NAME'], password: ENV['HTTP_BASIC_AUTH_PWD']
   end
 end
