@@ -291,10 +291,12 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
-end
-
-class ActiveAdmin::BaseController
+  #
   if Rails.env.production?
-    http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_NAME'], password: ENV['HTTP_BASIC_AUTH_PWD']
+    config.before_action do
+      authenticate_or_request_with_http_basic('Auth') do |username, password|
+        username == ENV['HTTP_BASIC_AUTH_NAME'] && password == ENV['HTTP_BASIC_AUTH_PWD']
+      end
+    end
   end
 end
