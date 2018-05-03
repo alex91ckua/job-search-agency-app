@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @candidate_form = RegisterCandidateForm.new
-    @jobs = Job.all
+    @jobs = Job.order(created_at: :desc)
     filter_by_salary
     filter_jobs
   end
