@@ -5,13 +5,19 @@
 .homepage .hero {
   position: relative;
   background-color: #0E0E77;
-  padding-top: 165px;
   overflow: hidden;
 
   .hero__title {
     z-index: 5;
+    padding-top: 111px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
     h1 {
+      margin-top: auto;
       margin-bottom: 30px;
       font-family: "MuseoSansRounded700";
       font-size: 36px;
@@ -22,7 +28,7 @@
     }
 
     h3 {
-      margin-bottom: 70px;
+      margin-bottom: auto;
       font-family: "MuseoSansRounded500";
       font-size: 17.7px;
       line-height: 22px;
@@ -225,9 +231,9 @@
 @include media-breakpoint-up(md) {
 
 .homepage .hero {
-  padding-top: 220px;
 
   .hero__title {
+    height: calc(100vh - 90px);
 
     h1 {
       margin-bottom: 6px;
@@ -236,7 +242,6 @@
     }
 
     h3 {
-      margin-bottom: 135px;
       font-size: 21px;
       line-height: 34px;
     }
@@ -349,13 +354,8 @@
 
     height: calc(100vh - 106px);
     padding-top: 116px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
 
     h1 {
-      margin-top: auto;
       margin-bottom: 8px;
       font-size: 64px;
       line-height: 64px;
@@ -363,7 +363,6 @@
 
     h3 {
       margin-top: 0;
-      margin-bottom: auto;
       font-size: 26px;
       line-height: 42px;
     }
