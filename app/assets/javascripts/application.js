@@ -18,4 +18,5 @@
 //= require TweenMax.min
 //= require owl.carousel.min
 //= require aos
+//= require vh-check
 //= require script

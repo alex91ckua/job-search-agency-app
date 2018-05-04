@@ -6,6 +6,7 @@ var searchJobsItems;
 var showedBlogPost = 9;
 
 var AOS;
+var isNeeded;
 
 var file_api = ( window.File && window.FileReader && window.FileList && window.Blob ) ? true : false;
 
@@ -435,5 +436,7 @@ $j( document ).on('turbolinks:load', function() {
             offset: -300
         });
     };
+
+    isNeeded = vhCheck('ios-gap');
 });
 
