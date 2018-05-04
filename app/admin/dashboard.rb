@@ -22,7 +22,7 @@ ActiveAdmin.register_page "Dashboard" do
             column :last_name
             column :email
             column :job
-            column ('Received At') { |candidate| time_ago_in_words(candidate.created_at) }
+            column ('Received At') { |candidate| "#{time_ago_in_words(candidate.created_at)} ago" }
             column ('') { |candidate| link_to('View', admin_candidate_path(candidate)) }
           end
 
