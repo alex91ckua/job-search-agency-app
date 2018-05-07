@@ -267,11 +267,24 @@ $j(document).on("turbolinks:before-cache", function() {
     $j("#header").removeClass("header--open");
 })
 
-
+var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 $j( document ).on('turbolinks:load', function() {
 
+    // Safari fix
+    // remove empty [file] before submit
+    $j('form').bind('submit', function() {
 
+        if (is_safari) {
+
+            $j(this).find("input[type=file]").each(function(index, field){
+                if ( !$j(field).val() ) {
+                    $j(field).remove();
+                }
+            });
+        }
+
+    });
 
     // Add/remove background to header on scroll
     $j(window).on("scroll", function() {
