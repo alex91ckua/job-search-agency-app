@@ -7,12 +7,15 @@
     <meta name="google-site-verification" content="c19rZz80-H22VgjhLvM-HLnM2hM55V9bR9_sIY86oeQ" >
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+    <%= analytics_init if (GoogleAnalytics.valid_tracker? && cookies[:allow_cookies] == 'yes') %>
   </head>
 
   <body class="<%= yield (:body_class) %>">
     <%= render 'partials/header' %>
     <%= yield %>
     <%= render 'partials/footer' %>
+    <% if !cookies[:allow_cookies] %>
+      <%= render 'partials/cookies_bar' %>
+    <% end %>
   </body>
 </html>

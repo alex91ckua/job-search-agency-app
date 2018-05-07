@@ -18,4 +18,6 @@
 //= require TweenMax.min
 //= require owl.carousel.min
 //= require aos
+//= require js.cookie
+//= require cookie-bar
 //= require script

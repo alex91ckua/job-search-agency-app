@@ -1,0 +1,51 @@
+/* ===========
+   Cookies bar
+   =========== */
+
+/* Common */
+#cookies-bar {
+  background-color: #0e0f77;
+  color: #fff;
+  width: 100%;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+
+  a {
+    color: #0e0f77;
+    background-color: #d9d8d9;
+    padding: 5px 20px;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+/* Collapsed version */
+@media (min-width: 768px) and (max-width: 1097px) {
+  #cookies-bar {
+    a#accept-cookies { margin-bottom: 10px; }
+  }
+}
+
+/* Large version */
+@media (min-width: 768px) {
+  #cookies-bar {;
+
+    .left-part {
+      width: 90%;
+      float: left;
+    }
+
+    .right-part {
+      width: 10%;
+      float: right;
+      padding-top: 2px;
+      text-align: right;
+    }
+  }
+}
