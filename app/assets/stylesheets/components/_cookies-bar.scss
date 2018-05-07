@@ -25,6 +25,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  #cookies-bar {
+    p {
+      margin-bottom: 20px;
+    }
+
+    .navbar {
+      padding: 10px 0;
+    }
+  }
+}
+
 /* Collapsed version */
 @media (min-width: 768px) and (max-width: 1097px) {
   #cookies-bar {
