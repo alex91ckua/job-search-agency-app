@@ -19,4 +19,6 @@
 //= require owl.carousel.min
 //= require aos
 //= require vh-check.min
+//= require js.cookie
+//= require cookie-bar
 //= require script

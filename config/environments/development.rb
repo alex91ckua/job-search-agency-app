@@ -56,4 +56,7 @@ Rails.application.configure do
   # Open email with letter opener
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+  # Google Analytics
+  GA.tracker = 'UA-57002128-1'
 end
