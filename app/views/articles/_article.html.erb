@@ -1,5 +1,5 @@
-<%= link_to article_path(article), class: 'blog-posts__item', style: "background-image: url('#{article.image.url ? article.image.url : asset_path('no_image.jpg')}')" do %>
-  <div class="item__info" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<%= link_to article_path(article), class: 'blog-posts__item', itemprop: 'blogPost', itemscope: 'itemscope', itemtype: 'https://schema.org/BlogPosting', style: "background-image: url('#{article.image.url ? article.image.url : asset_path('no_image.jpg')}')" do %>
+  <div class="item__info">
     <meta itemprop="mainEntityOfPage" content="<%= article_url(article) %>">
     <meta itemprop="datePublished" content="<%= article.created_at %>">
     <meta itemprop="dateModified" content="<%= article.updated_at %>">
@@ -12,7 +12,7 @@
     </figure>
 
     <span itemprop="author" itemscope itemtype="https://schema.org/Person" style="display: none">
-      <meta rel="author" itemprop="url" href="<%= articles_url %>">
+      <meta itemprop="url" content="<%= articles_url %>">
         <meta itemprop="name" content="<%= "#{article.admin_user.first_name} #{article.admin_user.last_name}" %>" >
       </meta>
       <meta itemprop="jobTitle" content="Director">
