@@ -38,4 +38,8 @@ Rails.application.routes.draw do
   get '/vacancies', to: redirect('/jobs', status: 301)
   get '/contact', to: redirect('/contact-us', status: 301)
   get '/finance-accounting', to: redirect('/about-us', status: 301)
+
+  # sitemap redirect
+  get '/sitemap.xml', to: redirect('https://s3.eu-west-2.amazonaws.com/global-accounting-network/sitemaps/sitemap.xml.gz',
+                                   status: 301)
 end
