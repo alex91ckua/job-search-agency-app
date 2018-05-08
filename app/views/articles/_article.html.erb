@@ -1,7 +1,34 @@
+<%= link_to article_path(article), class: 'blog-posts__item', style: "background-image: url('#{article.image.url ? article.image.url : asset_path('no_image.jpg')}')" do %>
+  <div class="item__info" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="<%= article_url(article) %>">
+    <meta itemprop="datePublished" content="<%= article.created_at %>">
+    <meta itemprop="dateModified" content="<%= article.updated_at %>">
 
-    <%= link_to article_path(article), class: 'blog-posts__item', style: "background-image: url('#{article.image.url ? article.image.url : asset_path('no_image.jpg')}')" do %>
-      <div class="item__info">
-        <div class="info__title"><%= article.title %></div>
-        <div class="info__short-descr"><%= article.subtitle %><br><span>READ</span></div>
-      </div>
-    <% end %>
+    <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" style="display: none" >
+      <img itemprop="url" alt="<%= article.title %>" src="<%= article.image.url ? article.image.url : asset_path('no_image.jpg') %>">
+      <meta itemprop="width" content="640">
+      <meta itemprop="height" content="480">
+      <figcaption itemprop="caption"><%= article.title %></figcaption>
+    </figure>
+
+    <span itemprop="author" itemscope itemtype="https://schema.org/Person" style="display: none">
+      <meta rel="author" itemprop="url" href="<%= articles_url %>">
+        <meta itemprop="name" content="<%= "#{article.admin_user.first_name} #{article.admin_user.last_name}" %>" >
+      </meta>
+      <meta itemprop="jobTitle" content="Director">
+      <meta itemprop="worksFor" content="Global Accounting Network">
+    </span>
+
+    <span style="display: none" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Global Accounting Network">
+      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="<%= asset_url('gan-logo.jpg') %>">
+        <meta itemprop="width" content="305">
+        <meta itemprop="height" content="105">
+      </span>
+    </span>
+
+    <div itemprop="name headline" class="info__title"><%= article.title %></div>
+    <div class="info__short-descr"><%= article.subtitle %><br><span>READ</span></div>
+  </div>
+<% end %>

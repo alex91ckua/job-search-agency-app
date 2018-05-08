@@ -21,14 +21,14 @@
           <span></span>
         </div>
       </div>
-      <div class="nav__links">
-        <%= link_to 'Home', root_path, {:style => 'color: #0E0E77', :class => 'nav__link'} %>
-        <%= link_to 'Current Jobs', jobs_path, {:style => 'color: #008CFF', :class => 'nav__link'} %>
-        <%= link_to 'Client Services', client_services_path, {:style => 'color: #D21E46', :class => 'nav__link'} %>
-        <%= link_to 'About Us', about_us_path, {:style => 'color: #8CC832', :class => 'nav__link'} %>
-        <%= link_to 'Work at Global', join_us_path, {:style => 'color: #F58A23', :class => 'nav__link'} %>
-        <%= link_to 'News Blog', articles_path, {:style => 'color: #6D10E0', :class => 'nav__link'} %>
-        <%= link_to 'Contact Us', contact_us_path, {:style => 'color: #0E0E77', :class => 'nav__link'} %>
+      <div class="nav__links" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <%= link_to 'Home', root_path, {:style => 'color: #0E0E77', :class => 'nav__link', :itemprop => 'url'} %>
+        <%= link_to 'Current Jobs', jobs_path, {:style => 'color: #008CFF', :class => 'nav__link', :itemprop => 'url'} %>
+        <%= link_to 'Client Services', client_services_path, {:style => 'color: #D21E46', :class => 'nav__link', :itemprop => 'url'} %>
+        <%= link_to 'About Us', about_us_path, {:style => 'color: #8CC832', :class => 'nav__link', :itemprop => 'url'} %>
+        <%= link_to 'Work at Global', join_us_path, {:style => 'color: #F58A23', :class => 'nav__link', :itemprop => 'url'} %>
+        <%= link_to 'News Blog', articles_path, {:style => 'color: #6D10E0', :class => 'nav__link', :itemprop => 'url'} %>
+        <%= link_to 'Contact Us', contact_us_path, {:style => 'color: #0E0E77', :class => 'nav__link', :itemprop => 'url'} %>
       </div>
     </div>
   </div>
