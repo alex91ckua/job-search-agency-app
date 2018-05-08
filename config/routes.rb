@@ -42,4 +42,6 @@ Rails.application.routes.draw do
   # sitemap redirect
   get '/sitemap.xml', to: redirect('https://s3.eu-west-2.amazonaws.com/global-accounting-network/sitemaps/sitemap.xml.gz',
                                    status: 301)
+
+  match '*path' => redirect('/'), via: :get unless Rails.env.development?
 end
