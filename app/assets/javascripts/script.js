@@ -359,7 +359,6 @@ $j( document ).on('turbolinks:load', function() {
         });
     });
 
-
     // Initialize quotes owlCarousel
     $j(".quotes .owl-carousel").owlCarousel({
         items: 1,
@@ -453,3 +452,17 @@ $j( document ).on('turbolinks:load', function() {
     isNeeded = vhCheck('ios-gap');
 });
 
+document.addEventListener("turbolinks:before-cache", function() {
+    // destroy select2 elements
+    $j('.js-select2').each(function () {
+        $j(this).select2('destroy');
+    });
+
+    // clean blue hover effect
+    searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");
+    for (var i = 0; i < searchJobsItems.length; i++) {
+
+        var overlay = $j(this).find(".vacancy__descr");
+        overlay.css({ 'left' : '', 'top': '' });
+    }
+});
