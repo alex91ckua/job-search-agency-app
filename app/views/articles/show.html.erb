@@ -62,7 +62,7 @@
                 </a>
               </div>
             </div>
-            <img src="<%= @article.image.url ? @article.image.url : asset_path('no_image.jpg') %>" alt="">
+            <img src="<%= @article.image.url ? @article.image.url : asset_path('no_image.jpg') %>" alt="<%= @article.title %>">
             <div class="content__main-info">
               Date: 		<%= @article.created_at.strftime("%d %B %Y") %><br>
               Author: 	<%= "#{@article.admin_user.first_name} #{@article.admin_user.last_name}" %><br>
