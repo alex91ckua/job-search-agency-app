@@ -15,6 +15,14 @@ module GlobalAccounting
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    VERSION = "1.0"
+    # Only attempt update on local machine
+    if Rails.env.development?
+      # Update version file from latest git tag
+      File.open('config/version', 'w') do |file|
+        file.write `git describe --tags --always` # or equivalent
+      end
+    end
+
+    config.version = File.read('config/version')
   end
 end
