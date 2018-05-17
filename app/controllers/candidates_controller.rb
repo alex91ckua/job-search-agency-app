@@ -4,8 +4,12 @@ class CandidatesController < ApplicationController
     if @candidate.errors.any?
       flash.now[:error] = @candidate.errors.full_messages.to_sentence
     else
+      begin
       flash.now[:success] = t('candidate_form.thanks_for_apply')
       CandidateFormMailer.with(candidate: @candidate, url: admin_candidate_url(@candidate)).candidate_apply_mail.deliver_now
+      rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
+        flash[:error] = t('forms.send_error')
+      end
     end
   end
 

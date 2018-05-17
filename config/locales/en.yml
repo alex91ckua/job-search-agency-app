@@ -31,6 +31,7 @@
 
 en:
   forms:
+    send_error: 'Oops.. There are some problems with sending mail.'
     all_option_text: 'All'
     clear_filters: 'Clear Filters'
   settings:
