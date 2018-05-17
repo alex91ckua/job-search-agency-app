@@ -4,7 +4,8 @@ class CandidatesController < ApplicationController
     if @candidate.errors.any?
       flash.now[:error] = @candidate.errors.full_messages.to_sentence
     else
-      flash.now[:success] = 'Thanks for your application'
+      flash.now[:success] = t('candidate_form.thanks_for_apply')
+      CandidateFormMailer.with(candidate: @candidate, url: admin_candidate_url(@candidate)).candidate_apply_mail.deliver_now
     end
   end
 

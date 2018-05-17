@@ -49,3 +49,5 @@ en:
     subject: 'Call me Back request - Global Accounting'
   register_vacancy_form:
     subject: 'Register Vacancy request - Global Accounting'
+  candidate_form:
+    thanks_for_apply: 'Thanks for your application'
