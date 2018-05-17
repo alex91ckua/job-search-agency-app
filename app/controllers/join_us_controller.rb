@@ -22,5 +22,7 @@ class JoinUsController < ApplicationController
       format.html { render :index }
       format.js
     end
+  rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
+    flash[:error] = t('forms.send_error')
   end
 end
