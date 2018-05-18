@@ -10,8 +10,12 @@ class ArticlesController < InheritedResources::Base
   end
 
   def show
-    @article = Article.friendly.find(params[:id])
+    @article = Article.unscoped.friendly.find(params[:id])
     @related_articles = Article.order('RANDOM()').where.not(slug: params[:id]).limit(15)
+
+    if current_admin_user.nil? && @article.status == 'Draft'
+      redirect_to root_path
+    end
   end
 
   private

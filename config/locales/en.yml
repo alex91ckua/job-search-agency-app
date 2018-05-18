@@ -30,6 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  article:
+    draft_preview_message: 'Draft preview mode. Showing only for admin users.'
   forms:
     send_error: 'Oops.. There are some problems with sending mail.'
     all_option_text: 'All'

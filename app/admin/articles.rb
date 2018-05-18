@@ -1,12 +1,20 @@
 ActiveAdmin.register Article do
-  permit_params :title, :subtitle, :description, :tags, :admin_user_id, :image, :created_at
+  permit_params :title, :subtitle, :description, :tags, :admin_user_id, :image, :created_at, :status
   menu label: 'Blog'
+
+  scope :all, default: true
+  scope('Published') { |scope| scope.where(status: Article.statuses['Published']) }
+  scope('Draft') { |scope| scope.where(status: Article.statuses['Draft']) }
 
   controller do
     def find_resource
       scoped_collection.where(slug: params[:id]).last!
     rescue ActiveRecord::RecordNotFound
       scoped_collection.find(params[:id])
+    end
+    # override default_scope, remove it
+    def scoped_collection
+      Article.unscoped
     end
   end
 
@@ -15,6 +23,7 @@ ActiveAdmin.register Article do
     column :id
     column :title
     column :subtitle
+    column :status
     column :image do |a|
       if a.image.url
         image_tag a.image.url, width: 100
@@ -36,6 +45,7 @@ ActiveAdmin.register Article do
       row :id
       row :title
       row :subtitle
+      row :status
       row :image do |a|
         if a.image.url
           image_tag a.image.url, width: 200
@@ -56,6 +66,7 @@ ActiveAdmin.register Article do
     inputs do
       f.input :title
       f.input :subtitle
+      f.input :status
       f.input :image, :as => :file, :hint => f.object.image.present? ? \
                                               image_tag(f.object.image.url, width: 100) : \
                                               content_tag(:span, 'no image selected')
