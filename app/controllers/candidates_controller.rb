@@ -7,8 +7,8 @@ class CandidatesController < ApplicationController
       begin
       flash.now[:success] = t('candidate_form.thanks_for_apply')
       CandidateFormMailer.with(candidate: @candidate, url: admin_candidate_url(@candidate)).candidate_apply_mail.deliver_now
-      rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
-        flash[:error] = t('forms.send_error')
+      rescue => e
+        flash[:error] = "#{t('forms.send_error')} - #{e.message}"
       end
     end
   end

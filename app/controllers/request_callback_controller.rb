@@ -10,20 +10,18 @@ class RequestCallbackController < ApplicationController
       if @callback.deliver
         @callback = CallbackForm.new
         flash.now[:success] = 'Thank you for your message!'
-        status_code = 200
       else
         flash.now[:error] = @callback.errors.full_messages.to_sentence
-        status_code = 400
       end
     rescue => ex
       flash.now[:error] = "Sorry, something bad occur. Error: #{ex.message}"
       # logger.error ex.message
     end
     respond_to do |format|
-      format.html { render :index, status: status_code }
+      format.html { render :index }
       format.js
     end
-  rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPSyntaxError, Net::SMTPFatalError, Net::SMTPUnknownError => e
-    flash[:error] = t('forms.send_error')
+  rescue => e
+    flash[:error] = "#{t('forms.send_error')} - #{e.message}"
   end
 end
