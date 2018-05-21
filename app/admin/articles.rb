@@ -8,7 +8,7 @@ ActiveAdmin.register Article do
 
   action_item only: :show do
     a = controller.find_resource
-    link_to 'Preview Article', article_path(a), target: :_blank if a.status == 'Draft'
+    link_to 'Preview Article', article_path(a), target: :_blank
   end
 
   controller do
