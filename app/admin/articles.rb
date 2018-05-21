@@ -6,6 +6,11 @@ ActiveAdmin.register Article do
   scope('Published') { |scope| scope.where(status: Article.statuses['Published']) }
   scope('Draft') { |scope| scope.where(status: Article.statuses['Draft']) }
 
+  action_item only: :show do
+    a = controller.find_resource
+    link_to 'Preview Article', article_path(a), target: :_blank if a.status == 'Draft'
+  end
+
   controller do
     def find_resource
       scoped_collection.where(slug: params[:id]).last!
