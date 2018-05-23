@@ -273,18 +273,18 @@ $j( document ).on('turbolinks:load', function() {
 
     // Safari fix
     // remove empty [file] before submit
-    $j('form').bind('submit', function() {
-
-        if (is_safari) {
-
-            $j(this).find("input[type=file]").each(function(index, field){
-                if ( !$j(field).val() ) {
-                    $j(field).remove();
-                }
-            });
-        }
-
-    });
+    // $j('form').bind('submit', function() {
+    //
+    //     if (is_safari) {
+    //
+    //         $j(this).find("input[type=file]").each(function(index, field){
+    //             if ( !$j(field).val() ) {
+    //                 $j(field).remove();
+    //             }
+    //         });
+    //     }
+    //
+    // });
 
     // Add/remove background to header on scroll
     $j(window).on("scroll", function() {
