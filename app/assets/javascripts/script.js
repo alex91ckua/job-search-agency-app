@@ -455,7 +455,9 @@ $j( document ).on('turbolinks:load', function() {
 document.addEventListener("turbolinks:before-cache", function() {
     // destroy select2 elements
     $j('.js-select2').each(function () {
-        $j(this).select2('destroy');
+        if ($j(this).hasClass("select2-hidden-accessible")) {
+            $j(this).select2('destroy');
+        }
     });
 
     // clean blue hover effect
