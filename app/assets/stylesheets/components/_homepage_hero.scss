@@ -234,6 +234,7 @@
 
   .hero__title {
     height: calc(100vh - (var(--ios-gap) + 90px));
+    max-height: 1080px;
 
     h1 {
       margin-bottom: 6px;
