@@ -2,11 +2,8 @@ class ContactUsController < ApplicationController
   def index
     @offices = Office.all
 
-    set_meta_tags title: 'Contact Us - The Best Way To Say Hello',
-                  description: 'Whether you\'re actively pursuing
-                  your next role, looking for a great candidate, or just
-                  want to talk about the job market,
-                  contact us on +44 (0)203 617 9197',
-                  og: { title: 'Contact Us - The Best Way To Say Hello' }
+    set_meta_tags title: 'Contact Us | Global Accounting Network',
+                  description: 'We help world class financial experts grow their careers by connecting them with challenging and rewarding employment opportunities. We also help companies find world class talent to fill even the most niche positions. Contact us today to find your ideal connection.',
+                  og: { title: 'Contact Us | Global Accounting Network' }
   end
 end

@@ -35,10 +35,10 @@ class JobsController < ApplicationController
   end
 
   def set_meta
-    set_meta_tags title: 'Current Jobs',
-                  description: 'Top candidates. Great companies.',
+    set_meta_tags title: 'Full List of Job Openings | Find Employment In The Finance Sector',
+                  description: 'Use our search tool to find your ideal job. We connect top talent in finance to great companies all across the UK. Our connections run deep across a wide range of industries and specialisations. Find your perfect match in just a few minutes online!',
                   og: {
-                    title: 'Current Jobs'
+                    title: 'Full List of Job Openings | Find Employment In The Finance Sector'
                   }
   end
 
