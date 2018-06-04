@@ -8,7 +8,7 @@
     <meta name="msvalidate.01" content="BDA362A66F5870F34690012384345FF5" >
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= analytics_init if (GoogleAnalytics.valid_tracker? && cookies[:allow_cookies] == 'yes') %>
+    <%= analytics_init if (GoogleAnalytics.valid_tracker? && cookies[:allow_cookies] != 'no') %>
   </head>
 
   <body class="<%= yield (:body_class) %>">
