@@ -24,4 +24,10 @@ class RequestCallbackController < ApplicationController
   rescue => e
     flash[:error] = "#{t('forms.send_error')} - #{e.message}"
   end
+
+  def thanks_for_apply
+    set_meta_tags title: 'Thanks for your apply! | UK Finance Talent Recruitment Professionals',
+                description: 'We provide career and talent solutions in finance all across the UK. We serve both job seekers and companies seeking world class financial specialists. Our team has deep connections across a range of sectors. We use our network to connect talent to even the hardest to fill spots.',
+                og: { title: 'Thanks for for job apply! | UK Finance Talent Recruitment Professionals' }
+  end
 end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'contact-us', to: 'contact_us#index'
   get 'about-us', to: 'about_us#index'
   get 'privacy-policy', to: 'privacy_policy#index'
+  get 'thanks-for-callback-apply', to: 'request_callback#thanks_for_apply'
+  get 'thanks-for-cv-apply', to: 'request_callback#thanks_for_apply'
 
   scope 'contact-us' do
     get 'register-a-vacancy', to: 'contact_client#index'
