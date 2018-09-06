@@ -24,6 +24,7 @@ CarrierWave.configure do |config|
         :region                => ENV['S3_REGION']
     }
 
+    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
     config.storage = :fog
     # config.fog_public = false
   end
