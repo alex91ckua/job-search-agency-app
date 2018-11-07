@@ -130,10 +130,25 @@
       }
     }
 
-    .member__info {
+    .member__position {
+      display: block;
+      font-family: "MuseoSansRounded700";
+      font-size: 16.8px;
+      color: #4A4A4A;
 
       @include media-breakpoint-down(sm) {
         order: 3;
+      }
+    }
+
+    .member__info {
+      margin-bottom: 15px;
+      height: 64px;
+      overflow: hidden;
+      transition: all 0.3s;
+
+      @include media-breakpoint-down(sm) {
+        order: 4;
       }
 
       p {
@@ -143,6 +158,45 @@
         line-height: 16px;
         text-align: center;
         color: #4A4A4A;
+      }
+    }
+
+
+    .member__link {
+      position: relative;
+
+      &::before {
+        content: "...";
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $dark;
+
+      }
+
+      a {
+        @include make-btn(green);
+        display: inline-block;
+        width: auto;
+        padding: 7px 10px !important;
+        font-size: 10px !important;
+        line-height: 10px !important;
+      }
+
+      @include media-breakpoint-down(sm) {
+        order: 5;
+      }
+    }
+
+    &--full {
+
+      .member__info {
+        height: auto !important;
+      }
+
+      .member__link {
+        display: none;
       }
     }
   }
@@ -204,10 +258,6 @@
 
       p {
         font-size: 14px;
-
-        &:not(:nth-last-child(1)) {
-          margin-bottom: 10px;
-        }
       }
     }
 
@@ -435,6 +485,10 @@
   .our-team__members--hide {
 
     .our-team__member {
+
+      .member__info {
+        height: 89.6px;
+      }
 
       &:nth-child(-n+3) {
         border-bottom: none;

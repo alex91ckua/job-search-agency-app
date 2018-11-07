@@ -307,6 +307,45 @@ $j( document ).on('turbolinks:load', function() {
         }, 1000);
     });
 
+    // Our-team see-more handler
+    $j(".member__link a").on("click", function(e) {
+        e.preventDefault();
+
+        var item = $j(this).parent().parent();
+        var itemIndex = item.index();
+        var itemContainer = $j('.our-team__members .owl-carousel');
+
+        if ($j(window).outerWidth() < 768) {
+
+        item.addClass("our-team__member--full");
+
+        } else if ($j(window).outerWidth() < 992) {
+
+        item.addClass("our-team__member--full");
+
+        if (itemIndex % 2 === 0) {
+            itemContainer.children().eq(itemIndex + 1).addClass("our-team__member--full");
+        } else {
+            itemContainer.children().eq(itemIndex - 1).addClass("our-team__member--full");
+        }
+
+        } else {
+
+        item.addClass("our-team__member--full");
+
+        if ((itemIndex + 1) % 3 === 0) {
+            itemContainer.children().eq(itemIndex - 1).addClass("our-team__member--full");
+            itemContainer.children().eq(itemIndex - 2).addClass("our-team__member--full");
+        } else if ((itemIndex + 2) % 3 === 0) {
+            itemContainer.children().eq(itemIndex - 1).addClass("our-team__member--full");
+            itemContainer.children().eq(itemIndex + 1).addClass("our-team__member--full");
+        } else {
+            itemContainer.children().eq(itemIndex + 1).addClass("our-team__member--full");
+            itemContainer.children().eq(itemIndex + 2).addClass("our-team__member--full");
+        }
+        }
+    });
+
     // Initialize orbAppearanceAnimation
     orbAppearanceAnimation('.hero__orb--1', 'topToBottom');
     orbAppearanceAnimation('.hero__orb--2', 'leftToRight');
@@ -329,18 +368,36 @@ $j( document ).on('turbolinks:load', function() {
     });
 
     // Smooth scrolling to internal links
-    $j('body').on('click', 'a[href^="#"]', function (e) {
-        e.preventDefault();
-        if ($j(this).hasClass("carousel-control-prev") || $j(this).hasClass("carousel-control-next")) {
-            return
+    $j('a[href*="#"]')
+    // Remove links that don't actually link to anything
+        .not('[href="#"]').not('[href="#0"]').click(function(event) {
+        // On-page links
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            // Figure out element to scroll to
+            var target = $j(this.hash);
+            target = target.length
+                ? target
+                : $j('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $j('html, body').animate({
+                scrollTop: target.offset().top
+                }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $j(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                    return false;
+                } else {
+                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                };
+                });
+            }
         }
-        ;
-        var target = this.hash;
-        var $target = $j(target);
-
-        $j('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 900, 'swing');
     });
 
     // Remove empty value attribute
