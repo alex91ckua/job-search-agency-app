@@ -21,7 +21,8 @@ class Job < ApplicationRecord
     'Property & Facility Management',
     'Pharmaceuticals & Life Sciences',
     'Mining, Energy & Oil & Gas',
-    'Professional Services'
+    'Professional Services',
+    'Manufacturing'
   ]
 
   enum job_type: %i[
