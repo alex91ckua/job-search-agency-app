@@ -429,6 +429,7 @@ $j( document ).on('turbolinks:load', function() {
 
     // Initialize current-jobs owlCarousel
     owlCarouselMobileOnly('.charter__items');
+    owlCarouselMobileOnly('.recruitment-process__items');
     owlCarouselMobileOnly('.our-team .owl-carousel');
 
 

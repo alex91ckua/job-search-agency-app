@@ -202,6 +202,38 @@
       letter-spacing: -0.65px;
       color: #4A4A4A;
     }
+
+    .content__stats {
+      margin-top: 30px;
+
+      h4 {
+        margin-bottom: 20px;
+        font-family: "MuseoSlab500";
+        font-size: 21.4px;
+        line-height: 31px;
+        letter-spacing: -0.76px;
+        color: #4A4A4A;
+        text-align: center;
+      }
+
+      img {
+        margin-bottom: 15px;
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-family: "MuseoSansRounded700";
+        font-size: 12px;
+        letter-spacing: -0.36px;
+        color: #4A4A4A;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }    
   }
 
   .hero__orb {
@@ -309,7 +341,8 @@
       padding: 55px;
     }
 
-    .content__title {
+    .content__title,
+    .content__stats h4 {
       font-size: 21.4px;
       line-height: 31px;
     }
@@ -422,7 +455,8 @@
 
   .dropdown__content {
 
-    .content__title {
+    .content__title,
+    .content__stats h4 {
       font-size: 25px;
       line-height: 36px;
     }
@@ -536,10 +570,15 @@
       padding: 70px;
     }
 
-    .content__title {
+    .content__title,
+    .content__stats h4 {
       margin-bottom: 30px;
       font-size: 30.2px;
       line-height: 43.7px;
+    }
+
+    .content__stats {
+      margin-top: 50px;
     }
   }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180517191740) do
+ActiveRecord::Schema.define(version: 20181109110801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,15 @@ ActiveRecord::Schema.define(version: 20180517191740) do
     t.integer "job_function"
     t.string "ref_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
+  end
+
+  create_table "landing_pages", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_landing_pages_on_slug", unique: true
   end
 
   create_table "offices", force: :cascade do |t|
