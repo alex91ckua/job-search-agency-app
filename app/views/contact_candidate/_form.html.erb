@@ -1,4 +1,4 @@
-<div id="contact-candidate-form" >
+<div class="contact-candidate-form" >
   <%= form_for @candidate_form, url: register_interest_path, method: :create, remote: true, :html => { :multipart => true, :class => 'form__register-interest' } do |f| %>
 
     <div class="form__select">
@@ -10,7 +10,6 @@
         <option value="-">Ms</option>
       </select>
     </div>
-
 
     <div class="form__input">
       <%= f.text_field :first_name, placeholder: 'First Name' %>
@@ -47,6 +46,6 @@
     <%= f.hidden_field :nickname  %>
   <% end %>
 </div>
-<div id="contact-candidate-form-result" >
+<div class="contact-candidate-form-result" >
   <%= render 'partials/flash' %>
 </div>
