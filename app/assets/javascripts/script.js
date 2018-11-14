@@ -469,7 +469,7 @@ $j( document ).on('turbolinks:load', function() {
         if ($j(window).outerWidth() < 992) {
             $j(".our-team__member:not(:nth-child(-n+2))").slideToggle();
         } else {
-            $j(".our-team__member:not(:nth-child(-n+3))").slideToggle();
+            $j(".our-team__member:not(:nth-child(-n+6))").slideToggle();
         }
         $j(".our-team__members--hide").removeClass("our-team__members--hide");
         $j(".members__join-our-team-btn").slideToggle();
