@@ -33,35 +33,40 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="dropdown__content">
-      <div id="heroDropdownContent1" class="collapse" aria-labelledby="heroDropdown1" data-parent="#accordion">
-        <div class="content__wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="content  content--1  col-12">
-                <h3 class="content__title">Apply Now</h3>
-                <%= render 'contact_candidate/form' %>
-                <div class="content__stats">
-                  <h4>The #1 financial recruitment firm people love working with</h4>
-                  <picture>
-                    <source
-                      srcset="<%= asset_path('stats.jpg') %>"
-                      media="(max-width: 991px)"
-                    >
-                    <source
-                      srcset="<%= asset_path('stats.jpg') %> 1x, <%= asset_path('stats@2x.jpg') %> 2x"
-                      media="(min-width: 992px)"
-                    >
-                    <img src="<%= asset_path('stats.jpg') %>" alt="The #1 financial recruitment firm people love working with">
-                  </picture>
-                  <p>Data from Glassdoor</p>
-                </div>  
+      
+      <div class="dropdown__content">
+        <div id="heroDropdownContent1" class="collapse" aria-labelledby="heroDropdown1" data-parent="#accordion">
+          <div class="content__wrapper pb-0">
+            <div class="container">
+              <div class="row">
+                <div class="content  content--1  col-12">
+                  <h3 class="content__title">Apply Now</h3>
+                  <%= render 'contact_candidate/form' %>  
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="container">
+          <div class="row" >
+            <div class="content__stats  col-12">
+              <h4>The #1 financial recruitment firm people love working with</h4>
+              <picture>
+                <source
+                  srcset="<%= asset_path('stats.jpg') %>"
+                  media="(max-width: 991px)"
+                >
+                <source
+                  srcset="<%= asset_path('stats.jpg') %> 1x, <%= asset_path('stats@2x.jpg') %> 2x"
+                  media="(min-width: 992px)"
+                >
+                <img src="<%= asset_path('stats.jpg') %>" alt="The #1 financial recruitment firm people love working with">
+              </picture>
+              <p>Data from Glassdoor</p>
+            </div>
+          </div>
+        </div>
+      </div>  
     </div>
   </div>
   <div class="hero__orb  hero__orb--1">
@@ -74,13 +79,12 @@
     <img src="<%= asset_path('orb-3.png') %>" alt="<%= COMPANY_NAME %>">
   </div>
 </div>
-
 <div class="career-opportunities">
   <div class="container">
     <div class="row">
       <div class="career-opportunities__descr  col-12">
         <h2>We Unlock Career Opportunities & Reward Your Hard Work!</h2>
-        <p>You've work hard in your career, from the early days of education, to the years of hard work int he corporate sector. You’ve taken charge of your career and you know what you want. When you seek out a new opportunity, you are looking for the right role, one that suits you as a person, will challenge you, and provides room to grow. Unfortunately for our industry, so many recruiters don't get this, don’t listen, don’t consult. They look for the easiest way to make their commission, putting you forward for jobs that are a less than ideal fit, trying to shoe horn you into the jobs they have, rather than find you the job you want.</p>
+        <p>You've work hard in your career, from the early days of education, to the years of hard work in the corporate sector. You’ve taken charge of your career and you know what you want. When you seek out a new opportunity, you are looking for the right role, one that suits you as a person, will challenge you, and provides room to grow. Unfortunately for our industry, so many recruiters don't get this, don’t listen, don’t consult. They look for the easiest way to make their commission, putting you forward for jobs that are a less than ideal fit, trying to shoe horn you into the jobs they have, rather than find you the job you want.</p>
         <p>At Global Accounting Network, we have made our name by using our expertise, our connections and our efforts to get you the right job for you. We represent excellent candidates and companies only, so when we help you find your next opportunity, we are thinking years ahead. Not just now, but every next career step. Not just a single relationship, but how we are going to guide your entire career. We put great people into great jobs, not just anyone into any job.</p>
         <p>You can see for yourself, there's a reason our rating and review are so profoundly positive. We work hard for our candidates, with the goal that in 2 years time you are still referring your friends and colleagues to the team that helps you take the next step in your career!</p>
         <h3>Next Steps To Find Your Career Opportunity</h3>
@@ -95,14 +99,12 @@
   <div class="container">
     <div class="row">
       <div class="col-12  col-lg-5  col-xl-3  offset-xl-1">
-        <img src="<%= asset_path('john.jpg') %>" alt="John - CFO of renowned accounting firm in London">
-        <h4>John - CFO of renowned accounting firm in London</h4>
+        <img src="<%= asset_path('john.jpg') %>" alt="John - Finance Manager, PE-Backed Aviation">
+        <h4>John - Finance Manager, PE-Backed Aviation</h4>
       </div>
       <div class="col-12  col-lg-7  col-xl-7">
         <h3>“They Found My Dream Job”</h3>
-        <p>I recommend Global Accounting Network with the highest regard. They are true talent experts, assessing you based on all of your attributes and finding amazing emplyment opportunities that you will shine in.</p>
-        <p>From day #1, they were excellent. I submitted my CV online, and within the day I had completed a detailed phone interview with their team. I felft an immediate connection with my recruiter Sharon. It was obvious she was looking to step me up, not sideways and really cared about achieving my goals.</p>
-        <p>Within a month, I had interviewed at 3 amazing companies. My mind was blown, as Sharon talked me up, and as she had promised, I fitted into their culture perfectly. Needless to say, when we recruit, the first people we call are Global Accounting Network.Do yourself a favor and submit your CV with them, it will be the best decision of your life.</p>
+        <p>My consultant at GAN was without a doubt the most helpful and proactive recruitment professional I dealt with during my search to find an attractive and stimulating role in London. This was by no means an easy task in a post-Brexit environment.</p>
         <a href="#send-cv">Assess My Opportunities</a>
       </div>
     </div>
@@ -138,7 +140,7 @@
           <div class="recruitment-process__item" style="color: #000047">
             <h4>Job Options</h4>
             <div data-aos="fade-up" data-aos-duration="600" class="number">4</div>
-            <p>We present you the opportunities that best suit your goals. Working closely with you, our team look for companies that meet your desires both now and into the future. We’ve built our reputation on going above and beyond what other recruiters do, and hence our candidates stay in roles longer and provide much higher satification scores at the end of the process than our competitors.</p>
+            <p>We present you the opportunities that best suit your goals. Working closely with you, our team look for companies that meet your desires both now and into the future. We’ve built our reputation on going above and beyond what other recruiters do, and hence our candidates stay in roles longer and provide much higher satisfaction scores at the end of the process than our competitors.</p>
           </div>
           <div class="recruitment-process__item" style="color: #F5A623">
             <h4>Securing the Offers</h4>

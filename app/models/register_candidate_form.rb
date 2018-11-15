@@ -1,6 +1,7 @@
 class RegisterCandidateForm < MailForm::Base
   attribute :first_name, validate: true
   attribute :last_name, validate: true
+  attribute :job_function, validate: true
   attribute :phone, validate: true
   attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :job_alerts
