@@ -2,7 +2,7 @@
   <%= form_for @candidate_form, url: register_interest_path, method: :create, remote: true, :html => { :multipart => true, :class => 'form__register-interest' } do |f| %>
 
     <div class="form__select">
-      <%= f.select :job_function, options_for_select(Job.job_functions_options.map{|j| j[0].to_s}), {:include_blank => true}, {:class => 'js-select2', 'data-placeholder' => 'Preferred Job function', id: "job_function_#{rand(1..100)}" } %>
+      <%= f.select :job_function, options_for_select(Job.job_functions_options.map{|j| j[0].to_s}), {:include_blank => true}, {:class => 'js-select2', 'data-placeholder' => 'Preferred Position', id: "job_function_#{rand(1..100)}" } %>
     </div>
 
     <div class="form__input">
