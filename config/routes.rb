@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'join-us', to: 'join_us#create'
   get 'contact-us', to: 'contact_us#index'
   get 'about-us', to: 'about_us#index'
+  get 'diversity-and-inclusion', to: 'diversity#index'
   get 'privacy-policy', to: 'privacy_policy#index'
   get 'thanks-for-callback-apply', to: 'request_callback#thanks_for_apply'
   get 'thanks-for-cv-apply', to: 'request_callback#thanks_for_apply'

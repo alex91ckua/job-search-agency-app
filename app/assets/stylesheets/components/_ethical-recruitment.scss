@@ -1,0 +1,77 @@
+.ethical-recruitment {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: url('../img/robots.jpg');
+  background-position: top center;
+  background-size: auto 300px;
+  background-repeat: no-repeat;
+
+  @include media-breakpoint-up(sm) {
+    background-size: auto 400px;
+  }
+
+  @include media-breakpoint-up(md) {
+    background-size: auto 500px;
+  }
+
+  @include media-breakpoint-up(md) {
+    background-position: center -120px;
+    background-size: auto 500px;
+    background-repeat: repeat-x;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-size: auto 600px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 65px;
+    background-size: auto 700px;
+  }
+
+  .ethical-recruitment__title {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 60px;
+    }
+  }
+
+  .ethical-recruitment__descr {
+    padding: 15px 25px;
+    background-color: $white;
+    text-align: center;
+    border-radius: 5.8px;
+
+    @include media-breakpoint-up(md) {
+      padding: 30px 40px;
+      border-radius: 6.8px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 60px 80px;
+      border-radius: 8px;
+    }
+
+    h4 {
+      margin-bottom: 20px;
+      font-family: "MuseoSansRounded500";
+      font-size: 20px;
+      color: #E7BF00;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 45px;
+        font-size: 25.2px;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-family: "MuseoSansRounded500";
+      font-size: 16.8px;
+      color: #4A4A4A;
+    }
+  }
+}

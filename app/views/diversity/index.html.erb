@@ -1,0 +1,70 @@
+<% content_for :body_class, 'diversity' %>
+
+<%= render 'partials/text_page_hero_section.html',
+           title: 'Get in touch',
+           subtitle: 'London Headquarters. Global reach.',
+           orb_1: 'orb-13.png'
+%>
+    <div class="ethical-recruitment">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ethical-recruitment__title  title-block">
+              <h3>
+                Ethical and inclusive recruitment
+              </h3>
+              <div class="round"></div>
+              <p>
+                Global Accounting Network (GAN) is committed to ethical and inclusive recruitment practices and is promoting DI in our industry. For example, research shows that whilst women are well represented in finance, they exit the industry in significant numbers as seniority increases and where there are senior finance leaders, the gender pay gap is inexcusable.
+              </p>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="ethical-recruitment__descr">
+              <h4>
+                As a starting point, we at GAN, we’re activating our network of talented finance professionals to gather insight, raise awareness and drive improvements in the recruitment, remuneration and retention of finance professionals from all groups. In so doing we hope to be able to add thought-leadership, drive improvements (however small) and enable our network to learn and develop from shared experiences. 
+              </h4>
+              <p>
+                And our work starts at home. We’ve created a D&I committee to plan events, initiatives and develop content. We’re committed to creating a culture of diversity and inclusion, so that anyone feels welcome and able to deliver to their full potential in our environment. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="meet-committee">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>MEET THE GLOBAL D&I COMMITTEE</h3>
+          </div>
+          <div class="col-12">
+            <div class="meet-committee__slider  owl-carousel">
+              <% @people.each do |person| %>
+                <div class="meet-committee__slider-item">
+                  <img src="<%= person.image.url %>" alt="<%= person.name %>">
+                  <h4><%= person.name %></h4>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="diversity-challenge">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="diversity-challenge__descr">
+              <h2>
+                Is diversity a challenge when you need to grow the team?
+              </h2>
+              <div class="round"></div>
+              <p>
+                Everyone deserves equal opportunity, and having a diverse workforce and including all people in our society is an important part of company culture. Talk to us about your challenges and we can help to hire highly-skilled and interesting people for your team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

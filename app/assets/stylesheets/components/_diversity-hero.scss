@@ -1,0 +1,29 @@
+.diversity .header:not(.header--open) .header__nav {
+
+  .nav__phone .phone__icon {
+    background-color: #EDEEEF;
+
+    svg {
+      fill: #EDBF00;
+    }
+  }
+
+  .toggle__text {
+    color: #EDEEEF;
+  }
+
+  .toggle__btn {
+
+    span {
+      background-color: #EDEEEF;
+    }
+  }
+
+  .nav__phone p {
+    color: #EDEEEF;
+  }
+}
+
+.diversity .hero {
+  background-color: #EDBF00;
+}

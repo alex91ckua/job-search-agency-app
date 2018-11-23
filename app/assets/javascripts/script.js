@@ -443,6 +443,13 @@ $j( document ).on('turbolinks:load', function() {
         autoplayTimeout: 10000
     });
 
+    // Initialize Diversity page slider
+    $j(".meet-committee__slider").owlCarousel({
+        loop: true,
+        items: 1,
+        nav: true,
+        dots: true
+    });    
 
     // Initialize Direction Aware Hover
     searchJobsItems = document.querySelectorAll(".search-current-jobs  .result__vacancy");

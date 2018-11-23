@@ -1,0 +1,59 @@
+.diversity-challenge {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .diversity-challenge__descr {
+    padding: 25px;
+    background-color: #E7BF00;
+    text-align: center;
+    border-radius: 5.8px;
+
+    @include media-breakpoint-up(md) {
+      padding: 30px 40px;
+      border-radius: 6.8px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 60px 80px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-family: "MuseoSlab500";
+      font-size: 30px;
+      letter-spacing: -1.52px;
+      color: $white;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 40px;
+        font-size: 50px;
+      }
+    }
+
+    .round {
+      @include make-round();
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 40px;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-family: "MuseoSansRounded500";
+      font-size: 18px;
+      color: $white;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 21px;
+      }
+    }
+  }
+}
