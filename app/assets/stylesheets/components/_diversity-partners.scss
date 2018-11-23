@@ -1,0 +1,31 @@
+.diversity-partners {
+
+  .diversity-partners__imgs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    background-color: $white;
+    border-radius: 5.8px;
+
+    @include media-breakpoint-up(md) {
+      border-radius: 6.8px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 30px;
+      flex-direction: row;
+      justify-content: center;
+      border-radius: 8px;
+    }
+
+    img {
+      margin: 10px auto;
+      max-width: 100%;
+
+      @include media-breakpoint-up(lg) {
+        margin: auto;
+      }
+    }
+  }
+}
