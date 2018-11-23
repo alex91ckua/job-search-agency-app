@@ -1,3 +1,13 @@
+.diversity {
+  .cls-1 {
+    fill: #EDEEEF;
+  }
+
+  .hero__orb--2, .hero__orb--3 {
+    display: none;
+  }
+}
+
 .diversity .header:not(.header--open) .header__nav {
 
   .nav__phone .phone__icon {
