@@ -450,7 +450,7 @@ $j( document ).on('turbolinks:load', function() {
         nav: true,
         dots: true,
         autoplay:true,
-        autoplayTimeout:1000,
+        autoplayTimeout:5000,
         autoplayHoverPause:true
     });    
 
