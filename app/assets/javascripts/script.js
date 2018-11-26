@@ -505,6 +505,13 @@ $j( document ).on('turbolinks:load', function() {
         }
     })
 
+    // Parallax robots background on Diversity page
+    $j(document).on("scroll", function() {
+
+        TweenMax.to('.ethical-recruitment', 0, {
+        backgroundPosition:  "center " + (($j(window).scrollTop()) / (-3) ) + "px"
+        });
+    });
 
     // Initialize AOS
     if (AOS) {
