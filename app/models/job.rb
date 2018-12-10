@@ -11,7 +11,7 @@ class Job < ApplicationRecord
     greater_than: 0
   }
   belongs_to :company, optional: true
-  has_many :candidates
+  has_many :candidates, dependent: :destroy
 
   enum sector: [
     'Technology, Media & Telecoms',
