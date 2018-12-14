@@ -146,28 +146,6 @@
   }
 }
 
-.client-services .charter {
-  padding-top: 0;
-
-  &:before {
-    content: '';
-    background-image: image_url("charter_bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  .title-block {
-    margin-top: -80px;
-  }
-}
-
 @include media-breakpoint-up(md) {
 
 .charter {

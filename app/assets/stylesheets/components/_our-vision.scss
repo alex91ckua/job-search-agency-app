@@ -2,20 +2,6 @@
   padding-bottom: 20px;
   text-align: center;
 
-  &::before {
-    content: '';
-    background-image: image_url("homepage_about-us-l.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
   .title-block {
     margin-top: -30px;
   }
@@ -55,11 +41,6 @@
   .our-vision {
     padding-bottom: 30px;
 
-    &::before {
-      content: '';
-      background-image: image_url("homepage_about-us-m.jpg");
-    }
-
   .title-block {
     margin-top: -50px;
   }
@@ -81,11 +62,6 @@
 
   .our-vision {
     padding-bottom: 50px;
-
-    &::before {
-      content: '';
-      background-image: image_url("homepage_about-us-xl.jpg");
-    }
 
   .title-block {
     margin-top: -60px;
@@ -117,32 +93,27 @@
   .our-vision {
     padding-bottom: 40px;
 
-    &::before {
-      content: '';
-      background-image: image_url("homepage_about-us-l.jpg");
+
+    .title-block {
+      margin-top: -80px;
     }
 
+    .our-vision__group-1 {
+      margin-bottom: 70px;
 
-  .title-block {
-    margin-top: -80px;
-  }
+      p {
+        font-size: 24px;
+      }
+    }
 
-  .our-vision__group-1 {
-    margin-bottom: 70px;
+    .our-vision__group-2 {
+      max-width: 100%;
+      padding: 30px 45px;
+      border-radius: 10px;
 
-    p {
-      font-size: 24px;
+      p {
+        font-size: 18px;
+      }
     }
   }
-
-  .our-vision__group-2 {
-    max-width: 100%;
-    padding: 30px 45px;
-    border-radius: 10px;
-
-    p {
-      font-size: 18px;
-    }
-  }
-}
 }
