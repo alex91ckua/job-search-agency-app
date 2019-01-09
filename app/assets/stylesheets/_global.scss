@@ -189,6 +189,50 @@ body.about-us {
       border-bottom: none;
     }
   }
+
+
+  .select2-selection--multiple {
+    overflow: hidden;
+    height: auto !important;
+
+    &.select2-selection {
+      padding: 12px;
+    }
+
+    .select2-selection__rendered {
+      display: inline-block;
+      overflow: hidden;
+      width: auto;
+    }
+
+    .select2-selection__choice {
+      // margin-top: 0 !important;
+      // flex-shrink: 1;
+    }
+  
+    .select2-selection__clear {
+      margin-top: 0 !important;
+    }
+  
+    .select2-selection__clear {
+      display: none !important;
+    }
+
+    .select2-selection__choice ~ .select2-search--inline  {
+      // width: 0 !important;
+      overflow: hidden;
+    }
+  
+    .select2-search--inline .select2-search__field {
+      // width: auto !important;
+      // flex-shrink: 0;
+      width: 103% !important;
+      margin: 0;
+      color: #4A4A4A;
+      text-transform: uppercase;
+    }
+  }
+
 }
 
 
