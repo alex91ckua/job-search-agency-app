@@ -230,6 +230,10 @@ body.about-us {
       margin: 0;
       color: #4A4A4A;
       text-transform: uppercase;
+
+      &::placeholder {
+        color: #4A4A4A;
+      }      
     }
   }
 
