@@ -2,6 +2,7 @@
 defaults: &defaults
   phone: ''
   email: ''
+  landing_form_recipients: ''
   currency_symbol: '£'
   linkedin: ''
   twitter: ''

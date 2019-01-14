@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'home#index'
   resources :jobs, only: [:index, :show]
-  resources :landing_pages, only: [:show], :path => '/landing'
+  resources :landing_pages, only: [:show, :create], :path => '/landing'
   resources :companies, only: [:index, :show]
   resources :articles, only: [:index, :show]
   resource :candidate, only: [:create]

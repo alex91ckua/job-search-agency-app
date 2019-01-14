@@ -39,6 +39,7 @@ en:
   settings:
     attributes:
       email: 'Administration Email'
+      landing_form_recipients: 'Landing Form Recipients'
       phone: 'Phone Number'
       linkedin: 'LinkedIn URL'
       twitter: 'Twitter URL'

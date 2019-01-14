@@ -1,0 +1,5 @@
+jQuery('.contact-candidate-form-result').html('<%= j render 'partials/flash' %>');
+<% if flash['success'] %>
+jQuery('.contact-candidate-form').html("");
+window.location.href = '<%= thanks_for_cv_apply_path %>';
+<% end %>
