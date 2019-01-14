@@ -12,7 +12,7 @@ class RegisterLandingCandidateForm < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      subject: 'Register Candidate Request - Global Accounting',
+      subject: 'Register Candidate Request (from Landing Page) - Global Accounting',
       to: Setting.landing_form_recipients,
       from: %("#{first_name} #{last_name}" <#{email}>)
     }
