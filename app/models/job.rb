@@ -73,7 +73,8 @@ class Job < ApplicationRecord
   end
 
   def self.locations_options
-    distinct.pluck(:location).map { |l| [l, l] }
+    # distinct.pluck(:location).map { |l| [l, l] }
+    distinct.pluck(:location).map { |l| [l, l] }.sort
   end
 
   def self.sectors_options
