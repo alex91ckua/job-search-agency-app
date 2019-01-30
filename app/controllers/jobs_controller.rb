@@ -9,7 +9,7 @@ class JobsController < ApplicationController
     @jobs = Job.order(created_at: :desc)
 
     is_contract_type = false
-    is_contract_type = true if params[:job_type] && Integer(params[:job_type]) == Job.job_types[:contract]
+    is_contract_type = true if !params[:job_type].empty? && Integer(params[:job_type]) == Job.job_types[:contract]
     rate = params[:salary_range]
     rate = params[:rate_range] if is_contract_type
     filter_by_rate(rate, is_contract_type)

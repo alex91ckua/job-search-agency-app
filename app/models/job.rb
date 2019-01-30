@@ -119,14 +119,15 @@ class Job < ApplicationRecord
 
   def self.day_rate_ranges_options
     [
-        ["#{Setting.currency_symbol}50-#{Setting.currency_symbol}100", '50-100'],
-        ["#{Setting.currency_symbol}100-#{Setting.currency_symbol}300", '100-300'],
-        ["#{Setting.currency_symbol}300-#{Setting.currency_symbol}500", '300-500'],
-        ["#{Setting.currency_symbol}500-#{Setting.currency_symbol}700", '500-700'],
-        ["#{Setting.currency_symbol}700-#{Setting.currency_symbol}1000", '700-1000'],
-        ["#{Setting.currency_symbol}1000+", '1000-9999999']
+      ["All", '0-9999999'],
+      ["#{Setting.currency_symbol}50-#{Setting.currency_symbol}100", '50-100'],
+      ["#{Setting.currency_symbol}100-#{Setting.currency_symbol}300", '100-300'],
+      ["#{Setting.currency_symbol}300-#{Setting.currency_symbol}500", '300-500'],
+      ["#{Setting.currency_symbol}500-#{Setting.currency_symbol}700", '500-700'],
+      ["#{Setting.currency_symbol}700-#{Setting.currency_symbol}1000", '700-1000'],
+      ["#{Setting.currency_symbol}1000+", '1000-9999999']
     ]
-  end  
+  end
 
   private
   def remove_whitespaces
