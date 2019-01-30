@@ -9,10 +9,17 @@
               <td>SECTOR: </td>
               <td><%= job.sector %></td>
             </tr>
-            <tr>
-              <td>SALARY:</td>
-              <td><%= "#{Setting.currency_symbol}#{job.salary}" %></td>
-            </tr>
+            <% if job.job_type == 'contract' %>
+              <tr>
+                <td>DAY RATE:</td>
+                <td><%= "#{Setting.currency_symbol}#{job.day_rate}" %></td>
+              </tr>
+            <% else %>
+              <tr>
+                <td>SALARY:</td>
+                <td><%= "#{Setting.currency_symbol}#{job.salary}" %></td>
+              </tr>
+            <% end %>
             <tr>
               <td>LOCATION:</td>
               <td><%= job.location %></td>

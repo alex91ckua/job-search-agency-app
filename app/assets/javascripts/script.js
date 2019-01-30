@@ -518,6 +518,17 @@ $j( document ).on('turbolinks:load', function() {
     };
 
     isNeeded = vhCheck('ios-gap');
+
+    $j( "div.form__select select[name='job_type']" ).change(function() {
+        if ( this.value == 4 ) { // contract
+            $j( "div#salary_range_row" ).addClass('d-none');
+            $j( "div#day_rate_range_row" ).removeClass('d-none');
+        } else {
+            $j( "div#salary_range_row" ).removeClass('d-none');
+            $j( "div#day_rate_range_row" ).addClass('d-none');
+        }
+    });
+
 });
 
 document.addEventListener("turbolinks:before-cache", function() {

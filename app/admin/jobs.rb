@@ -1,6 +1,7 @@
 ActiveAdmin.register Job do
   permit_params :title, :job_type, :sector, :salary, :description, :company_id,
-                :responsibilities, :location, :company_job_alerts, :job_function, :ref_id
+                :responsibilities, :location, :company_job_alerts,
+                :job_function, :ref_id, :day_rate
 
   index do
     selectable_column
@@ -11,9 +12,7 @@ ActiveAdmin.register Job do
     column :job_function
     column :sector
     column :salary
-    # column :description do |a|
-    #   truncate(strip_tags(a.description), length: 100)
-    # end
+    column :day_rate
     column :company
     # column :responsibilities
     column :location
@@ -30,6 +29,7 @@ ActiveAdmin.register Job do
       row :job_function
       row :sector
       row :salary
+      row :day_rate
       row :description
       row :company
       row :responsibilities
@@ -58,6 +58,7 @@ ActiveAdmin.register Job do
       f.input :ref_id
       f.input :sector
       f.input :salary
+      f.input :day_rate
       f.input :description, as: :froala_editor, input_html:
           {
               data: {

@@ -8,8 +8,12 @@
     <%= select_tag :sector, options_for_select(Job.sectors_options, params[:sector]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Choose a sector'} %>
   </div>
 
-  <div class="form__select">
+  <div class="form__select <%= params[:job_type] == 'contract' ? 'd-none' : '' %>" id="salary_range_row">
     <%= select_tag :salary_range, options_for_select(Job.salary_ranges_options, params[:salary_range]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Salary range'} %>
+  </div>
+
+  <div class="form__select <%= params[:job_type] == 'contract' ? '' : 'd-none' %>" id="day_rate_range_row">
+    <%= select_tag :rate_range, options_for_select(Job.day_rate_ranges_options, params[:rate_range]), {:class => 'js-select2', :include_blank => true, 'data-placeholder' => 'Day rate'} %>
   </div>
 
   <div class="form__select">

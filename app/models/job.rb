@@ -6,10 +6,27 @@ class Job < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true
   validates :ref_id, presence: true, uniqueness: true
-  validates :salary, presence: true, numericality: {
-    only_integer: true,
-    greater_than: 0
-  }
+  validates :salary,
+            presence: true,
+            numericality:
+            {
+              only_integer: true,
+              greater_than: 0
+            },
+            if: -> {
+              job_type != 'contract'
+            }
+  validates :day_rate,
+            presence: true,
+            numericality:
+            {
+              only_integer: true,
+              greater_than: 0
+            },
+            if: -> {
+              job_type == 'contract'
+            }
+
   belongs_to :company, optional: true
   has_many :candidates, dependent: :destroy
 
@@ -57,6 +74,9 @@ class Job < ApplicationRecord
   scope :salary_from_to, lambda { |salary_from, salary_to|
     where('salary >= ? AND salary <= ?', salary_from, salary_to)
   }
+  scope :day_rate_from_to, lambda { |rate_from, rate_to|
+    where('day_rate >= ? AND day_rate <= ?', rate_from, rate_to)
+  }
   scope :location, ->(location) { where location: location }
   scope :sector, ->(sector) { where sector: sector }
   scope :job_type, ->(job_type) { where job_type: job_type }
@@ -96,6 +116,17 @@ class Job < ApplicationRecord
     ]
     # 40000-60000, 60000-80000, 80000-100000, 100000-150000, 150000-200000, 200000-250000, 250000-350000, 350000+
   end
+
+  def self.day_rate_ranges_options
+    [
+        ["#{Setting.currency_symbol}50-#{Setting.currency_symbol}100", '50-100'],
+        ["#{Setting.currency_symbol}100-#{Setting.currency_symbol}300", '100-300'],
+        ["#{Setting.currency_symbol}300-#{Setting.currency_symbol}500", '300-500'],
+        ["#{Setting.currency_symbol}500-#{Setting.currency_symbol}700", '500-700'],
+        ["#{Setting.currency_symbol}700-#{Setting.currency_symbol}1000", '700-1000'],
+        ["#{Setting.currency_symbol}1000+", '1000-9999999']
+    ]
+  end  
 
   private
   def remove_whitespaces

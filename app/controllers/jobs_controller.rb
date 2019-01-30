@@ -7,16 +7,22 @@ class JobsController < ApplicationController
   def index
     @candidate_form = RegisterCandidateForm.new
     @jobs = Job.order(created_at: :desc)
-    filter_by_salary
+
+    is_contract_type = false
+    is_contract_type = true if Integer(params[:job_type]) == Job.job_types[:contract]
+    rate = params[:salary_range]
+    rate = params[:rate_range] if is_contract_type
+    filter_by_rate(rate, is_contract_type)
     filter_jobs
   end
 
   private
 
-  def filter_by_salary
-    if params[:salary_range] && params[:salary_range].match(/^\d*-\d*$/)
-      salary = params[:salary_range].split('-')
-      @jobs = @jobs.salary_from_to(salary[0], salary[1])
+  def filter_by_rate(rate, is_contract_type)
+    if rate && rate.match(/^\d*-\d*$/)
+      rates = rate.split('-')
+      @jobs = @jobs.salary_from_to(rates[0], rates[1]) unless is_contract_type
+      @jobs = @jobs.day_rate_from_to(rates[0], rates[1]) if is_contract_type
     end
   end
 
