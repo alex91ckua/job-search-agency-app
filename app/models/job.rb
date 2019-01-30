@@ -13,6 +13,8 @@ class Job < ApplicationRecord
   belongs_to :company, optional: true
   has_many :candidates, dependent: :destroy
 
+  before_validation :remove_whitespaces
+
   enum sector: [
     'Technology, Media & Telecoms',
     'Retail, FMCG & Hospitality',
@@ -95,4 +97,9 @@ class Job < ApplicationRecord
     # 40000-60000, 60000-80000, 80000-100000, 100000-150000, 150000-200000, 200000-250000, 250000-350000, 350000+
   end
 
+  private
+  def remove_whitespaces
+    location.strip!
+    title.strip!
+  end
 end
