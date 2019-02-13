@@ -73,8 +73,6 @@ gem 'sitemap_generator'
 # GA
 gem 'google-analytics-rails', '1.1.1'
 
-gem 'geocoder'
-
 group :production do
   gem 'heroku-deflater'
 end
