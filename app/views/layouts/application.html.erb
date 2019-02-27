@@ -24,12 +24,12 @@
       <script>
         var is_bot = bot_check();
         function geoip_validation(g) {
-          if ( g.country_code == 'US' && !is_bot ) {
+          if ( g.countryCode == 'US' && !is_bot ) {
             window.top.location.href = '<%= US_MIRROR_URL %>';
           }
         }
       </script>
-      <script type="text/javascript" src="http://api.ipstack.com/<%= @client_ip %>?access_key=<%= IP_STACK_KEY %>&callback=geoip_validation" ></script>
+      <script type="text/javascript" src="https://extreme-ip-lookup.com/json/?callback=geoip_validation" ></script>
 
     <% end %>
 
