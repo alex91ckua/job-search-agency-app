@@ -1,11 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # before_action :redirect_to_us
+  before_action :geo_variables
 
-  private
-
-  def redirect_to_us
-    # redirect_to US_MIRROR_URL if request.location.country_code == 'US'
+  def geo_variables
+    @client_ip = request.remote_ip
   end
 end
