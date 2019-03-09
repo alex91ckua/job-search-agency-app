@@ -39,7 +39,8 @@
             <div class="container">
               <div class="row">
                 <div class="content  content--1  col-12">
-                  <h3 class="content__title">Apply Now</h3>
+                  <h3 class="content__title">So the next step is easy.</h3>
+                  <p class="content__subtitle">Just submit your CV/Resume and our team of experts will do the rest!</p>
                   <%= render 'form' %>  
                 </div>
               </div>
@@ -170,3 +171,19 @@
     </div>
   </div>
 </div>
+
+<div class="modal" id="submit-cv-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center">
+            Thank you for your application.<br>
+            Unfortunately you do not meet our requirement for a placement at this time
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
