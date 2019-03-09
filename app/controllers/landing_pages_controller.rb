@@ -1,5 +1,4 @@
 class LandingPagesController < InheritedResources::Base
-
   def show
     @lp = LandingPage.friendly.find(params[:id])
     set_meta_tags title: @lp.title,
@@ -11,11 +10,16 @@ class LandingPagesController < InheritedResources::Base
 
   def create
     @candidate_form = RegisterLandingCandidateForm.new(params['register_landing_candidate_form'])
-    @candidate_form.request = request
-    if @candidate_form.deliver
-      flash.now[:success] = 'Thank you for your message!'
+    if @candidate_form.verify_1 == '0' ||  @candidate_form.verify_2 == '0'
+      flash.now[:error] = 'Thanks for your application. Unfortunately you do not meet our requirement for a placement at this time.'
+      @show_popup = true
     else
-      flash.now[:error] = @candidate_form.errors.full_messages.to_sentence
+      @candidate_form.request = request
+      if @candidate_form.deliver
+        flash.now[:success] = 'Thank you for your message!'
+      else
+        flash.now[:error] = @candidate_form.errors.full_messages.to_sentence
+      end
     end
     respond_to do |format|
       format.html { render :index }
@@ -24,5 +28,4 @@ class LandingPagesController < InheritedResources::Base
   rescue => e
     flash[:error] = "#{t('forms.send_error')} - #{e.message}"
   end
-
 end
