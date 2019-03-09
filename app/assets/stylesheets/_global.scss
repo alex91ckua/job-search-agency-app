@@ -243,3 +243,11 @@ body.about-us {
 .owl-carousel.off {
     display: block;
 }
+
+#submit-cv-modal.show {
+  display: flex !important;
+
+  .modal-dialog {
+    margin: auto;
+  }
+}

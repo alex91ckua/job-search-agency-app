@@ -614,3 +614,214 @@
     }
   }
 }
+
+
+
+// Landing page form
+
+.form__submit-cv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .form__select {
+    width: 100%;
+    margin-bottom: 9px;
+  }
+
+  .form__input {
+    width: 100%;
+    margin-bottom: 9px;
+
+    @include media-breakpoint-up(md) {
+      margin: auto 1% auto 0;
+    }
+
+    input {
+      @include make-input();
+    }
+
+    textarea {
+      @include make-input();
+      resize: none;
+      height: 60px;
+    }
+  }
+
+  .form__group {
+    width: 100%;
+    padding: 15px 0 0 0;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 0 15px 0;
+      padding: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      padding: 15px 0 20px 0;
+    }
+  }
+
+  .form__checkbox {
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include media-breakpoint-up(md) {
+      margin: auto 1% auto 0;
+      width: 32%;
+    }
+
+    .checkbox__box {
+      position: relative;
+      display: block;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #9B9B9B;
+      border-radius: 3px;
+      background-color: $white;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        width: 13px;
+        height: 7px;
+        border-bottom: 3px solid #4A4A4A;
+        border-left: 3px solid #4A4A4A;
+        transform: translateY(-60%) translateX(-45%) rotate(-45deg);
+        opacity: 0;
+        transition: all 0.3s;
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked + .checkbox__box::before {
+      opacity: 1;
+    }
+
+    p {
+      margin-bottom: 0;
+      margin-left: 6px;
+      font-family: "MuseoSansRounded300";
+      font-size: 10px;
+      line-height: 16px;
+      color: #666666;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 12px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .form__file {
+    margin: 0 auto auto 0;
+    width: calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      width: 32%;
+      margin: auto 1% auto 0;
+    }
+
+    input {
+      display: none;
+    }
+
+    .file__btn {
+      flex-shrink: 0;
+      width: 100%;
+      padding: 0px;
+      margin: 0 auto 5px 0;
+      display: block;
+      font: 15px/15px "MuseoSansRounded300";
+      color: $white;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      padding: 9px;
+      background: #c9d0d2;
+      border-radius: 4px;
+
+      @include media-breakpoint-up(md) {
+        padding: 10px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 15px;
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      &--added-file {
+        background-image: linear-gradient(to bottom, #EB407C 0%, #D21E46 100%);
+        border-color: transparent;
+      }
+    }
+
+    .file__info {
+      font-family: "MuseoSansRounded300";
+      font-size: 13px;
+      line-height: 16px;
+      color: #666666;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .form__submit {
+    margin: 0 0 auto auto;
+    width: calc(50% - 10px);
+
+    @include media-breakpoint-up(md) {
+      width: 32%;
+      margin: 0 1% auto 0;
+    }
+
+    input[type="submit"] {
+      @include make-btn(blue);
+      width: 100%;
+      padding: 9px;
+      box-shadow: none;
+      font: 15px/15px "MuseoSansRounded300";
+      background: #1dabfb !important;
+      border-radius: 4px;
+
+      @include media-breakpoint-up(md) {
+        padding: 10px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 15px;
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    & > .form__select,
+    & > .form__input {
+      width: 32%;
+      margin: 0 1% 1% 0;
+    }
+  }
+}

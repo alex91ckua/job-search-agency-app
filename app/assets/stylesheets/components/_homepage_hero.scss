@@ -196,13 +196,21 @@
     }
 
     .content__title {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-family: "MuseoSlab500";
       font-size: 21.4px;
       line-height: 31px;
       letter-spacing: -0.65px;
       color: #4A4A4A;
     }
+
+    .content__subtitle {
+      font-family: "MuseoSlab300";
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.25px;
+      color: #4A4A4A;
+    }    
 
     .content__stats {
       padding-top: 30px;
@@ -463,6 +471,11 @@
       font-size: 25px;
       line-height: 36px;
     }
+
+    .content__subtitle {
+      margin: 0 0 35px 0;
+      font-size: 24px;
+    }    
   }
 
   .hero__orb--1 {

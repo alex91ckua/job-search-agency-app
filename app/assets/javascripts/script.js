@@ -366,20 +366,6 @@ $j( document ).on('turbolinks:load', function() {
     parallaxIt('.hero__orb--2', 20);
     parallaxIt('.hero__orb--3', 15);
 
-    // Check if all checkbox clicked on 'Submit CV' form
-    $j('#form-submit-cv').on('submit', function(e) {
-    
-      $j('#form-submit-cv').find('input[type="checkbox"]').each(function(){
-
-        if(!$j(this).prop('checked')){
-
-          e.preventDefault();
-          $j("#submit-cv-modal").modal()
-          
-        }
-      });
-    });
-
     // Nav toggle
     $j("#headerNavToggle").on("click", function (e) {
         e.preventDefault();
