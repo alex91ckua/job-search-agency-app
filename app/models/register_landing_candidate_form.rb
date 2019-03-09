@@ -1,10 +1,12 @@
 class RegisterLandingCandidateForm < MailForm::Base
   attribute :first_name, validate: true
   attribute :last_name, validate: true
-  attribute :job_function, validate: true
   attribute :phone, validate: true
-  attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  attribute :job_function, validate: true
   attribute :job_alerts
+  attribute :verify_1
+  attribute :verify_2
+  attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :attachment, attachment: true, validate: :file_type_allowed?
   attribute :nickname, captcha: true
 
@@ -19,6 +21,10 @@ class RegisterLandingCandidateForm < MailForm::Base
   end
 
   def file_type_allowed?
+    if attachment.nil?
+      self.errors.add(:attachment, "can't be blank")
+      return
+    end
     acceptable_types = [
       'application/pdf',
       'application/vnd.ms-excel',
