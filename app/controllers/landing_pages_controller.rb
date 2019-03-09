@@ -11,7 +11,7 @@ class LandingPagesController < InheritedResources::Base
   def create
     @candidate_form = RegisterLandingCandidateForm.new(params['register_landing_candidate_form'])
     if @candidate_form.valid? && (@candidate_form.verify_1 == '0' ||  @candidate_form.verify_2 == '0')
-      flash.now[:error] = 'Thanks for your application. Unfortunately you do not meet our requirement for a placement at this time.'
+      flash.now[:error] = 'Thanks for your application. Unfortunately you do not meet our requirement for a placement. We require candidates to be fully qualified accountants who are eligible to work in the UK lawfully already.'
       @show_popup = true
     else
       @candidate_form.request = request
