@@ -250,4 +250,16 @@ body.about-us {
   .modal-dialog {
     margin: auto;
   }
+
+}
+
+.tooltip.bs-tooltip-top {
+
+  .tooltip-inner {
+    background-color: #1dabfb;
+  }
+
+  .arrow::before {
+    border-top-color: #1dabfb !important;
+  }  
 }

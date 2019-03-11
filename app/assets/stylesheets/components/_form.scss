@@ -720,6 +720,11 @@
       line-height: 16px;
       color: #666666;
 
+      span {
+        font-weight: 700;
+        color: #1dabfb;
+      }
+
       @include media-breakpoint-up(lg) {
         font-size: 12px;
       }

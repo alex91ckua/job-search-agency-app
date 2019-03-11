@@ -366,6 +366,9 @@ $j( document ).on('turbolinks:load', function() {
     parallaxIt('.hero__orb--2', 20);
     parallaxIt('.hero__orb--3', 15);
 
+    // Init tooltips
+    $j('[data-toggle="tooltip"]').tooltip()    
+
     // Nav toggle
     $j("#headerNavToggle").on("click", function (e) {
         e.preventDefault();
