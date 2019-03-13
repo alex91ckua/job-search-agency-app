@@ -25,12 +25,12 @@
       <label class="form__checkbox">
         <%= f.check_box :verify_1 %>
         <div class="checkbox__box"></div>
-        <p>I am a qualified Accountant</p>
+        <p>I am a <span data-toggle="tooltip" data-placement="top" title="I hold a professional accountancy qualification">qualified <%= svg 'information-button' %></span> Accountant</p>
       </label>
       <label class="form__checkbox">
         <%= f.check_box :verify_2 %>
         <div class="checkbox__box"></div>
-        <p>I am <span data-toggle="tooltip" data-placement="top" title="Inventore quae dicta.">eligible <%= svg 'information-button' %></span> to work in the UK</p>
+        <p>I am <span data-toggle="tooltip" data-placement="top" title="I have permanent residence in the UK, or an active work VISA">eligible <%= svg 'information-button' %></span> to work in the UK</p>
       </label>
       <label class="form__checkbox">
         <%= f.check_box :job_alerts %>
