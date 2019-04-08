@@ -443,6 +443,7 @@ $j( document ).on('turbolinks:load', function() {
     owlCarouselMobileOnly('.charter__items');
     owlCarouselMobileOnly('.recruitment-process__items');
     owlCarouselMobileOnly('.our-team .owl-carousel');
+    owlCarouselMobileOnly('.career-development__items');
 
 
     // Initialize Stats owlCarousel

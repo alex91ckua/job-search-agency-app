@@ -1,0 +1,189 @@
+<% content_for :body_class, 'homepage' %>
+
+<div class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="hero__title  col-12">
+        <h1>Global Accounting network Recruitment training academy</h1>
+        <h3>Learn whilst you earn. Everything you need to launch a career in recruitment.</h3>
+      </div>
+    </div>
+  </div>
+  <div class="hero__dropdown  container-fluid" id="accordion">
+    <div class="row">
+      <div class="container">
+        <div class="row" >
+          <div class="dropdown__btns  col-12">
+            <div class="dropdown__btn  dropdown__btn--1  collapsed" data-toggle="collapse" data-target="#heroDropdownContent1" aria-expanded="false" aria-controls="heroDropdownContent1" style="margin-left: auto; margin-right: auto">
+              <div class="btn__card">
+                <p>Want to become a recruiter?</p>
+                <span>Apply Now</span>
+                <div class="lines">
+                  <div class="line  line--1"></div>
+                  <div class="line  line--2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dropdown__content">
+        <div id="heroDropdownContent1" class="collapse" aria-labelledby="heroDropdown1" data-parent="#accordion">
+          <div class="content__wrapper pb-0">
+            <div class="container">
+              <div class="row">
+                <div class="content  content--1  col-12">
+                  <h3 class="content__title text-center">
+                    Do you want to build a career in recruitment?<br>
+                    Just submit your CV and apply.
+                  </h3>
+                  <%= render 'form' %>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row" >
+            <div class="content__stats  col-12">
+              <h4>The #1 financial recruitment firm people love working with</h4>
+              <picture>
+                <source
+                  srcset="<%= asset_path('stats.jpg') %>"
+                  media="(max-width: 991px)"
+                >
+                <source
+                  srcset="<%= asset_path('stats.jpg') %> 1x, <%= asset_path('stats@2x.jpg') %> 2x"
+                  media="(min-width: 992px)"
+                >
+                <img src="<%= asset_path('stats.jpg') %>" alt="The #1 financial recruitment firm people love working with">
+              </picture>
+              <p>Data from Glassdoor</p>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <div class="hero__orb  hero__orb--1">
+    <img src="<%= asset_path('orb-1.png') %>" alt="<%= COMPANY_NAME %>">
+  </div>
+  <div class="hero__orb  hero__orb--2">
+    <img src="<%= asset_path('orb-2.png') %>" alt="<%= COMPANY_NAME %>">
+  </div>
+  <div class="hero__orb  hero__orb--3">
+    <img src="<%= asset_path('orb-3.png') %>" alt="<%= COMPANY_NAME %>">
+  </div>
+</div>
+<div class="career-opportunities">
+  <div class="container">
+    <div class="row">
+      <div class="career-opportunities__descr  col-12">
+        <h2>The GAN Academy has been launched to enable us to develop the stars of tomorrow.</h2>
+        <p>Aimed at graduate level sales people looking to build a career in recruitment, The Academy will provide the complete recruitment toolkit. It’s a chance to earn whilst you learn with an Associate Consultant job waiting at the end. Combining classroom training, at desk work with active clients, 121 coaching & a mentoring scheme the course will arm you with all of the hard and soft skills required to be successful.</p>
+        <p>There is both an art and a science to Recruitment. This eight-week programme has been developed to train both. All in a performance-based work environment.</p>
+        <p>Global Accounting Network has a sophisticated approach to working with both candidates and clients. It’s this approach that has enabled us to achieve 40% year on year growth and launch our US business.</p>
+        <p>The Academy is a practical learning environment encompassing sales, account management, marketing & business modules. As an employee of GAN you will be working with real job hunters & clients who have urgent staffing needs. You will be working on real roles, working to real KPI’s and earning Commission on placements.</p>
+        <p>This is a chance to join a team that benefits from unlimited earning potential. Commission is paid on every placement. With success comes significant financial gain. You really can be in charge of your own income.</p>
+        <h3 class="text-uppercase">Modules include:</h3>
+        <p class="text-uppercase">• Candidate generation and management • Client development & management • Face to face and telephone sales • Building long term relationships • Negotiation  • Advertising vacancies & social media • Networking • Broad business and accountancy skills • Objective setting, time management and planning • Resilience, motivation and success behaviours</p>
+        <h3>Next Steps to joining us</h3>
+        <p>All you need to do, is submit your resume to our team for review. Let’s talk about why you should be our next superstar!</p>
+        <a href="#send-cv">I'm Ready - Next Steps Please</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="client-review">
+  <div class="container">
+    <div class="row">
+      <div class="col-12  col-sm-4  col-xl-3  offset-xl-1">
+        <img src="<%= asset_path('sara.jpg') %>" alt="">
+        <h4>Sara – Consultant</h4>
+      </div>
+      <div class="col-12  col-sm-8  col-xl-7">
+        <h3>“GAN is great at pushing you to your limits to become a high achiever.”</h3>
+        <p>Since joining GAN, I have learnt an incredible amount. Being a part of a business where the Senior Management Team shows a genuine interest in people’s development is very refreshing. Being rewarded is a constant reminder that the people in the business do matter. I have loved watching people receive a round of applause, well deserved gifts and see them walk off to a celebratory lunch as part off the Top Performers awards.</p>
+        <p>GAN is fundamentally invested into making its people a success as well as ensuring personal development is constantly being fueled. Whether it’s a training session which is outsourced or a one-to-one training to build your progress plan. GAN is great at pushing you to your limits to become a high achiever.</p>
+        <p>Culture is of great importance for me and GAN, is such a great, lively environment. We’re a family, and that’s what makes coming to work so much more enjoyable.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12  col-sm-4  col-xl-3  offset-xl-1">
+        <img src="<%= asset_path('andy.jpg') %>" alt="">
+        <h4>Andy – Business Manager</h4>
+      </div>
+      <div class="col-12  col-sm-8  col-xl-7">
+        <h3>“I have learnt a huge amount in 5 years…”</h3>
+        <p>Working for GAN has been a brilliant experience for me - not just in developing my business acumen, but also my development as a person. Joining as a graduate, I was given responsibility from day one and was immediately exposed to senior business leaders in companies ranging from start-ups through to listed businesses. I was given fantastic training from highly experienced colleagues which has given me the skills and confidence to succeed. Not only was I given extensive training in recruitment, but a large emphasis was put upon understanding business more broadly to make sure I had a well-rounded knowledge base to ensure I could accomplish my goals. I have learnt a huge amount in the 5 years I’ve been with the company, and have met some great people and made some great friends. For someone interested in moving into recruitment, but looking to find the right environment to thrive – I cannot recommend joining GAN more highly. Every opportunity is provided to make sure each Associate/Consultant will succeed, and it’s then up to the individual to make it happen.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="career-development">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-block">
+          <h3>Fantastic career development</h3>
+          <div class="round"></div>
+          <p>The Academy offers non recruiters the opportunity to learn all of the skills required to start your GAN career. However, your development journey does not stop there. Every recruiter has a Personal Development Plan with clear goals to enable career development. Through OTJ training, external courses and development based KPI’s the following levels are attainable.</p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="career-development__items  owl-carousel">
+          <div class="career-development__item" style="color: #008CFF">
+            <h4>Consultant</h4>
+            <p>Full 360 degree recruitment role. You will have a significant amount of autonomy to build your own desk. You will work with senior candidates and clients.</p>
+          </div>
+          <div class="career-development__item" style="color: #D21E46">
+            <h4>SENIOR Consultant</h4>
+            <p>In addition to your own desk the Senior Consultants role is to mentor juniors, support business development and account development initiatives. You will have strategic market development goals.</p>
+          </div>
+          <div class="career-development__item" style="color: #8CC832">
+            <h4>Business Manager</h4>
+            <p>As a Business Manager you are a senior on the team. You are the go to person for strategic account issues. You will be responsible for building key accounts, new revenue streams and additional areas of the business.</p>
+          </div>
+          <div class="career-development__item" style="color: #000047">
+            <h4>Team Manager</h4>
+            <p>This is a first formal step into Management. As such you will be responsible for the motivation, development & support of your team and its goals. This is a billing manager position with responsibility for your own revenue in addition to that of the team.</p>
+          </div>
+          <div class="career-development__item" style="color: #F5A623">
+            <h4>Director</h4>
+            <p>As a Director you are part of the strategic growth of the business. In addition to day to day recruitment or management responsibilities you will drive growth initiatives that form part of the mid/long term vision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="send-cv" id="send-cv">
+  <div class="container">
+    <div class="row">
+      <div class="send-cv__content  col-12">
+        <h3>So the next step is easy. Just submit your CV. Our team will do the rest.</h3>
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="submit-cv-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center">
+            Thank you for your application.<br>
+            Unfortunately you do not meet our requirement for a placement. We require recruiters who are eligible to work in the UK lawfully already.
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

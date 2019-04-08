@@ -1,0 +1,42 @@
+<div class="apply-recruiter-form" >
+  <%= form_for @candidate_form, url: academy_path, method: :create, remote: true, :html => { :multipart => true, :class => 'form__submit-cv' } do |f| %>
+
+    <div class="form__input">
+      <%= f.text_field :first_name, placeholder: 'First Name' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.email_field :email, placeholder: 'Email' %>
+    </div>
+
+    <div class="form__input">
+      <%= f.phone_field :phone, placeholder: 'Mobile phone' %>
+    </div>
+
+    <label class="form__file">
+      <%= f.file_field :attachment %>
+      <div class="file__btn">upload cv</div>
+      <p class="file__info">No files attached…</p>
+    </label>      
+
+    <div class="form__submit">
+      <%= f.submit 'Apply Now' %>
+    </div>
+
+    <div class="form__group">
+      <label class="form__checkbox">
+        <%= f.check_box :verify_1 %>
+        <div class="checkbox__box"></div>
+        <p>I am <span data-toggle="tooltip" data-placement="top" title="I have permanent residence in the UK, or an active work VISA">eligible <%= svg 'information-button' %></span> to work in the UK</p>
+      </label>    
+    </div>
+    <%= f.hidden_field :nickname  %>
+  <% end %>
+</div>
+<div class="apply-recruiter-form-result" >
+  <%= render 'partials/flash' %>
+</div>

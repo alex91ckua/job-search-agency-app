@@ -1,0 +1,275 @@
+.recruitment-process {
+  padding-bottom: 40px;
+
+  &:before {
+    content: '';
+    background-image: asset_url("homepage_about-us-l.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .title-block {
+    margin-top: -70px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: -100px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: -120px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-top: -150px;
+    }
+  }
+
+  .recruitment-process__items {
+    position: relative;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 35px 25px;
+    border-radius: 5.8px;
+    background-color: $white;
+
+    .owl-stage {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: calc(50% - 18.5px);
+      width: 37px;
+      height: 37px;
+      background-color: #D1D6D9 !important;
+      border-radius: 50%;
+
+      span {
+        font-size: 0;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: 5px solid $white;
+        border-left: 5px solid $white;
+        transition: all 0.3s;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .owl-prev {
+      left: 20px;
+
+      span {
+        margin-left: 13px;
+        margin-right: auto;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .owl-next {
+      right: 20px;
+
+      span {
+        margin-left: auto;
+        margin-right: 13px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+
+  .recruitment-process__item {
+
+    h4 {
+      margin-bottom: 17.5px;
+      font-family: "MuseoSansRounded300";
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .number {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 23.5px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid;
+      border-radius: 50%;
+      font-family: "MuseoSansRounded700";
+      font-size: 57.8px;
+      line-height: 80px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-family: "MuseoSlab300";
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: -0.37px;
+      text-align: center;
+      color: #4A4A4A;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+
+.recruitment-process {
+
+  .recruitment-process__items {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 40px;
+    border-radius: 6.8px;
+  }
+
+  .recruitment-process__item {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    &:not(:nth-last-child(1)) {
+      border-bottom: 1.7px solid #EDEEEF;
+
+      &::before {
+        display: block;
+        position: absolute;
+        left: -5.25px;
+        bottom: -5.25px;
+        content: "";
+        width: 9.35px;
+        height: 9.35px;
+        background-color: #fff;
+        border: 1.7px solid #EDEEEF;
+        border-radius: 50%;
+      }
+
+      &::after {
+        display: block;
+        position: absolute;
+        right: -5.25px;
+        bottom: -5.25px;
+        content: "";
+        width: 9.35px;
+        height: 9.35px;
+        background-color: #fff;
+        border: 1.7px solid #EDEEEF;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+}
+
+@include media-breakpoint-up(lg) {
+
+.recruitment-process {
+  padding-bottom: 70px;
+
+  .recruitment-process__items {
+    border-radius: 8px;
+    padding: 10px 40px;
+  }
+
+  .recruitment-process__item {
+    padding: 35px;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .number {
+      order: 1;
+      flex-shrink: 0;
+      margin: 0 auto;
+      width: 111px;
+      height: 111px;
+      font-size: 80px;
+      line-height: 111px;
+    }
+
+    h4 {
+      width: 170px;
+      order: 2;
+      flex-shrink: 0;
+      margin: auto 20px;
+      font-size: 20px;
+    }
+
+    p {
+      order: 3;
+      font-size: 16.8px;
+      line-height: 22.4px;
+      letter-spacing: -0.5px;
+      text-align: left;
+    }
+
+    &::before {
+      width: 11px;
+      height: 11px;
+      left: -5.5px;
+      bottom: -5.5px;
+    }
+
+    &::after {
+      width: 11px;
+      height: 11px;
+      right: -5.5px;
+      bottom: -5.5px;
+    }
+  }
+}
+}
+
+
+@include media-breakpoint-up(xl) {
+
+.recruitment-process {
+
+  .recruitment-process__items {
+    padding: 60px;
+    border-radius: 10px;
+  }
+
+  .recruitment-process__item {
+    border-width: 2.5px !important;
+
+    h4 {
+      font-size: 24px;
+    }
+
+    &::before,
+    &::after {
+      transform: scale(1.25);
+    }
+  }
+}
+}

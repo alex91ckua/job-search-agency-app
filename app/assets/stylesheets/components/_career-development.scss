@@ -1,9 +1,9 @@
-.recruitment-process {
+.career-development {
   padding-bottom: 40px;
 
   &:before {
     content: '';
-    background-image: asset_url("homepage_about-us-l.jpg");
+    background-image: url("../img/homepage_about-us-l.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,7 +31,7 @@
     }
   }
 
-  .recruitment-process__items {
+  .career-development__items {
     position: relative;
     max-width: 360px;
     margin-left: auto;
@@ -93,7 +93,8 @@
   }
 
 
-  .recruitment-process__item {
+  .career-development__item {
+    padding: 0 35px;
 
     h4 {
       margin-bottom: 17.5px;
@@ -132,9 +133,9 @@
 
 @include media-breakpoint-up(md) {
 
-.recruitment-process {
+.career-development {
 
-  .recruitment-process__items {
+  .career-development__items {
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -142,7 +143,7 @@
     border-radius: 6.8px;
   }
 
-  .recruitment-process__item {
+  .career-development__item {
     position: relative;
     width: 100%;
     padding: 20px;
@@ -190,14 +191,15 @@
 
 @include media-breakpoint-up(lg) {
 
-.recruitment-process {
-  padding-bottom: 70px;
+.career-development {
+  padding-bottom: 150px;
 
-  .recruitment-process__items {
+  .career-development__items {
+    padding: 10px 40px;
     border-radius: 8px;
   }
 
-  .recruitment-process__item {
+  .career-development__item {
     padding: 35px;
     border-width: 2px;
     display: flex;
@@ -205,22 +207,13 @@
     justify-content: center;
     align-items: center;
 
-    .number {
-      order: 1;
-      flex-shrink: 0;
-      margin: 0 auto;
-      width: 111px;
-      height: 111px;
-      font-size: 80px;
-      line-height: 111px;
-    }
-
     h4 {
       width: 170px;
       order: 2;
       flex-shrink: 0;
-      margin: auto 20px;
-      font-size: 20px;
+      margin: 20px 30px 20px 0;
+      font-size: 24px;
+      text-align: left;
     }
 
     p {
@@ -251,18 +244,21 @@
 
 @include media-breakpoint-up(xl) {
 
-.recruitment-process {
+.career-development {
+  padding-bottom: 200px;
 
-  .recruitment-process__items {
-    padding: 60px;
+  .career-development__items {
+    padding: 20px 60px;
     border-radius: 10px;
   }
 
-  .recruitment-process__item {
+  .career-development__item {
+    padding: 50px 35px;
     border-width: 2.5px !important;
 
     h4 {
-      font-size: 24px;
+      font-size: 30px;
+      width: 250px;
     }
 
     &::before,

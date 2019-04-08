@@ -1,0 +1,8 @@
+jQuery('.apply-recruiter-form-result').html('<%= j render 'partials/flash' %>');
+<% if @show_popup %>
+  jQuery("#submit-cv-modal").modal();
+<% end %>
+<% if flash['success'] %>
+  jQuery('.apply-recruiter-form').html("");
+  window.location.href = '<%= thanks_for_cv_apply_path %>';
+<% end %>
