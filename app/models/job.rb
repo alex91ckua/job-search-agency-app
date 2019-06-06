@@ -67,6 +67,7 @@ class Job < ApplicationRecord
     project_accountant
     commercial_analysis
     financial_analysis
+    part_qualified
   ]
 
   scope :salary_from, ->(salary_from) { where('salary >= ?', salary_from) }
