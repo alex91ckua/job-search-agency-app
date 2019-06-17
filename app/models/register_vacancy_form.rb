@@ -19,6 +19,10 @@ class RegisterVacancyForm < MailForm::Base
   end
 
   def file_type_allowed?
+    if attachment.nil?
+      self.errors.add(:attachment, "can't be blank")
+      return
+    end
     acceptable_types = [
       'application/pdf',
       'application/vnd.ms-excel',
