@@ -317,6 +317,12 @@ $j( document ).on('turbolinks:load', function() {
         }, 1000);
     });
 
+    $j('.video-section__link').click(function(e){
+      e.preventDefault();
+      var video = '<div class="video-section__video"><iframe src="'+ $j(this).attr('data-video') +'" autoplay ></iframe></div>';
+      $j(this).replaceWith(video);
+    });    
+
     // Our-team see-more handler
     $j(".member__link a").on("click", function(e) {
         e.preventDefault();

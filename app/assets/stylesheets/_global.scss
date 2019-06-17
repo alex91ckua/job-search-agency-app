@@ -32,22 +32,22 @@ body.current-jobs {
   }
 }
 
-body.client-services:not(.client-services-callback) {
+// body.client-services:not(.client-services-callback) {
 
-  &:before {
-    content: '';
-    background-image: image_url("global-sunglasses-web.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-}
+//   &:before {
+//     content: '';
+//     background-image: image_url("global-sunglasses-web.jpg");
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     position: fixed;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     z-index: -1;
+//   }
+// }
 
 body.about-us {
 

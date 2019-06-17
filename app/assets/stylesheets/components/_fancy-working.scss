@@ -1,0 +1,99 @@
+.fancy-working {
+  padding: 40px 0;
+
+  .fancy-working__heading {
+    margin-bottom: 30px;
+    font: 30px/1em "MuseoSlab500";
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.50);
+  }
+
+  .fancy-working__item {
+    margin-bottom: 20px;
+    background-color: $white;
+    padding: 20px 10px;
+    border-radius: 8px;
+    text-align: center;
+
+    h5 {
+      margin: 0 0 20px 0;
+      font: 20px/1em "MuseoSansRounded700";
+    }
+
+    p {
+      margin: 0 0 20px 0;
+      font-size: 16.8px/1.1em "MuseoSansRounded500";
+      color: #666666;
+    }
+
+    a {
+      display: block;
+      width: 250px !important;
+      margin: auto;
+    }
+
+    &--green {
+
+      h5 {
+        color: #8CC832;
+      }
+
+      a {
+        @include make-btn(green);
+      }
+    }
+
+    &--blue {
+
+      h5 {
+        color: #0E0E77;
+      }
+      
+      a {
+        @include make-btn(darkblue);
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-up(lg) {
+
+.fancy-working {
+  padding: 30px 0 60px 0;
+  
+  .fancy-working__heading {
+    font-size: 40px;
+  }
+
+  .fancy-working__item {
+    margin: 0;
+    padding: 25px;
+
+    h5 {
+      font-size: 25px;
+    }
+  }
+}
+}
+
+@include media-breakpoint-up(xl) {
+
+.fancy-working {
+  padding: 40px 0 130px 0;
+
+  .fancy-working__heading {
+    margin-bottom: 50px;
+  }
+
+  .fancy-working__item {
+    padding: 25px 35px 35px 35px;
+
+    h5,
+    p {
+      margin: 0 0 30px 0;
+    }
+  }
+}
+}

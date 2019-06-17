@@ -1,0 +1,15 @@
+.banner {
+  padding: 30px 0;
+  background-color: #D21E46;
+
+  p {
+    margin: 0;
+    font: 22px/1.1em "MuseoSansRounded300";
+    color: $white;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 34px;
+    }
+  }
+}
