@@ -22,4 +22,5 @@
 //= require vh-check.min
 //= require js.cookie
 //= require cookie-bar
+//= require jquery-modal-video.min
 //= require script
