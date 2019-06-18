@@ -318,7 +318,7 @@ $j( document ).on('turbolinks:load', function() {
     });
 
     // Show youtube video in popup
-    $j('.video-section__link').modalVideo({channel:'youtube'});
+    $j('.video-section').modalVideo({channel:'youtube'});
 
     // Our-team see-more handler
     $j(".member__link a").on("click", function(e) {

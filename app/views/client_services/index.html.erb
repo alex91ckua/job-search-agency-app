@@ -2,10 +2,12 @@
 
 <%= render 'partials/text_page_hero_section.html', title: 'Recruiting in a world where people count', subtitle: 'Finance talent for your business' %>
 
-<div class="video-section">
-  <a class="video-section__link" href="#" data-video-id="wuh7hU9Kwfc">
-    <img src="<%= asset_path('video-preview.jpg') %>" alt="Video preview"/>
-  </a>
+<div class="video-section" data-video-id="wuh7hU9Kwfc">
+  <video class="video-section__link" autoplay loop muted poster="<%= asset_path('video-preview.jpg') %>" >
+    <source src="https://global-accounting-network.s3.eu-west-2.amazonaws.com/videos/gan.mp4" type="video/mp4">
+    <source src="https://global-accounting-network.s3.eu-west-2.amazonaws.com/videos/gan.webm" type="video/webm">
+    <source src="https://global-accounting-network.s3.eu-west-2.amazonaws.com/videos/gan.ogv" type="video/ogg">
+  </video>
 </div>
 
 <div class="register-vacancy">

@@ -1,12 +1,52 @@
 .video-section {
   width: 100%;
+  padding-bottom: 50%;
+  position: relative;
   background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Crect fill='%23fafafa' id='canvas_background' height='5' width='5' /%3E%3C/g%3E%3Cg%3E%3Cellipse stroke='%23fafafa' ry='1' rx='1' id='svg_4' cy='2.5' cx='2.5' stroke-width='0' fill='%23e1e1e1'/%3E%3C/g%3E%3C/svg%3E%0A");
   background-repeat: repeat;
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 500px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 34.5px);
+    left: calc(50% - 23.5px);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 34.5px 0 34.5px 47px;
+    border-color: transparent transparent transparent #ffffff;
+    z-index: 9;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    cursor: pointer;
+  }
 
   .video-section__link {
     width: 100%;
     display: block;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
 
     &::before {
       content: "";
@@ -18,6 +58,8 @@
       border-style: solid;
       border-width: 34.5px 0 34.5px 47px;
       border-color: transparent transparent transparent #ffffff;
+      z-index: 2;
+      cursor: pointer;
     }
 
     img {
@@ -28,21 +70,21 @@
   .video-section__video {
     position: relative;
     width: 100%;
-    // max-width: 800px;
+    max-width: 800px;
     margin: auto;
     padding-bottom: 56%;
 
     @media (min-width: 790px) {
-      padding-bottom: 900px;
+      padding-bottom: 450px;
     }
   }
 
   iframe {
     position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
     border: none;
   }
 }
