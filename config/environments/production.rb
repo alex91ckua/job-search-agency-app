@@ -99,7 +99,7 @@ Rails.application.configure do
   }
 
   # Google Analytics
-  GA.tracker = 'UA-57002128-1'
+  GA.tracker = 'UA-144760728-1'
 
   # Expire headers
   config.public_file_server.headers = {
