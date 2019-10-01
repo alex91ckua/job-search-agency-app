@@ -60,10 +60,14 @@
       font-family: "MuseoSansRounded300";
       font-size: 12px;
       color: #4A4A4A;
+      position: relative;
+      padding-left: 15px;
 
       &::before {
+        position: absolute;
         content: "•";
-        margin-right: 15px;
+        top: 0;
+        left: 0;
       }
     }
   }
