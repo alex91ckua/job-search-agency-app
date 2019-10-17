@@ -15,9 +15,13 @@ class ArticlesController < InheritedResources::Base
 
   def show
     @article = Article.unscoped.friendly.find(params[:id])
+    image_url = @article.image.url ? @article.image.url : nil
     set_meta_tags title: @article.title,
                   description: '',
-                  og: { title: @article.title }
+                  og: {
+                    title: @article.title,
+                    image: image_url
+                  }
     @related_articles = Article.order('RANDOM()').where.not(slug: params[:id]).limit(15)
 
     if current_admin_user.nil? && @article.status == 'Draft'
