@@ -1,13 +1,17 @@
-class ArticlesController < InheritedResources::Base
-
+class PodcastsController < InheritedResources::Base
   def index
-    set_meta_tags title: 'Read Our Blog | Finance Recruiting Agency News',
-                  description: 'Read content from one of the most respected boutique search and recruitment firms in the UK. Our blog contains thought provoking insights from our recruitment experts. We cover a wide range of topics including productivity, critical business skills, and global career trends.',
-                  og: { title: 'Read Our Blog | Finance Recruiting Agency News' }
+    set_meta_tags title: 'Listen to our Podcasts | Finance Recruiting Agency News',
+                  description: 'Read content from one of the most respected
+                                boutique search and recruitment firms in the UK.
+                                Our blog contains thought provoking insights
+                                from our recruitment experts. We cover a wide
+                                range of topics including productivity, critical
+                                business skills, and global career trends.',
+                  og: { title: 'Listen to Our Podcasts | Finance Recruiting Agency News' }
 
-    @articles = Article.posts.order(created_at: :desc)
+    @articles = Article.podcasts.order(created_at: :desc)
     @articles = @articles.where_tag(params[:order_by_tag]) if params[:order_by_tag].present?
-    tags = Article.posts.pluck(:tags)
+    tags = Article.podcasts.pluck(:tags)
     @striped_tags = []
     tags.each { |t| t ? t.split(',').each { |tag| @striped_tags.push tag.strip } : '' }
     @striped_tags = @striped_tags.uniq # remove duplicates
@@ -22,7 +26,6 @@ class ArticlesController < InheritedResources::Base
                     title: @article.title,
                     image: image_url
                   }
-    @related_articles = Article.order('RANDOM()').where.not(slug: params[:id]).limit(15)
 
     if current_admin_user.nil? && @article.status == 'Draft'
       redirect_to root_path

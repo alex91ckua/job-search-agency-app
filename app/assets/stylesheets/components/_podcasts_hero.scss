@@ -1,0 +1,147 @@
+.podcasts .header .header__nav .nav__phone .phone__icon svg {
+  fill: #92D12F;
+}
+
+.podcasts .hero {
+  background-color: #92D12F;
+}
+
+.podcasts .hero {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 0;
+  overflow: hidden;
+
+  .hero__orb {
+    @include media-breakpoint-down(md) {
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  .hero__title {
+    z-index: 5;
+    text-align: center;
+
+    h1 {
+      margin-top: 37px;
+      margin-bottom: 150px;
+      font-family: "MuseoSlab500";
+      font-size: 25px;
+      // line-height: 26px;
+      // letter-spacing: -0.67px;
+      color: $white;
+      text-align: center;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 50px;
+      }
+    }
+
+    a {
+      @include make-btn(blue);
+      display: inline-block;
+      width: auto;
+      margin-top: 20px;
+    }
+  }
+
+  .btn__card {
+    border-radius: 4px 4px 0px 0px;
+    background-color: #0d0e77;
+    padding: 23px 12px 17px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    // position: absolute;
+    width: 323px;
+    // height: 110%;
+    // top: 0;
+    // left: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+
+    p {
+      display: block;
+      margin-bottom: 3px;
+      font-family: "MuseoSansRounded700";
+      font-size: 18px;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      // white-space: nowrap;
+      margin-bottom: 2px;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 14px;
+      font-family: "MuseoSlab300";
+      font-size: 18px;
+      color: $white;
+      text-align: center;
+      // white-space: nowrap;
+      transition: all 0.3s;
+    }
+
+    .lines {
+      height: 5px;
+      width: 39px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      position: relative;
+    }
+
+    .line {
+      top: 0;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background-color: $white;
+      transition: all 0.2s;
+      border-radius: 4px;
+    }
+
+    .line--1 {
+      right: 49%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .line--2 {
+      left: 49%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .podcasts .hero {
+    padding-top: 130px;
+
+    .hero__title {
+      h1 {
+        font-size: 33px;
+        line-height: 32px;
+
+        br {
+          display: none;
+        }
+      }
+
+      .round {
+        @include make-round();
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+}

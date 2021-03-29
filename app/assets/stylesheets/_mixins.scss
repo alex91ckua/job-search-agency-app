@@ -40,6 +40,12 @@
     background-position: bottom;
   }
 
+  @if $color == green {
+    &:hover {
+      color: white;
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     padding: 8px 16px;
     font-size: 20px;

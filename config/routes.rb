@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :landing_pages, only: [:show, :create], :path => '/landing'
   resources :companies, only: [:index, :show]
   resources :articles, only: [:index, :show]
+  resources :podcasts, only: [:index, :show]
   resource :candidate, only: [:create]
   get 'client-services', to: 'client_services#index'
   get 'join-us', to: 'join_us#index'

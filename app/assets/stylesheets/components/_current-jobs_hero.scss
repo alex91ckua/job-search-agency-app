@@ -2,10 +2,11 @@
 .client-services .hero,
 .contact-us .hero,
 .about-us .hero,
+.podcast-page .hero,
 .blog-page .hero,
 .diversity .hero {
   position: relative;
-  background-color: #008CFF;
+  background-color: #008cff;
   padding-top: 130px;
   padding-bottom: 35px;
   overflow: hidden;
@@ -49,142 +50,138 @@
   }
 }
 
-
 @include media-breakpoint-up(md) {
+  .current-jobs .hero,
+  .client-services .hero,
+  .contact-us .hero,
+  .about-us .hero,
+  .podcast-page .hero,
+  .blog-page .hero,
+  .diversity .hero {
+    padding-top: 130px;
+    padding-bottom: 60px;
 
-.current-jobs .hero,
-.client-services .hero,
-.contact-us .hero,
-.about-us .hero,
-.blog-page .hero,
-.diversity .hero {
-  padding-top: 130px;
-  padding-bottom: 60px;
+    .hero__title {
+      h1 {
+        margin-bottom: 20px;
+        font-size: 30px;
+        line-height: 32px;
 
-  .hero__title {
-
-    h1 {
-      margin-bottom: 20px;
-      font-size: 30px;
-      line-height: 32px;
-
-      br {
-        display: none;
+        br {
+          display: none;
+        }
       }
-    }
 
-    .round {
-      @include make-round();
-      margin-bottom: 15px;
-    }
+      .round {
+        @include make-round();
+        margin-bottom: 15px;
+      }
 
-    h3 {
-      font-size: 20px;
-      line-height: 28px;
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+      }
     }
   }
 }
-}
-
 
 @include media-breakpoint-up(lg) {
+  .current-jobs .hero,
+  .client-services .hero,
+  .contact-us .hero,
+  .about-us .hero,
+  .podcasts .hero,
+  .blog-page .hero,
+  .podcast-page .hero,
+  .diversity .hero {
+    padding-top: 130px;
+    padding-bottom: 80px;
 
-.current-jobs .hero,
-.client-services .hero,
-.contact-us .hero,
-.about-us .hero,
-.blog-page .hero,
-.diversity .hero {
-  padding-top: 130px;
-  padding-bottom: 80px;
+    .hero__title {
+      h1 {
+        margin-bottom: 25px;
+        font-size: 40px;
+        line-height: 36.4px;
+        letter-spacing: -1.2px;
 
-  .hero__title {
+        br {
+          display: none;
+        }
+      }
 
-    h1 {
-      margin-bottom: 25px;
-      font-size: 40px;
-      line-height: 36.4px;
-      letter-spacing: -1.2px;
+      .round {
+        @include make-round();
+        margin-bottom: 20px;
+      }
 
-      br {
-        display: none;
+      h3 {
+        font-size: 26px;
+        line-height: 42px;
+        letter-spacing: -0.96px;
       }
     }
 
-    .round {
-      @include make-round();
-      margin-bottom: 20px;
-    }
+    .hero__orb {
+      img {
+        width: 100%;
+      }
 
-    h3 {
-      font-size: 26px;
-      line-height: 42px;
-      letter-spacing: -0.96px;
-    }
-  }
+      &--1 {
+        display: block;
+        position: absolute;
+        width: 465px;
+        height: 465px;
+        top: -60px;
+        left: calc(50% - 232.5px);
+      }
 
-  .hero__orb {
+      &--2 {
+        display: block;
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        top: 70px;
+        left: -200px;
+      }
 
-    img {
-      width: 100%;
-    }
-
-    &--1 {
-      display: block;
-      position: absolute;
-      width: 465px;
-      height: 465px;
-      top: -60px;
-      left: calc(50% - 232.5px);
-    }
-
-    &--2 {
-      display: block;
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      top: 70px;
-      left: -200px;
-    }
-
-    &--3 {
-      display: block;
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      top: 140px;
-      right: -400px;
+      &--3 {
+        display: block;
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        top: 140px;
+        right: -400px;
+      }
     }
   }
-}
 }
 
 @include media-breakpoint-up(xl) {
+  .current-jobs .hero,
+  .client-services .hero,
+  .contact-us .hero,
+  .about-us .hero,
+  .podcasts .hero,
+  .blog-page .hero,
+  .podcast-page .hero,
+  .diversity .hero {
+    padding-top: 170px;
+    padding-bottom: 120px;
 
-.current-jobs .hero,
-.client-services .hero,
-.contact-us .hero,
-.about-us .hero,
-.blog-page .hero,
-.diversity .hero {
-  padding-top: 170px;
-  padding-bottom: 120px;
+    .hero__orb {
+      &--1 {
+        top: -15px;
+      }
 
-  .hero__orb {
+      &--2 {
+        top: 130px;
+        left: auto;
+        right: calc(50% + 450px);
+      }
 
-    &--1 {
-      top: -15px;
-    }
-
-    &--2 {
-      top: 130px;
-      left: auto;
-      right: calc(50% + 450px);
-    }
-
-    &--3 {
-      left: calc(50% + 400px)
+      &--3 {
+        left: calc(50% + 400px);
+      }
     }
   }
-}
 }

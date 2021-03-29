@@ -1,0 +1,51 @@
+.bg-image-section {
+  padding: 180px 0;
+  background-size: cover;
+
+  @include media-breakpoint-down(sm) {
+    padding: 50px 0;
+  }
+
+  &--podcasts {
+    background-image: image-url('podcast-bg.jpg');
+    background-color: #8fca3c;
+  }
+
+  &__modal {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 100px 100px 41px 100px;
+    text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      padding: 35px;
+    }
+  }
+
+  &__title1 {
+    color: #8DC832;
+    text-align: center;
+    font-size: 25px;
+    font-family: "MuseoSansRounded700";
+    display: block;
+    margin-bottom: 20px;
+    line-height: 28px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 19px;
+    }
+  }
+  
+  &__title2 {
+    display: block;
+    color: #6b6b6b;
+    text-align: center;
+    line-height: 28px;
+    font-size: 25px;
+    font-family: "MuseoSansRounded500";
+
+    @include media-breakpoint-down(sm) {
+      font-size: 20px;
+    }
+  }
+}

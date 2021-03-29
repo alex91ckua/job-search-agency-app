@@ -1,0 +1,18 @@
+.brand-heading {
+  padding: 100px 0 80px 0;
+  
+  &__text {
+    text-align: center;
+
+    p {
+      font-family: "MuseoSansRounded700";
+      font-size: 28px;
+      line-height: 37px;
+      color: #8DC832;       
+      
+      @include media-breakpoint-down(sm) {
+        font-size: 20px;
+      }
+    }
+  }
+}

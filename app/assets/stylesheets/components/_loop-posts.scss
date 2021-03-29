@@ -1,0 +1,99 @@
+.loop-posts {
+  padding: 103px 0 109px 0;
+
+  $posts-margin: 20px / 2;
+
+  &__content {
+    padding: 87px 60px 54px 60px;
+    background-color: white;
+    border-radius: 14px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 30px;
+    }
+  }
+
+  &__items {
+    margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+    // margin-bottom: 80px;
+  }
+
+  &__info {
+    padding: 20px 24px 15px 24px;
+  }
+
+  &__item {
+    padding: 0 $posts-margin;
+    padding-bottom: 15px;
+    flex: 1 1 33.333%;
+    max-width: 33.333%;
+    text-decoration: none !important;
+    display: block;
+    margin-bottom: 48px;
+
+    @include media-breakpoint-down(md) {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    .shadow {
+      -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      height: 100%;
+    }
+
+    &:hover {
+      .shadow {
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.44);
+        -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.44);
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.44);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 172px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    color: rgba(0, 0, 0, 0.58);
+    margin-bottom: 75px;
+    margin-top: 19px;
+    font-size: 24px;
+    font-family: "MuseoSlab500";
+  }
+
+  &__subtext {
+    color: rgba(0, 0, 0, 0.58);
+    margin-bottom: 14px;
+    font-size: 16px;
+    font-family: "MuseoSlab500";
+  }
+
+  &__cta {
+    text-align: center;
+
+    a {
+      @include make-btn(green);
+      display: inline-block;
+      width: auto;
+    }
+  }
+}

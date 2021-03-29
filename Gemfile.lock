@@ -126,7 +126,7 @@ GEM
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
-    ffi (1.9.23)
+    ffi (1.9.25)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)

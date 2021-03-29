@@ -1,0 +1,185 @@
+<% content_for :body_class, 'podcasts' %>
+
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="hero__title  col-12">
+          <%= image_tag("the-variants-analysis-logo.png", alt: 'The variants analysis logo', class: 'img-fluid') %>
+          <h1>A Podcast By Global Accounting Network</h1>
+        </div>
+      </div>
+    </div>
+    <div class="hero__orb  hero__orb--1">
+      <%= image_tag("orb-12.png", alt: 'Orb icon', class: 'img-fluid') %>
+    </div>
+    <div class="hero__orb  hero__orb--2">
+      <%= image_tag("orb-2.png", alt: 'Orb icon', class: 'img-fluid') %>
+    </div>
+    <div class="hero__orb  hero__orb--3">
+      <%= image_tag("orb-3.png", alt: 'Orb icon', class: 'img-fluid') %>
+    </div>
+
+    <%= link_to contact_us_path, class: 'btn__card' do %>
+      <p>WANT TO BECOME A RECRUITER?</p>
+      <span>Get in touch</span>
+      <div class="lines">
+        <div class="line  line--1"></div>
+        <div class="line  line--2"></div>
+      </div>    
+    <% end %>
+  </div>
+  <section class="brand-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 brand-heading__text">
+          <p>Accounting and finance is changing. The days of stereotypical accountants - grey men, in grey suits doing
+            grey things - are long gone. Finance and accounting teams are now staffed and led by a diverse range of
+            professionals who have phenomenal business skills and have taken varied - inspiring - journeys to get to
+            where they are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="charter">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title-block">
+            <h3>About the podcast</h3>
+            <div class="round"></div>
+            <p>In this podcast, we speak to these leaders who have used their finance and accounting backgrounds to
+              forge unconventional and exciting career paths.</p>
+            <p>We want to inspire the next generation of leaders within the finance world to take control of their
+              career trajectory and to do that we’ll be asking influential leaders to open up about their career
+              journeys once they used their finance and accounting backgrounds as a launchpad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="bg-image-section bg-image-section--podcasts">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="bg-image-section__modal">
+            <span class="bg-image-section__title1">
+              In a series of open and inspiring conversations, we’ll discover what it takes to use a finance background
+              to get to the top, whether that’s staying in finance or moving into something completely different. We
+              discuss the importance of career milestones, plotting a viable career path, overcoming mistakes, and the
+              influential people who helped and supported today’s finance leaders.
+            </span>
+            <span class="bg-image-section__title2">This podcast is a platform for sharing the stories behind career
+              progression that starts in one place - a finance qualification - but can take you anywhere.</span>
+
+            <section class="various-links">
+              <h5 class="various-links__title">Availble To Listen On</h5>
+              <ul class="various-links__items">
+                <li>
+                  <%= link_to '#', target: '_blank' do %>
+                    <%= image_tag("spotify-icon.svg", alt: 'Spotify icon', width: 50, height: 50) %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to '#', target: '_blank' do %>
+                    <%= image_tag("apple-music.svg", alt: 'Apple Music icon', width: 50, height: 50) %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to '#', target: '_blank' do %>
+                    <%= image_tag("youtube.svg", alt: 'Youtube icon', width: 50, height: 50) %>
+                  <% end %>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="loop-posts">
+    <div class="container">
+      <div class="title-block  title-block--single">
+        <h3>All Episodes</h3>
+      </div>
+
+      <div class="loop-posts__content">
+        <div class="loop-posts__items" itemscope itemtype="https://schema.org/Blog">
+          <%= render partial: 'article', collection: @articles, as: :article %>
+        </div>
+
+        <%
+=begin%>
+ <div class="loop-posts__cta">
+          <a href="#">Load more results</a>
+        </div> 
+<%
+=end%>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="podcast-team">
+    <div class="container">
+      <div class="podcast-team__items">
+
+        <div class="podcast-team__item">
+          <div class="title-block  title-block--small">
+            <h3>Our Host</h3>
+          </div>
+          <div class="podcast-team__profile">
+            <div class="podcast-team__top">
+              <div class="podcast-team__img">
+                <%= image_tag("adrian.jpg", alt: 'Adrian O’connor') %>
+              </div>
+            </div>
+            <h5 class="podcast-team__name">Adrian O’connor</h5>
+            <div class="podcast-team__bio">
+              <p>Adrian is the Founding Partner and Executive Recruiter at the Global Accounting Network (GAN), a
+                specialist recruitment firm which helps connect top tier finance professionals with leading businesses
+                around the world.</p>
+
+              <p>After becoming disillusioned with the financial recruitment process, Adrian cofounded GAN with a view
+                to make things better for candidates and clients. His goal? Stop the commodification of finance
+                professionals.</p>
+
+              <p>Adrian is passionate about giving power back to the candidate and has spent much of his 20-year career
+                building specialist teams dedicated to helping finance professionals take control of their careers. This
+                podcast has been made to inspire the future leaders of finance by picking the brains of the current crop
+                through a series of insightful interviews.</p>
+
+              <p>Financial recruitment isn't working as it should for candidates. But, by talking with some of
+                finance and accounting's most influential leaders, Adrian wants to show it can be fixed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="podcast-team__item">
+          <div class="title-block  title-block--small">
+            <h3>Our Guests</h3>
+          </div>
+          <div class="podcast-team__profile">
+            <div class="podcast-team__top">
+              <div class="podcast-team__img">
+                <%= image_tag("podcasts-guests.jpg", alt: 'People photo') %>
+              </div>
+            </div>
+            <!-- <h5 class="podcast-team__name">Adrian O’connor</h5> -->
+            <div class="podcast-team__bio mt-5 mb-3">
+              <p>We’ll be talking to some of the most inspiring leaders in finance and accounting. Visionary CEOs, innovative CFOs, ambitious senior managers… these guests have seen it all in the industry, and they’ll be sharing their priceless career insights, philosophies and advice with the next generation of professionals. Besides their personal stories, our guests will be diving into details about the companies they lead, and the future of the wider finance industry.</p>
+            </div>
+            <div class="mt-auto" >
+              <%= link_to 'Want To Be Our Next Guest?', contact_us_path, class: 'podcast-team__cta' %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

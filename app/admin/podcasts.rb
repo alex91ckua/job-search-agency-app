@@ -1,6 +1,5 @@
-ActiveAdmin.register Article do
+ActiveAdmin.register Article, as: 'Podcasts' do
   permit_params :title, :subtitle, :description, :tags, :admin_user_id, :image, :created_at, :status
-  menu label: 'Blog'
 
   scope :all, default: true
   scope('Published') { |scope| scope.where(status: Article.statuses['Published']) }
@@ -8,7 +7,7 @@ ActiveAdmin.register Article do
 
   action_item only: :show do
     a = controller.find_resource
-    link_to 'Preview Article', article_path(a), target: :_blank
+    link_to 'Preview Podcast', podcast_path(a), target: :_blank
   end
 
   controller do
@@ -19,7 +18,7 @@ ActiveAdmin.register Article do
     end
     # override default_scope, remove it
     def scoped_collection
-      Article.unscoped.posts
+      Article.unscoped.podcasts
     end
   end
 
@@ -68,6 +67,7 @@ ActiveAdmin.register Article do
   end
 
   form do |f|
+    f.object.post_type = Article.post_types['Podcast']
     inputs do
       f.input :title
       f.input :subtitle

@@ -105,6 +105,15 @@
         display: inline-block;
         width: auto;
       }
+
+      &--podcast {
+        a {
+          @include make-btn(green);
+          display: inline-block;
+          width: auto;
+        }
+      }
+
     }
   }
 }

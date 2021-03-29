@@ -1,0 +1,24 @@
+.various-links {
+  $margin-between-links: 10.5px / 2;
+  
+  margin-top: 45px;
+  text-align: center;
+
+  &__title {
+    font-size: 25px;
+    margin-bottom: calc(20px - #{$margin-between-links});
+    color: #6b6b6b;
+    font-family: "MuseoSansRounded700";
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: $margin-between-links;
+
+    li {
+      margin: $margin-between-links;
+    }
+  }
+}
