@@ -1,8 +1,8 @@
 //= require active_admin/base
 //= require activeadmin/froala_editor/froala_editor.pkgd.min
+//= require froala_custom_buttons
 //= require activeadmin/froala_editor_input
 //= require activeadmin_reorderable
-
 
 $(document).ready(function(){
 

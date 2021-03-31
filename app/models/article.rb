@@ -44,4 +44,5 @@ class Article < ApplicationRecord
       save
     end
   end
+
 end

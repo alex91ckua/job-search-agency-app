@@ -193,6 +193,10 @@
     .content__left-column {
       width: 65%;
 
+      iframe {
+        max-width: 100%;
+      }
+
       &:nth-last-child(1) {
         margin-bottom: 0;
       }

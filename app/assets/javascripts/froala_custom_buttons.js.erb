@@ -1,0 +1,13 @@
+$(document).ready(function(){
+
+  $.FroalaEditor.DefineIcon('imageIcon', {SRC: '<%= asset_url("podcast.svg") %>', ALT: 'Buzzsprout podcast providers', template: 'image'});
+
+  $.FroalaEditor.RegisterCommand('buzzsprout_podcast_providers_button', {
+    title: 'Buzzsprout podcast providers',
+    icon: 'imageIcon',
+    focus: false,
+    callback: function () {
+      this.html.insert('%buzzsprout_podcast_providers%');
+    }
+  });
+});
