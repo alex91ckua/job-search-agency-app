@@ -1,86 +1,122 @@
 <% content_for :body_class, 'podcast-page' %>
 
-  <%= render 'partials/text_page_hero_section.html', title: @article.title, subtitle: @article.subtitle %>
+<%= render 'partials/text_page_hero_section.html', title: @article.title, subtitle: @article.subtitle %>
 
-  <% if @article.status == 'Draft' %>
-    <div class="draft-preview-mode" ><%= t('article.draft_preview_message') %></div>
-  <% end %>
+<% if @article.status == 'Draft' %>
+<div class="draft-preview-mode"><%= t('article.draft_preview_message') %></div>
+<% end %>
 
-  <div class="blog-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<div class="blog-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
 
-    <meta itemprop="mainEntityOfPage" content="<%= article_url(@article) %>">
-    <meta itemprop="datePublished" content="<%= @article.created_at %>">
-    <meta itemprop="dateModified" content="<%= @article.updated_at %>">
-    <meta itemprop="name headline" content="<%= @article.title %>">
+  <meta itemprop="mainEntityOfPage" content="<%= article_url(@article) %>">
+  <meta itemprop="datePublished" content="<%= @article.created_at %>">
+  <meta itemprop="dateModified" content="<%= @article.updated_at %>">
+  <meta itemprop="name headline" content="<%= @article.title %>">
 
-    <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" style="display: none" >
-      <img itemprop="url" alt="<%= @article.title %>" src="<%= @article.image.url ? @article.image.url : asset_path('no_image.jpg') %>">
-      <meta itemprop="width" content="640">
-      <meta itemprop="height" content="480">
-      <figcaption itemprop="caption"><%= @article.title %></figcaption>
-    </figure>
+  <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" style="display: none">
+    <img itemprop="url" alt="<%= @article.title %>" src="<%= @article.image.url ? @article.image.url : asset_path('no_image.jpg') %>">
+    <meta itemprop="width" content="640">
+    <meta itemprop="height" content="480">
+    <figcaption itemprop="caption"><%= @article.title %></figcaption>
+  </figure>
 
-    <span itemprop="author" itemscope itemtype="https://schema.org/Person" style="display: none">
-      <meta rel="author" itemprop="url" href="<%= articles_url %>">
-      <meta itemprop="name" content="<%= "#{@article.admin_user.first_name} #{@article.admin_user.last_name}" %>" >
-      <meta itemprop="jobTitle" content="Director">
-      <meta itemprop="worksFor" content="Global Accounting Network">
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person" style="display: none">
+    <meta rel="author" itemprop="url" href="<%= articles_url %>">
+    <meta itemprop="name" content="<%= "#{@article.admin_user.first_name} #{@article.admin_user.last_name}" %>">
+    <meta itemprop="jobTitle" content="Director">
+    <meta itemprop="worksFor" content="Global Accounting Network">
+  </span>
+
+  <span style="display: none" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Global Accounting Network">
+    <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="<%= asset_url('gan-logo.jpg') %>">
+      <meta itemprop="width" content="305">
+      <meta itemprop="height" content="105">
     </span>
+  </span>
 
-    <span style="display: none" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-      <meta itemprop="name" content="Global Accounting Network">
-      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="<%= asset_url('gan-logo.jpg') %>">
-        <meta itemprop="width" content="305">
-        <meta itemprop="height" content="105">
-      </span>
-    </span>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blog-post__content">
+          <div class="content__left-column">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="blog-post__content">
-            <div class="content__left-column">
-              <%= @article.description.html_safe %>
+            
+            <div class="podcast-info__listen">
+              <a class="listen__item listen__item--apple" target="_blank" href="https://podcasts.apple.com/us/podcast/business-life-hacks/id1509870238?uo=4">Apple Podcasts</a>
+              <a class="listen__item listen__item--spotify" target="_blank" href="https://open.spotify.com/show/52bwGDjjU5odHDY4qePNBr">Spotify</a>
+              <a class="listen__item listen__item--google" target="_blank" href="https://podcasts.google.com/?feed=aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xMDgxMjUwLnJzcw==">Google Podcasts</a>
+              <a class="listen__item--more" href="#" onclick="jQuery('#more-providers').toggleClass('d-none'); return false;">More</a>
             </div>
-            <div class="content__right-column">
-              <div class="content__share">
-                <p>Share this podcast...</p>
-                <div class="share__btns">
-                  <a href="mailto:your-friend@mail.com?Subject=<%=u "Check out new podcast #{@article.title} at Global Accounting Network" %>&body=<%=u "Here is a link #{podcast_url(@article.id)}" %>" target="_blank" class="share__btn  share__btn--email">
-                    <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="#fff" d="m1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
-                    </svg>
-                  </a>
-                  <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= podcast_url(@article.id) %>" target="_blank" class="share__btn  share__btn--linkedin">
-                    <svg version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m29.675 177.28l92.784-1.157v303.83l-92.784 1.178v-303.85z" fill="#fff"/>
-                      <path d="m200.14 177.28l88.658-1.126v38.646l0.021 10.947c26.255-25.744 53.32-45.2 96.563-45.2 51.016 0 100.36 21.381 100.36 91.034v208.44l-90 1.341v-159.23c0-35.103-8.796-57.733-50.719-57.733-36.935 0-52.398 6.615-52.398 55.214v160.4l-92.478 1.116v-303.84z" fill="#fff"/>
-                      <path d="m127.84 81.449c0 28.051-22.74 50.79-50.79 50.79s-50.791-22.739-50.791-50.791c0-28.051 22.739-50.791 50.791-50.791 28.051 0 50.791 22.739 50.791 50.791z" fill="#fff"/>
-                    </svg>
-                  </a>
-                  <a href="https://twitter.com/intent/tweet?text=<%=u "Check out new post #{@article.title} at Global Accounting Network #{podcast_url(@article.id)}" %>" target="_blank" class="share__btn  share__btn--twitter">
-                    <svg enable-background="new 0 0 612 612" version="1.1" viewBox="0 0 612 612" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m612 116.26c-22.525 9.981-46.694 16.75-72.088 19.772 25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.55 56.217-125.55 125.51 0 9.828 1.109 19.427 3.251 28.606-104.33-5.24-196.84-55.223-258.75-131.17-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.48-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0 60.806 43.291 111.55 100.69 123.1-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-0.803-23.634-2.333 15.985 49.907 62.336 86.199 117.25 87.194-42.947 33.654-97.099 53.655-155.92 53.655-10.134 0-20.116-0.612-29.944-1.721 55.567 35.681 121.54 56.485 192.44 56.485 230.95 0 357.19-191.29 357.19-357.19l-0.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z" fill="#fff"/>
-                    </svg>
-                  </a>
+
+            <div id="more-providers" class="modal-takeover d-none">
+              <div class="listen-modal">
+                <h3 class="listen-modal--title">Listen to this podcast on</h3>
+                <div class="listen-modal__list" data-target="listing.iconList">
+                  <a class="listen-modal__item--apple" target="_blank" href="https://podcasts.apple.com/us/podcast/business-life-hacks/id1509870238?uo=4">Apple Podcasts</a>
+                  <a class="listen-modal__item--spotify" target="_blank" href="https://open.spotify.com/show/52bwGDjjU5odHDY4qePNBr">Spotify</a>
+                  <a class="listen-modal__item--google" target="_blank" href="https://podcasts.google.com/?feed=aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xMDgxMjUwLnJzcw==">Google Podcasts</a>
+                  <a class="listen-modal__item--overcast" target="_blank" href="https://overcast.fm/itunes1509870238">Overcast</a>
+                  <a class="listen-modal__item--stitcher" target="_blank" href="https://www.stitcher.com/podcast/business-life-hacks">Stitcher</a>
+                  <a class="listen-modal__item--iheartradio" target="_blank" href="https://www.iheart.com/podcast/269-business-life-hacks-63078167/">iHeart Radio</a>
+                  <a class="listen-modal__item--pandora" target="_blank" href="https://www.pandora.com/podcast/business-life-hacks/PC:33019">Pandora</a>
+                  <a class="listen-modal__item--tunein" target="_blank" href="https://tunein.com/podcasts/Business--Economics-Podcasts/Business-Life-Hacks-p1324858/">TuneIn + Alexa</a>
+                  <a class="listen-modal__item--podcastaddict" target="_blank" href="https://podplayer.net/?podId=2923282">Podcast Addict</a>
+                  <a class="listen-modal__item--castro" target="_blank" href="https://castro.fm/itunes/1509870238">Castro</a>
+                  <a class="listen-modal__item--castbox" target="_blank" href="https://castbox.fm/vic/1509870238?ref=buzzsprout">Castbox</a>
+                  <a class="listen-modal__item--podchaser" target="_blank" href="https://www.podchaser.com/podcasts/business-life-hacks-1197888">Podchaser</a>
+                  <a class="listen-modal__item--pocketcasts" target="_blank" href="https://pca.st/itunes/1509870238">Pocket Casts</a>
+                  <a class="listen-modal__item--deezer" target="_blank" href="https://www.deezer.com/show/1233392">Deezer</a>
+                  <a class="listen-modal__item--listennotes" target="_blank" href="https://www.listennotes.com/c/2adbaa0b258144d085d711e8db0474c0/">Listen Notes</a>
+                  <a class="listen-modal__item--playerfm" target="_blank" href="https://player.fm/series/series-2824339">Player FM</a>
+                  <a class="listen-modal__item--podcastindex" target="_blank" href="https://podcastindex.org/podcast/369084">Podcast Index</a>
+                  <a class="listen-modal__item--podfriend" target="_blank" href="https://web.podfriend.com/podcast/1509870238">Podfriend</a>
+                  <a class="listen-modal__item--rss" target="_blank" href="https://feeds.buzzsprout.com/1081250.rss">RSS Feed</a>
                 </div>
               </div>
-              <img src="<%= @article.image.url ? @article.image.url : asset_path('no_image.jpg') %>" alt="<%= @article.title %>">
-              <div class="content__main-info">
-                Date: 		<%= @article.created_at.strftime("%d %B %Y") %><br>
-                Author: 	<%= "#{@article.admin_user.first_name} #{@article.admin_user.last_name}" %><br>
-                <% if @article.tags %>
-                Tags: 		<%= @article.tags %>
-                <% end %>
+            </div>
+
+
+            <%= @article.description.html_safe %>
+          </div>
+          <div class="content__right-column">
+            <div class="content__share">
+              <p>Share this podcast...</p>
+              <div class="share__btns">
+                <a href="mailto:your-friend@mail.com?Subject=<%=u "Check out new podcast #{@article.title} at Global Accounting Network" %>&body=<%=u "Here is a link #{podcast_url(@article.id)}" %>" target="_blank" class="share__btn  share__btn--email">
+                  <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff" d="m1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
+                  </svg>
+                </a>
+                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= podcast_url(@article.id) %>" target="_blank" class="share__btn  share__btn--linkedin">
+                  <svg version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m29.675 177.28l92.784-1.157v303.83l-92.784 1.178v-303.85z" fill="#fff" />
+                    <path d="m200.14 177.28l88.658-1.126v38.646l0.021 10.947c26.255-25.744 53.32-45.2 96.563-45.2 51.016 0 100.36 21.381 100.36 91.034v208.44l-90 1.341v-159.23c0-35.103-8.796-57.733-50.719-57.733-36.935 0-52.398 6.615-52.398 55.214v160.4l-92.478 1.116v-303.84z" fill="#fff" />
+                    <path d="m127.84 81.449c0 28.051-22.74 50.79-50.79 50.79s-50.791-22.739-50.791-50.791c0-28.051 22.739-50.791 50.791-50.791 28.051 0 50.791 22.739 50.791 50.791z" fill="#fff" />
+                  </svg>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=<%=u "Check out new post #{@article.title} at Global Accounting Network #{podcast_url(@article.id)}" %>" target="_blank" class="share__btn  share__btn--twitter">
+                  <svg enable-background="new 0 0 612 612" version="1.1" viewBox="0 0 612 612" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m612 116.26c-22.525 9.981-46.694 16.75-72.088 19.772 25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.55 56.217-125.55 125.51 0 9.828 1.109 19.427 3.251 28.606-104.33-5.24-196.84-55.223-258.75-131.17-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.48-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0 60.806 43.291 111.55 100.69 123.1-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-0.803-23.634-2.333 15.985 49.907 62.336 86.199 117.25 87.194-42.947 33.654-97.099 53.655-155.92 53.655-10.134 0-20.116-0.612-29.944-1.721 55.567 35.681 121.54 56.485 192.44 56.485 230.95 0 357.19-191.29 357.19-357.19l-0.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z" fill="#fff" />
+                  </svg>
+                </a>
               </div>
             </div>
-            <div class="content__back-to-result content__back-to-result--podcast">
-              <%= link_to 'back to podcasts', podcasts_path %>
+            <img src="<%= @article.image.url ? @article.image.url : asset_path('no_image.jpg') %>" alt="<%= @article.title %>">
+            <div class="content__main-info">
+              Date: <%= @article.created_at.strftime("%d %B %Y") %><br>
+              Author: <%= "#{@article.admin_user.first_name} #{@article.admin_user.last_name}" %><br>
+              <% if @article.tags %>
+              Tags: <%= @article.tags %>
+              <% end %>
             </div>
+          </div>
+          <div class="content__back-to-result content__back-to-result--podcast">
+            <%= link_to 'back to podcasts', podcasts_path %>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
