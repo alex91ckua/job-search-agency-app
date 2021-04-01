@@ -81,10 +81,11 @@ ActiveAdmin.register Article, as: 'Podcasts' do
               options: {
                 height: 300,
                 toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic',
-                                 'underline', 'insertVideo', 'strikeThrough', 'subscript',
+                                 'underline', 'strikeThrough', 'subscript',
                                  'superscript', 'outdent', 'indent',
                                  'clearFormatting', 'insertTable', 'html',
-                                 'buzzsprout_podcast_providers_button']
+                                 'buzzsprout_podcast_providers_button',
+                                 'youtube_video_button', 'buzzsprout_podcast_button']
               }
             }
           }

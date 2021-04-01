@@ -1,13 +1,38 @@
 $(document).ready(function(){
 
-  $.FroalaEditor.DefineIcon('imageIcon', {SRC: '<%= asset_url("podcast.svg") %>', ALT: 'Buzzsprout podcast providers', template: 'image'});
+  $.FroalaEditor.DefineIcon('podcastImageIcon', {SRC: '<%= asset_url("podcast.svg") %>', ALT: 'Buzzsprout podcast providers', template: 'image'});
+  $.FroalaEditor.DefineIcon('podcast2ImageIcon', {SRC: '<%= asset_url("voice-search.svg") %>', ALT: 'Podcast', template: 'image'});
+  $.FroalaEditor.DefineIcon('youtubeImageIcon', {SRC: '<%= asset_url("youtube-red.svg") %>', ALT: 'Youtube', template: 'image'});
 
   $.FroalaEditor.RegisterCommand('buzzsprout_podcast_providers_button', {
     title: 'Buzzsprout podcast providers',
-    icon: 'imageIcon',
+    icon: 'podcastImageIcon',
     focus: false,
     callback: function () {
-      this.html.insert('%buzzsprout_podcast_providers%');
+      this.html.insert('[buzzsprout_podcast_providers]');
     }
   });
+  
+  // 
+
+  $.FroalaEditor.RegisterCommand('youtube_video_button', {
+    title: 'Youtube Video',
+    icon: 'youtubeImageIcon',
+    focus: false,
+    callback: function () {
+      this.html.insert('[youtube_video id="put_your_id_here"]');
+    }
+  });
+  
+  //
+
+  $.FroalaEditor.RegisterCommand('buzzsprout_podcast_button', {
+    title: 'Buzzsprout Podcast Player',
+    icon: 'podcast2ImageIcon',
+    focus: false,
+    callback: function () {
+      this.html.insert('[buzzsprout_podcast src="put_your_source_here"]');
+    }
+  });
+
 });
